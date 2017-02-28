@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "lint": "eslint *.js **/*.js; exit 0",
+    "lint-html": "eslint *.js **/*.js -f html -o ./reports/lint-results.html; exit 0",
+    "lint-fix": "eslint --fix *.js **/*.js; exit 0"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -16,6 +19,9 @@
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
     "nodemon": "^1.11.0"
   }
 }
