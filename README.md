@@ -11,7 +11,7 @@ Because the later, final database and data schema is not given at the beginning 
 
 1. Install Elasticsearch: https://www.elastic.co/de/downloads/elasticsearch
 2. Start Elasticsearch: bin/elasticsearch (default port 9200)
-3. sh mock_data/insert_to_elasticsearch.sh
+3. node mock_data/insert_to_elasticsearch.js
 
 ### JSON-REST-API (Some Examples)
 
