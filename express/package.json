@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "dev": "export NODE_ENV=development && nodemon ./bin/www",
+    "prod": "export NODE_ENV=production && forever start ./bin/www",
     "lint": "eslint *.js **/*.js; exit 0",
     "lint-html": "eslint *.js **/*.js -f html -o ./reports/lint-results.html; exit 0",
     "lint-fix": "eslint --fix *.js **/*.js; exit 0"

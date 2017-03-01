@@ -48,4 +48,6 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+console.log('Running server in environment', app.get('env'));
+
 module.exports = app;
