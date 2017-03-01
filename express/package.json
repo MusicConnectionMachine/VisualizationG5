@@ -1,0 +1,29 @@
+{
+  "name": "express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "export NODE_ENV=development && nodemon ./bin/www | bunyan -o short",
+    "prod": "export NODE_ENV=production && forever start ./bin/www",
+    "lint": "eslint *.js **/*.js; exit 0",
+    "lint-html": "eslint *.js **/*.js -f html -o ./reports/lint-results.html; exit 0",
+    "lint-fix": "eslint --fix *.js **/*.js; exit 0"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "bunyan": "^1.8.5",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "node-sass-middleware": "0.9.8",
+    "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.11.0"
+  }
+}
