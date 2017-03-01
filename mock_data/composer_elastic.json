@@ -1,0 +1,20 @@
+{"index" : {"_id" : "1"}}
+{ "name": "Graham Thomas", "gender": "female", "brithday": "1952-08-05", "birthplace": "Stevenage", "deathdate": "2005-08-27", "deathplace": "Macklin", "tags": ["classical","austrian","german","opera","austrian composer","classical period"], "thought_by": [3, 4] }
+{"index" : {"_id" : "2"}}
+{ "name": "Beau Marks", "gender": "male", "brithday": "1947-09-24", "birthplace": "Villach", "deathdate": "2016-03-19", "deathplace": "Chattanooga", "tags": ["classical","german","romantic","32 sonatas","concerto"], "thought_by": [] }
+{"index" : {"_id" : "3"}}
+{ "name": "Cameron Collier", "gender": "female", "brithday": "1879-08-19", "birthplace": "Callander", "deathdate": "1940-08-02", "deathplace": "Kessenich", "tags": [], "thought_by": [5,6,7] }
+{"index" : {"_id" : "4"}}
+{ "name": "Boris Walter", "gender": "female", "brithday": "1892-01-25", "birthplace": "Harlech", "deathdate": "1951-07-07", "deathplace": "Newtown", "tags": ["spain","romantic"], "thought_by": [] }
+{"index" : {"_id" : "5"}}
+{ "name": "Benjamin Meadows", "gender": "male", "brithday": "1842-01-21", "birthplace": "Fairbanks", "deathdate": "1899-10-10", "deathplace": "Chiavari", "tags": ["italian","opera","italian composer"], "thought_by": [7,8,9] }
+{"index" : {"_id" : "6"}}
+{ "name": "Anna Justice", "gender": "female", "brithday": "1900-06-29", "birthplace": "Warangal", "deathdate": "1984-03-14", "deathplace": "Santa Fiora", "tags": [], "thought_by": [] }
+{"index" : {"_id" : "7"}}
+{ "name": "Preston David", "gender": "male", "brithday": "1819-11-10", "birthplace": "Santa Cruz de Tenerife", "deathdate": "1962-05-08", "deathplace": "Rocca d'Arce", "tags": [], "thought_by": [5,3] }
+{"index" : {"_id" : "8"}}
+{ "name": "Elisabeth Hudson", "gender": "female", "brithday": "1826-06-03", "birthplace": "Melsbroek", "deathdate": "2078-09-14", "deathplace": "Chonchi", "tags": [], "thought_by": [7] }
+{"index" : {"_id" : "9"}}
+{ "name": "Alex Cooley", "gender": "female", "brithday": "1862-05-04", "birthplace": "Coalhurst", "deathdate": "1932-03-25", "deathplace": "Valley East", "tags": [], "thought_by": [7] }
+{"index" : {"_id" : "10"}}
+{ "name": "Yasir Burks", "gender": "male", "brithday": "1876-10-25", "birthplace": "Boechout", "deathdate": "1889", "deathplace": "Königs Wusterhausen", "tags": [], "thought_by": [7] }

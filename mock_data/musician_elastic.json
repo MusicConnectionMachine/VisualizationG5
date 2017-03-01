@@ -1,0 +1,20 @@
+{"index" : {"_id" : "101"}}
+{ "id": 101, "name": "Eleanor Walsh", "type": "choirs" }
+{"index" : {"_id" : "102"}}
+{ "id": 102, "name": "Dai Cannon", "type": "orchestras" }
+{"index" : {"_id" : "103"}}
+{ "id": 103, "name": "Stone Mccarty", "type": "person" }
+{"index" : {"_id" : "104"}}
+{ "id": 104, "name": "Katell", "type": "choirs" }
+{"index" : {"_id" : "105"}}
+{ "id": 105, "name": "Osborne", "type": "ensembles" }
+{"index" : {"_id" : "106"}}
+{ "id": 106, "name": "Olsen", "type": "choirs" }
+{"index" : {"_id" : "107"}}
+{ "id": 107, "name": "Pandora Rich", "type": "person" }
+{"index" : {"_id" : "108"}}
+{ "id": 108, "name": "Elton", "type": "orchestras" }
+{"index" : {"_id" : "109"}}
+{ "id": 109, "name": "Germane Norman", "type": "person" }
+{"index" : {"_id" : "110"}}
+{ "id": 110, "name": "Nelle Mayo", "type": "person" }
