@@ -1,9 +1,10 @@
 const express = require('express');
+const composers = require('../../mock_data/composer.json');
 const router = express.Router();
 
-/* GET home page. */
+/* GET composers listing. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'MusicConnectionMachine' });
+  res.send(composers);
 });
 
 module.exports = router;

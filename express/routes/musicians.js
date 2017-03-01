@@ -1,9 +1,10 @@
 const express = require('express');
+const musicians = require('../../mock_data/musician.json');
 const router = express.Router();
 
-/* GET home page. */
+/* GET musicians listing. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'MusicConnectionMachine' });
+  res.send(musicians);
 });
 
 module.exports = router;
