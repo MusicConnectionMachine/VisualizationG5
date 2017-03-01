@@ -43,3 +43,18 @@ Search for a composer whose name begins with "Gra":
     }
 
 For more information, please read the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html).
+
+# Express
+
+### Setup
+  - Navigate to express folder
+  - Run `yarn install` to install dependencies
+
+### Development
+  - Run `npm run dev` to start server in development environment
+  - Run `npm run lint` before commiting to check code style
+  - Run `npm run lint-fix` to try to automatically fix style errors
+
+### Production
+  - Run `npm install -g forever`
+  - Run `npm run prod` to start server in production environment
