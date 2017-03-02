@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+warnings.json
 
 # Runtime data
 pids
@@ -28,3 +29,10 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+# ESLint reports
+reports
+
+# Generated styles
+style.css
+style.css.map
