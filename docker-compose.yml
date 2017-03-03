@@ -1,0 +1,15 @@
+version: "3"
+services:
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile-express
+    ports:
+    - "3000:3000"
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: Dockerfile-elasticsearch
+    ports:
+    - "9200:9200"
+    user: elasticsearch

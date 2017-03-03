@@ -15,6 +15,8 @@ The Elasticsearch service (including the mock data) and Express server are avail
 
 Link to the repositories: https://hub.docker.com/u/musicconnectionmachine/dashboard/
 
+The start both services with docker-comspose, clone this repository and run `docker-compose up`.
+
 ## Elasticsearch
 
 Because the later, final database and data schema is not given at the beginning of this project, we defined some mock data and use a simple Elasticsearch setup. It provides a API for fetching data and perform searches.
