@@ -4,12 +4,14 @@ In this repository we will build a visualization of the other teams aggregated d
 
 ## Docker
 
-The Elasticsearch service (including the mock data) and Express server are available as Docker images. They can be run with:
+The Elasticsearch service (including the mock data) and Express server are available as Docker images. The builds will be updated with every push to the develop and master branch. They can be run with:
 
-    docker run musicconnectionmachine/visualizationg5-express
-    docker run --user elasticsearch musicconnectionmachine/visualizationg5-elasticsearch
-    
-The builds will be updated with every push to the develop branch.
+    # develop branch
+    docker run musicconnectionmachine/visualizationg5-express:develop
+    docker run --user elasticsearch musicconnectionmachine/visualizationg5-elasticsearch:develop
+    # master branch
+    docker run musicconnectionmachine/visualizationg5-express:latest
+    docker run --user elasticsearch musicconnectionmachine/visualizationg5-elasticsearch:latest
 
 Link to the repositories: https://hub.docker.com/u/musicconnectionmachine/dashboard/
 
