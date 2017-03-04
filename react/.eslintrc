@@ -1,7 +1,4 @@
 {
-  "env": {
-    "mocha": true,
-  },
   "extends": "airbnb",
   "rules": {
     "id-length": 0,

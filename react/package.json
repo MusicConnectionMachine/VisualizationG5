@@ -2,7 +2,8 @@
   "name": "VisualizationG5",
   "version": "0.0.1",
   "scripts": {
-    "dev": "export NODE_ENV=development && webpack-dev-server --inline"
+    "dev": "export NODE_ENV=development && webpack-dev-server --inline",
+    "build": "export NODE_ENV=production && webpack"
   },
   "author": "VisualizationG5",
   "dependencies": {
