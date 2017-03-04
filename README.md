@@ -58,3 +58,17 @@ For more information, please read the [Elasticsearch documentation](https://www.
 ### Production
   - Run `npm install -g forever`
   - Run `npm run prod` to start server in production environment
+
+# React
+
+### Setup
+  - Navigate to react folder
+  - Run `yarn install` to install dependencies
+
+### Development
+  - Run `npm run dev` to start webapck server in development environment
+  
+### Express Integration 
+  - Run `npm run build` to compile the react resources and make them available for express
+
+
