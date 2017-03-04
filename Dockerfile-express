@@ -1,8 +1,0 @@
-FROM node
-COPY mock_data/ /VisualizationG5/mock_data/
-COPY express/ /VisualizationG5/express/
-WORKDIR /VisualizationG5/express/
-RUN npm install -g forever
-RUN yarn install
-EXPOSE 3000
-CMD ["npm", "run", "prod-fg"]
