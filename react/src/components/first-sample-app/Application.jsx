@@ -1,5 +1,5 @@
-import React from 'react';
 import CommonComponent from '../CommonComponent';
+import React from 'react';
 
 class Application extends React.Component {
   constructor(props) {
