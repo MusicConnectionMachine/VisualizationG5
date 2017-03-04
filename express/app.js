@@ -6,10 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('./utils/logger');
 
-const index = require('./routes/index');
-const composers = require('./routes/composers');
-const musicians = require('./routes/musicians');
-const works = require('./routes/works');
+const index = require('./routes/');
 
 const app = express();
 
@@ -32,9 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // setup Routes
 app.use('/', index);
-app.use('/api/v1/composers', composers);
-app.use('/api/v1/musicians', musicians);
-app.use('/api/v1/works', works);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

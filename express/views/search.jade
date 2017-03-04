@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        .content
+            form#search-form(method="GET", action="/search")
+                .input-group
+                    input.form-control(type="text", placeholder="Search for composer, artist, work ...", name="q", value=query)
+                    span.input-group-btn
+                        button.btn.btn-secondary(type="button") Search!
+            hr
+            for hit in hits
+                .card
+                    .card-block
+                        case hit._index
+                            when "composer"
+                                a(href="/composer/#{hit._id}")
+                                    h4.card-title= hit._source.name
+                            when "musician"
+                                a(href="/musician/#{hit._id}")
+                                    h4.card-title= hit._source.name
+                            when "work"
+                                a(href="/work/#{hit._id}")
+                                    h4.card-title= hit._source.title

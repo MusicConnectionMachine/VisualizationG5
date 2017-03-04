@@ -5,4 +5,9 @@ block content
     div.content
       h1= title
       p Welcome to #{title}
-      button(type="button").btn.btn-primary Bootstrap
+
+      form#search-form(method="GET", action="/search")
+        .input-group
+          input.form-control(type="text", placeholder="Search for composer, artist, work ...", name="q")
+          span.input-group-btn
+            button.btn.btn-secondary(type="button") Search!
