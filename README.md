@@ -2,30 +2,24 @@
 
 In this repository we will build a visualization of the other teams aggregated data
 
-## Docker
+# Running with Docker-Compose
 
-The Elasticsearch service (including the mock data) and Express server are available as Docker images. The builds will be updated with every push to the develop and master branch. They can be run with:
+### Development
+  - Run `docker-compose up` to start server in development environment
+  - The express server is accessible at localhost:3000
+  - The elasticsearch server is accessible at localhost:9200
+  - Docker volume is mapped to local volume - no need to rebuild for changes
 
-    # develop branch
-    docker run musicconnectionmachine/visualizationg5-express:develop
-    docker run --user elasticsearch musicconnectionmachine/visualizationg5-elasticsearch:develop
-    # master branch
-    docker run musicconnectionmachine/visualizationg5-express:latest
-    docker run --user elasticsearch musicconnectionmachine/visualizationg5-elasticsearch:latest
+### Production
+  - Run `docker-compose -f docker-compose.yml -f docker-compose.prod.yml up`
 
+## Dockerhub
 Link to the repositories: https://hub.docker.com/u/musicconnectionmachine/dashboard/
 
-The start both services with docker-comspose, clone this repository and run `docker-compose up`.
-
-## Elasticsearch
+## Mockup data
 
 Because the later, final database and data schema is not given at the beginning of this project, we defined some mock data and use a simple Elasticsearch setup. It provides a API for fetching data and perform searches.
 
-### Setup
-
-1. Install Elasticsearch: https://www.elastic.co/de/downloads/elasticsearch
-2. Start Elasticsearch: bin/elasticsearch (default port 9200)
-3. node mock_data/insert_to_elasticsearch.js
 
 ### JSON-REST-API (Some Examples)
 
@@ -57,18 +51,3 @@ Search for a composer whose name begins with "Gra":
     }
 
 For more information, please read the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html).
-
-# Express
-
-### Setup
-  - Navigate to express folder
-  - Run `yarn install` to install dependencies
-
-### Development
-  - Run `npm run dev` to start server in development environment
-  - Run `npm run lint` before commiting to check code style
-  - Run `npm run lint-fix` to try to automatically fix style errors
-
-### Production
-  - Run `npm install -g forever`
-  - Run `npm run prod` to start server in production environment
