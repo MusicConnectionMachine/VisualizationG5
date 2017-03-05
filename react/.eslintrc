@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "id-length": 0,
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "new-cap": [2, {"capIsNew": false}],
+    "no-param-reassign": 0,
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true,
+  },
+}

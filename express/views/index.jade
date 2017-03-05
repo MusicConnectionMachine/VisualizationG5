@@ -5,9 +5,8 @@ block content
     div.content
       h1= title
       p Welcome to #{title}
+      // Container for the react application
+      div#react-app
+      // Load the script after the react container has been mounted to DOM
 
-      form#search-form(method="GET", action="/search")
-        .input-group
-          input.form-control(type="text", placeholder="Search for composer, artist, work ...", name="q")
-          span.input-group-btn
-            button.btn.btn-secondary(type="button") Search!
+  script(src="/react/firstSampleApp.bundle.js")

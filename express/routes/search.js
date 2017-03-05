@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     res.redirect('/');
     return;
   }
-  services.elasticsearchService.search(query).then(hits => res.render('search', { query, hits }));
+  services.elasticsearchService.search(query).then(hits => res.render('search', { data: { query, hits } }));
 });
 
 
