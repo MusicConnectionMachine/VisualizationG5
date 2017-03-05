@@ -1,0 +1,17 @@
+version: "3"
+services:
+  express:
+    build: .
+    command: sh start-dev.sh
+    volumes:
+    - "./express:/VisualizationG5/express"
+    - "/VisualizationG5/express/node_modules/"
+    ports:
+    - "3000:3000"
+    links:
+    - elasticsearch
+  elasticsearch:
+    image: elasticsearch:latest
+    ports:
+    - "9200:9200"
+    user: elasticsearch
