@@ -30,6 +30,8 @@ app.use(require('node-sass-middleware')({
   sourceMap: true,
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+// Make React Resources available
+app.use('/react', express.static(path.join(__dirname, 'react')));
 
 // setup Routes
 app.use('/', index);
