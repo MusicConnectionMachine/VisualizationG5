@@ -11,7 +11,7 @@ module.exports = {
     secondSampleApp: './src/second-sample-app.js',
   },
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/../express/react',
     filename: '[name].bundle.js',
     chunkFilename: '[id].[hash].bundle.js',
   },
