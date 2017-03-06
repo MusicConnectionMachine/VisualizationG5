@@ -9,6 +9,7 @@ module.exports = {
   entry: {
     firstSampleApp: './src/first-sample-app.js',
     secondSampleApp: './src/second-sample-app.js',
+    personGraph: './src/person-graph.js',
   },
   output: {
     path: __dirname + '/../express/react',
@@ -50,6 +51,12 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['secondSampleApp'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'person-graph.html',
+      template: 'index.html',
+      inject: 'body',
+      chunks: ['personGraph'],
     }),
   ],
   sassLoader: {
