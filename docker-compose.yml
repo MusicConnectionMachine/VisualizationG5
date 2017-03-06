@@ -1,0 +1,11 @@
+version: "3"
+services:
+  express:
+    image: musicconnectionmachine/visualizationg5-express:latest
+    ports:
+    - "3000:3000"
+    links:
+    - elasticsearch
+  elasticsearch:
+    image: elasticsearch:latest
+    user: elasticsearch

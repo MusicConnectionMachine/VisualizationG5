@@ -13,8 +13,5 @@
   "bugs": {
     "url": "https://github.com/MusicConnectionMachine/VisualizationG5/issues"
   },
-  "homepage": "https://github.com/MusicConnectionMachine/VisualizationG5#readme",
-  "devDependencies": {
-    "elasticsearch": "^12.1.3"
-  }
+  "homepage": "https://github.com/MusicConnectionMachine/VisualizationG5#readme"
 }

@@ -36,3 +36,6 @@ reports
 # Generated styles
 style.css
 style.css.map
+
+# React builds
+react

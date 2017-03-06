@@ -2,5 +2,5 @@ const ElasticsearchService = require('./ElasticsearchService');
 
 
 module.exports = {
-  elasticsearchService: new ElasticsearchService(process.env.ELASTICSERACH_HOST || 'localhost:9200'),
+  elasticsearchService: new ElasticsearchService(process.env.ELASTICSEARCH_HOST || 'elasticsearch:9200'),
 };

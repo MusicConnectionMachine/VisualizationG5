@@ -5,6 +5,7 @@ const httplogger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('./utils/logger');
+const insertToElasticSearch = require('./utils/insertToElasticSearch');
 
 const index = require('./routes/');
 
@@ -27,7 +28,7 @@ app.use(require('node-sass-middleware')({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 // Make React Resources available
-app.use('/react', express.static(path.join(__dirname, '/../react/dist')));
+app.use('/react', express.static(path.join(__dirname, 'react')));
 
 // setup Routes
 app.use('/', index);
@@ -51,5 +52,6 @@ app.use((err, req, res, next) => {
 });
 
 logger.info('Server running in %s environment', app.get('env'));
+insertToElasticSearch();
 
 module.exports = app;
