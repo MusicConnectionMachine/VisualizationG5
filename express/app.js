@@ -5,6 +5,7 @@ const httplogger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('./utils/logger');
+const insertToElasticSearch = require('./utils/insertToElasticSearch');
 
 const index = require('./routes/index');
 const composers = require('./routes/composers');
@@ -57,5 +58,6 @@ app.use((err, req, res, next) => {
 });
 
 logger.info('Server running in %s environment', app.get('env'));
+insertToElasticSearch();
 
 module.exports = app;
