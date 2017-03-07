@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import Application from './components/second-sample-app/Application';
+import Application from './components/home-app/Application';
 
 
 injectTapEventPlugin({
@@ -10,7 +10,8 @@ injectTapEventPlugin({
 });
 
 function startApp() {
-  ReactDOM.render(<Application />, document.getElementById('react-app'));
+  const root = document.getElementById('react-app');
+  ReactDOM.render(<Application { ...(root.dataset) } />, root);
 }
 
 startApp();
