@@ -13,7 +13,7 @@ class Application extends React.Component {
 }
 
 Application.propTypes = {
-  host: React.PropTypes.string,
+  host: React.PropTypes.string.isRequired,
 };
 
 

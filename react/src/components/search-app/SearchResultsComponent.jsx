@@ -70,6 +70,6 @@ export default class SearchResultsComponent extends React.Component {
 
 
 SearchResultsComponent.propTypes = {
-  host: React.PropTypes.string,
-  query: React.PropTypes.string,
+  host: React.PropTypes.string.isRequired,
+  query: React.PropTypes.string.isRequired,
 };

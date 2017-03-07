@@ -33,7 +33,6 @@ export default class SearchBarComponent extends React.Component {
       http.onreadystatechange = function onreadystatechange() {
         if (http.readyState === 4 && http.status === 200) {
           const suggestions = JSON.parse(http.response);
-          console.log(http);
           suggestions.sort((a, b) => {
             if (a._index < b._index) {
               return -1;
@@ -122,6 +121,6 @@ export default class SearchBarComponent extends React.Component {
 
 
 SearchBarComponent.propTypes = {
-  host: React.PropTypes.string,
+  host: React.PropTypes.string.isRequired,
   initQuery: React.PropTypes.string,
 };

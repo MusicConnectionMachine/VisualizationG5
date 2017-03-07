@@ -6,7 +6,7 @@ block content
       h1= title
       p Welcome to #{title}
       // Container for the react application
-      div#react-app(data-host="http://localhost:3000/api/v1")
+      div#react-app(data-host="#{serverApiURL}")
       // Load the script after the react container has been mounted to DOM
 
   script(src="/react/homeApp.bundle.js")

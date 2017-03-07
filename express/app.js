@@ -11,6 +11,7 @@ const insertToElasticSearch = require('./utils/insertToElasticSearch');
 const index = require('./routes/');
 
 const app = express();
+app.locals.serverApiUrl = process.env.SERVER_API_URL || 'http://localhost:3000/api/v1';
 
 // Allow cors requests except for production (for instance, in development)
 if (app.get('env') !== 'production') {
