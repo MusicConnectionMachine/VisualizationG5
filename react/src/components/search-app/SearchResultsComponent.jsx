@@ -2,11 +2,33 @@ import React from 'react';
 
 
 export default class SearchResultsComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hits: [],
+    };
+  }
+
+
+  componentWillMount() {
+    const http = new XMLHttpRequest();
+    http.open('GET', `${this.props.host}/search?query=${encodeURIComponent(this.props.query)}&mode=search`, true);
+    http.setRequestHeader('Content-type', 'application/json');
+    http.onreadystatechange = function onreadystatechange() {
+      if (http.readyState === 4 && http.status === 200) {
+        const hits = JSON.parse(http.response);
+        this.setState({ hits });
+      }
+    }.bind(this);
+    http.send();
+  }
+
+
   render() {
     return (
       <div>
         {
-          window.__dataForReact.hits.map(function displayHit(hit) {
+          this.state.hits.map(function displayHit(hit) {
             return (
               <div className="card">
                 <div className="card-block">
@@ -45,3 +67,9 @@ export default class SearchResultsComponent extends React.Component {
     );
   }
 }
+
+
+SearchResultsComponent.propTypes = {
+  host: React.PropTypes.string,
+  query: React.PropTypes.string,
+};

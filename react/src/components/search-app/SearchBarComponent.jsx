@@ -6,7 +6,7 @@ export default class SearchBarComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: props.query,
+      query: props.initQuery,
       suggestions: [],
     };
     this.handleChange = this.handleChange.bind(this);
@@ -28,12 +28,12 @@ export default class SearchBarComponent extends React.Component {
     this.setState({ query });
     if (query.length >= 2) {
       const http = new XMLHttpRequest();
-      const params = JSON.stringify({ query });
-      http.open('POST', '/api/v1/search', true);
+      http.open('GET', `${this.props.host}/search?query=${encodeURIComponent(query)}&mode=auto-suggest`, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.onreadystatechange = function onreadystatechange() {
         if (http.readyState === 4 && http.status === 200) {
           const suggestions = JSON.parse(http.response);
+          console.log(http);
           suggestions.sort((a, b) => {
             if (a._index < b._index) {
               return -1;
@@ -52,7 +52,7 @@ export default class SearchBarComponent extends React.Component {
           this.setState({ suggestions });
         }
       }.bind(this);
-      http.send(params);
+      http.send();
     } else {
       this.setState({ suggestions: [] });
     }
@@ -64,10 +64,10 @@ export default class SearchBarComponent extends React.Component {
   }
 
 
-  renderItems(items) {
+  renderSuggestions(suggestions) {
     const types = [];
-    items.forEach(item => types.push(item.props.children._index));
-    return items.map((item, index) => {
+    suggestions.forEach(item => types.push(item.props.children._index));
+    return suggestions.map((item, index) => {
       item.props.children = SearchBarComponent.getItemValue(item.props.children);
       if (index === 0 || types[index - 1] !== types[index]) {
         const style = {
@@ -106,7 +106,7 @@ export default class SearchBarComponent extends React.Component {
               )}
               renderMenu={(items) => (
                 <div>
-                  {this.renderItems(items)}
+                  {this.renderSuggestions(items)}
                 </div>
               )}
               value={this.state.query}
@@ -122,5 +122,6 @@ export default class SearchBarComponent extends React.Component {
 
 
 SearchBarComponent.propTypes = {
-  query: React.PropTypes.string,
+  host: React.PropTypes.string,
+  initQuery: React.PropTypes.string,
 };

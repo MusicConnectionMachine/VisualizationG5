@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const services = require('../services/');
 
 
 router.get('/', (req, res, next) => {
@@ -9,7 +8,7 @@ router.get('/', (req, res, next) => {
     res.redirect('/');
     return;
   }
-  services.elasticsearchService.search(query).then(hits => res.render('search', { data: { query, hits } }));
+  res.render('search', { query });
 });
 
 

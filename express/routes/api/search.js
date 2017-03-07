@@ -4,18 +4,26 @@ const elasticsearchService = require('../../services/').elasticsearchService;
 
 
 /* GET composers listing. */
-router.post('/', (req, res, next) => {
-  if (!req.body.query) {
+router.get('/', (req, res, next) => {
+  const query = req.query.query;
+  const mode = req.query.mode || 'search';
+  if (!query) {
     res.send({
       error: 'Missing parameter'
     });
     return;
   }
-  elasticsearchService.autoSuggestionSearch(req.body.query, [
-    'name', 'title', 'part_of', 'birthplace', 'deathplace'
-  ]).then(function (hits) {
-    res.send(hits);
-  });
+  if (mode === 'auto-suggest') {
+    elasticsearchService.autoSuggestionSearch(query, [
+      'name', 'title', 'part_of', 'birthplace', 'deathplace'
+    ]).then(hits => res.send(hits));
+  } else if (mode === 'search') {
+    elasticsearchService.search(query).then(hits => res.send(hits));
+  } else {
+    res.send({
+      error: 'Unknown mode'
+    });
+  }
 });
 
 

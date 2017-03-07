@@ -10,7 +10,8 @@ injectTapEventPlugin({
 
 
 function startApp() {
-  ReactDOM.render(<Application />, document.getElementById('react-app'));
+  const root = document.getElementById('react-app');
+  ReactDOM.render(<Application { ...(root.dataset) } />, root);
 }
 
 

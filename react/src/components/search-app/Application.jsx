@@ -4,25 +4,22 @@ import SearchResultsComponent from './SearchResultsComponent';
 
 
 class Application extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { toggle: false };
-  }
-
-
   render() {
-    const { toggle } = this.state;
-
     return (
-      <div style={ toggle ? { backgroundColor: 'red' } : {} }>
-        <SearchBarComponent query={ window.__dataForReact.query }/>
+      <div>
+        <SearchBarComponent host={ this.props.host } initQuery={ this.props.query }/>
         <hr />
-        <SearchResultsComponent />
+        <SearchResultsComponent host={ this.props.host } query={ this.props.query } />
       </div>
     );
   }
 }
+
+
+Application.propTypes = {
+  host: React.PropTypes.string,
+  query: React.PropTypes.string,
+};
 
 
 export default Application;
