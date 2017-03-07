@@ -3,6 +3,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const httplogger = require('morgan');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('./utils/logger');
 const insertToElasticSearch = require('./utils/insertToElasticSearch');
@@ -10,6 +11,11 @@ const insertToElasticSearch = require('./utils/insertToElasticSearch');
 const index = require('./routes/');
 
 const app = express();
+
+// Allow cors requests except for production (for instance, in development)
+if (app.get('env') !== 'production') {
+  app.use(cors());
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
