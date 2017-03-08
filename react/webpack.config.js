@@ -26,7 +26,7 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'eslint' },
       { test: /\.scss$/, include: /components/, exclude: /node_modules/, loader: 'style!css?module!autoprefixer!sass' },
-      { test: /\.scss$/, include: path.normalize(__dirname + '/src/scss/home-app.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/home-app.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.png$/, loader: 'file' },
@@ -53,7 +53,7 @@ module.exports = {
   ],
   sassLoader: {
     includePaths: [
-      __dirname + '/src/scss',
+      __dirname + '/scss',
     ],
   },
 };

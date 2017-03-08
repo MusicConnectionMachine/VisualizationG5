@@ -43,6 +43,7 @@
     "node-sass": "3.10.0",
     "phantomjs": "1.9.20",
     "react-addons-test-utils": "15.4.1",
-    "sass-loader": "3.2.3"
+    "sass-loader": "3.2.3",
+    "style-loader": "^0.13.2"
   }
 }
