@@ -3,16 +3,20 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const httplogger = require('morgan');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('./utils/logger');
 const insertToElasticSearch = require('./utils/insertToElasticSearch');
 
-const index = require('./routes/index');
-const composers = require('./routes/composers');
-const musicians = require('./routes/musicians');
-const works = require('./routes/works');
+const index = require('./routes/');
 
 const app = express();
+app.locals.serverApiUrl = process.env.SERVER_API_URL || 'http://localhost:3000/api/v1';
+
+// Allow cors requests except for production (for instance, in development)
+if (app.get('env') !== 'production') {
+  app.use(cors());
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,9 +39,6 @@ app.use('/react', express.static(path.join(__dirname, 'react')));
 
 // setup Routes
 app.use('/', index);
-app.use('/api/v1/composers', composers);
-app.use('/api/v1/musicians', musicians);
-app.use('/api/v1/works', works);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -7,8 +7,8 @@ console.log('Compiling with NODE_ENV = ' + (process.env.NODE_ENV || 'unset')); /
 
 module.exports = {
   entry: {
-    firstSampleApp: './src/first-sample-app.js',
-    secondSampleApp: './src/second-sample-app.js',
+    homeApp: './src/home-app.js',
+    searchApp: './src/search-app.js',
     personGraph: './src/person-graph.js',
   },
   output: {
@@ -27,8 +27,7 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'eslint' },
       { test: /\.scss$/, include: /components/, exclude: /node_modules/, loader: 'style!css?module!autoprefixer!sass' },
-      { test: /\.scss$/, include: path.normalize(__dirname + '/src/scss/first-sample-app.scss'), loader: 'style!css!autoprefixer!sass' },
-      { test: /\.scss$/, include: path.normalize(__dirname + '/src/scss/second-sample-app.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/home-app.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.png$/, loader: 'file' },
@@ -41,16 +40,16 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
     new HtmlWebpackPlugin({
-      filename: 'first-sample-app.html',
+      filename: 'home-app.html',
       template: 'index.html',
       inject: 'body',
-      chunks: ['firstSampleApp'],
+      chunks: ['homeApp'],
     }),
     new HtmlWebpackPlugin({
-      filename: 'second-sample-app.html',
+      filename: 'search-app.html',
       template: 'index.html',
       inject: 'body',
-      chunks: ['secondSampleApp'],
+      chunks: ['searchApp'],
     }),
     new HtmlWebpackPlugin({
       filename: 'person-graph.html',
@@ -61,7 +60,7 @@ module.exports = {
   ],
   sassLoader: {
     includePaths: [
-      __dirname + '/src/scss',
+      __dirname + '/scss',
     ],
   },
 };

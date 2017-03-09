@@ -5,8 +5,8 @@ block content
     div.content
       h1= title
       p Welcome to #{title}
-      button(type="button").btn.btn-primary Bootstrap
       // Container for the react application
-      div#react-app
+      div#react-app(data-host="#{serverApiUrl}")
       // Load the script after the react container has been mounted to DOM
-      script(src="/react/firstSampleApp.bundle.js")
+
+  script(src="/react/homeApp.bundle.js")

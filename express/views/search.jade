@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .container
+    .content
+      div#react-app(data-query="#{query}" data-host="#{serverApiUrl}")
+  script(src="/react/searchApp.bundle.js")
