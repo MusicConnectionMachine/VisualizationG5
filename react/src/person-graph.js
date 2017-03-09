@@ -1,16 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import drawGraph from './components/person-graph/drawGraph';
 
-import Application from './components/person-graph/Application';
-
-
-injectTapEventPlugin({
-  shouldRejectClick: 'ontouchstart' in window ? () => true : null,
-});
 
 function startApp() {
-  ReactDOM.render(<Application />, document.getElementById('react-app'));
+  drawGraph(document.getElementById('react-app'));
 }
 
 startApp();
