@@ -1,135 +1,88 @@
-/*eslint-disable*/
+/* eslint-disable no-use-before-define */
 import * as d3 from 'd3';
-
-export default function drawGraph(container) {
-  const data = {
-    nodes: [
-      {
-        'index': 0,
-        'name': 'Test1',
-        'group': 1,
-      },
-      {
-        'index': 1,
-        'name': 'Test2',
-        'group': 1,
-      },
-      {
-        'index': 2,
-        'name': 'Test3',
-        'group': 2,
-      },
-      {
-        'index': 3,
-        'name': 'Test4',
-        'group': 3,
-      },
-      {
-        'index': 4,
-        'name': 'Test5',
-        'group': 1,
-      },
-      {
-        'index': 5,
-        'name': 'Test5',
-        'group': 1,
-      },
-      {
-        'index': 6,
-        'name': 'Test5',
-        'group': 1,
-      },
-      {
-        'index': 7,
-        'name': 'Test5',
-        'group': 1,
-      },
-    ],
-    links: [
-      {
-        source: 0,
-        target: 1,
-        value: 3,
-      },
-      {
-        source: 0,
-        target: 2,
-        value: 3,
-      },
-      {
-        source: 0,
-        target: 3,
-        value: 1,
-      },
-      {
-        source: 0,
-        target: 4,
-        value: 5,
-      },
-      {
-        source: 4,
-        target: 5,
-        value: 5,
-      },
-      {
-        source: 4,
-        target: 6,
-        value: 5,
-      },
-      {
-        source: 4,
-        target: 7,
-        value: 5,
-      },
-    ],
-  };
-
-  const width = 500;
-  const height = 500;
-
-  const color = d3.scaleOrdinal(d3.schemeCategory20);
-
-  const simulation = d3.forceSimulation(data.nodes)
-    .force('charge', d3.forceManyBody())
-    .force('link', d3.forceLink(data.links).distance(50))
-    .force('center', d3.forceCenter(width / 2, height / 2))
-    .on('tick', ticked);
+import { data } from './graphData';
+import { setupSimulation } from './simulation';
+import { setupLink } from './link';
+import { setupNode } from './node';
+import { nodeIsClickable } from './utilityFunctions';
 
 
-  const svg = d3.select(container).append('svg')
+export default function drawGraph(targetContainer) {
+  const width = 1000;
+  const height = 800;
+
+  const svg = d3.select(targetContainer).append('svg')
     .attr('width', width)
     .attr('height', height);
 
+  const container = svg.append('g');
 
-  const links = svg.selectAll('.link')
-    .data(data.links)
-    .enter().append('line')
-    .attr('class', 'link')
-    .style('stroke-width', d => Math.sqrt(d.value));
+  const link = setupLink(container, data);
+  const node = setupNode(container, data);
+  const simulation = setupSimulation(data, link, node, width, height);
 
-  const nodes = svg.selectAll('.node')
-    .data(data.nodes)
-    .enter().append('circle')
-    .attr('class', 'node')
-    .attr('r', 20)
-    .style('fill', d => color(d.group))
-    .call(d3.drag()
-      .on('start', dragStarted)
-      .on('drag', dragged)
-      .on('end', dragEnded)
-    );
+  // --------- Zoom ------------
 
-  function ticked() {
-    links
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
+  // Do node that we're currently zoomed in to (or null otherwise)
+  let zoomTarget;
 
-    nodes
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y);
-  }
+  const zoom = d3.zoom().on('zoom', () => {
+    container.attr('transform', 'translate(' + d3.event.transform.x + ',' + d3.event.transform.y + ') scale(' + d3.event.transform.k + ')');
+  });
+
+  // Initiate zoom-in / zoom-out on double click
+  node.on('dblclick', (target, index, nodes) => {
+    if (!nodeIsClickable(target)) return;
+
+    if (!zoomTarget) {
+      zoomTarget = target;
+      const clickedNode = nodes[index];
+
+      // Global zoom transform
+      svg.transition()
+        .duration(1250)
+        .call(zoom.transform, d3.zoomIdentity
+            .translate(width / 2, height / 2)
+            .scale(6)
+            .translate(-zoomTarget.x, -zoomTarget.y));
+
+      // Fade out node text
+      d3.select(clickedNode).select('text').transition()
+        .duration(1250)
+        .style('fill-opacity', 0);
+
+      // Fade in the children nodes
+      d3.select(clickedNode).selectAll('.node--leaf, .label--leaf').transition()
+        .delay(500)
+        .duration(750)
+        .style('fill-opacity', 1);
+    } else {
+      zoomTarget = null;
+      const clickedNode = nodes[index];
+
+      // Global zoom transform back to zoom identity
+      svg.transition()
+        .duration(1250)
+        .call(zoom.transform, d3.zoomIdentity);
+
+      // Fade in node text
+      d3.select(clickedNode).select('text').transition()
+        .duration(1250)
+        .style('fill-opacity', 1);
+
+      // Fade out children
+      d3.select(clickedNode).selectAll('.node--leaf, .label--leaf').transition()
+        .duration(750)
+        .style('fill-opacity', 0);
+    }
+  });
+
+  // --------- Drag ------------
+  node.call(d3.drag()
+    .on('start', dragStarted)
+    .on('drag', dragged)
+    .on('end', dragEnded)
+  );
 
   function dragStarted() {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -147,5 +100,4 @@ export default function drawGraph(container) {
     d3.event.subject.fx = null;
     d3.event.subject.fy = null;
   }
-
 }

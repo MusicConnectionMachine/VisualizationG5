@@ -1,0 +1,19 @@
+@import 'common';
+
+.link line {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+.node--group {
+  cursor: pointer;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+.label,
+.node--leaf {
+  pointer-events: none;
+}
