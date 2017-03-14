@@ -2,6 +2,8 @@
 
 In this repository we will build a visualization of the other teams aggregated data
 
+During the development phase, the site is hosted on a simple virtual machine on AWS using the free tier. URL: http://54.68.164.199:3000/
+
 # Running with Docker-Compose
 
 ### Development
