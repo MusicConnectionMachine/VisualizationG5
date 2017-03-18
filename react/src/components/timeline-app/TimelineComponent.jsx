@@ -27,13 +27,19 @@ export default class TimelineComponent extends React.Component {
    * @param {Array} events
    */
   drawTimeline(events) {
+    /* Prepare the data */
+    let idCounter = 0;
     /* eslint-disable no-shadow */
     let { max, min } = events.reduce(({ max, min }, event) => {
+      event.id = idCounter++;
       event.start = new Date(event.start);
       let localMax = event.start;
       if (event.end) {
         event.end = new Date(event.end);
         localMax = event.end;
+      }
+      if (event.description) {
+        event.description = '<p>' + event.description.replace(/\n/g, '</p><p>') + '</p>';
       }
       return {
         max: localMax > max ? localMax : max,
@@ -46,6 +52,7 @@ export default class TimelineComponent extends React.Component {
     min.setMonth(min.getMonth() - margin * 3 - 1);
     max.setMonth(max.getMonth() + margin * 3 + 1);
 
+    /* Display the vis-timeline */
     const container = this.refs.visTimeline;
     const items = new vis.DataSet(events);
     const options = {
@@ -77,21 +84,21 @@ export default class TimelineComponent extends React.Component {
       orientation: 'top',
       selectable: false,
       showCurrentTime: false,
-      template: (item, element) => {
+      template: (event, element) => {
         const className = 'timeline__itembox ' +
-          (item.icon ? 'timeline__itembox--icon ' : '') +
-          (item.linkType === 'external' ? 'timeline__itembox--external ' : '');
+          (event.icon ? 'timeline__itembox--hasicon ' : '') +
+          (event.linkType === 'external' ? 'timeline__itembox--external ' : '');
         const html = (
           <div>
-            <div className={ className }>
-              { item.icon ? <div className="timeline__itembox__imagebox"><img src={ item.icon } /></div> : '' }
+            <div className={ className } id={ 'timeline__itembox__' + event.id }>
+              { event.icon ? <div className="timeline__itembox__imagebox"><img src={ event.icon } /></div> : '' }
               <div className="timeline__itembox__titlebox">
                 {
-                  item.link ?
-                    <a href={ item.link } target={ item.linkType === 'external' ? '_blank' : '_self' }>
-                      { item.title }
+                  event.link ?
+                    <a href={ event.link } target={ event.linkType === 'external' ? '_blank' : '_self' }>
+                      { event.title }
                     </a>
-                    : item.title
+                    : event.title
                 }
               </div>
             </div>
@@ -100,10 +107,62 @@ export default class TimelineComponent extends React.Component {
         return ReactDOM.render(html, element);
       },
       zoomMin: 1000 * 60 * 60 * 24 * 3,
-      zoomMax: 1000 * 60 * 60 * 24 * 365 * (margin + 10),
+      zoomMax: 1000 * 60 * 60 * 24 * 365 * (margin + 10) * 2,
     };
-    /* eslint-disable no-new */
-    new vis.Timeline(container, items, options);
+    const timeline = new vis.Timeline(container, items, options);
+
+    /* Create the tooltips */
+    events.forEach((event) => {
+      const date = event.start;
+      let tooltipContent = `<p class="timeline__tooltip__date">${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}</p>`;
+      if (event.description) {
+        tooltipContent += event.description;
+      }
+      tooltipContent += `<span class="timeline__tooltip__arrow"></span>`;
+      const tooltipNode = document.createElement('div');
+      tooltipNode.innerHTML = tooltipContent;
+      tooltipNode.classList.add('timeline__tooltip');
+      tooltipNode.id = 'timeline__tooltip__' + event.id;
+      container.appendChild(tooltipNode);
+    });
+    // The event 'itemover' cannot be used because the original event will not be passed due to a bug.
+    // It is already fixed by the developers but not included in the current release (4.18.1).
+    // https://github.com/almende/vis/pull/2704
+    let currentItem = null;
+    timeline.on('mouseOver', (e) => {
+      if (e.what === 'item' && currentItem !== e.item) {
+        const tooltipNode = document.getElementById('timeline__tooltip__' + e.item);
+        currentItem = e.item;
+        if (tooltipNode) {
+          const margin = 20;
+          const tooltipWidth = tooltipNode.offsetWidth;
+          const itemBoundaries =
+            document.getElementById('timeline__itembox__' + e.item).parentNode.parentNode.parentNode.getBoundingClientRect();
+          const mouseX = e.pageX;
+          let left = mouseX;
+          if (left + tooltipWidth + margin > window.innerWidth) {
+            left = window.innerWidth - margin - tooltipWidth;
+          }
+          tooltipNode.style.left = left + 'px';
+          tooltipNode.style.top = (itemBoundaries.bottom + 10) + 'px';
+          const arrow = tooltipNode.getElementsByClassName('timeline__tooltip__arrow')[0];
+          if (mouseX + 10 + margin < window.innerWidth) {
+            arrow.style.left = (mouseX + 10) + 'px';
+          } else {
+            arrow.style.left = mouseX + 'px';
+          }
+          arrow.style.top = tooltipNode.style.top;
+          tooltipNode.classList.add('timeline__tooltip--visible');
+        }
+      }
+    });
+    timeline.on('itemout', (e) => {
+      currentItem = null;
+      const tooltipNode = document.getElementById('timeline__tooltip__' + e.item);
+      if (tooltipNode) {
+        tooltipNode.classList.remove('timeline__tooltip--visible');
+      }
+    });
   }
 
 
