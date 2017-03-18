@@ -9,6 +9,7 @@ module.exports = {
   entry: {
     homeApp: './src/home-app.js',
     searchApp: './src/search-app.js',
+    personGraph: './src/person-graph.js',
   },
   output: {
     path: __dirname + '/../express/react',
@@ -27,6 +28,7 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'eslint' },
       { test: /\.scss$/, include: /components/, exclude: /node_modules/, loader: 'style!css?module!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/home-app.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/person-graph.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.png$/, loader: 'file' },
@@ -49,7 +51,13 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['searchApp'],
-    })
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'person-graph.html',
+      template: 'index.html',
+      inject: 'body',
+      chunks: ['personGraph'],
+    }),
   ],
   sassLoader: {
     includePaths: [
