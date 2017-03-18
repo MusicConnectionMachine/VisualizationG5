@@ -5,15 +5,16 @@
   stroke-opacity: .6;
 }
 
-.node--group {
-  cursor: pointer;
+.node {
+  &--group {
+    cursor: pointer;
+  }
+  &--leaf {
+    fill: white;
+    pointer-events: none;
+  }
 }
 
-.node--leaf {
-  fill: white;
-}
-
-.label,
-.node--leaf {
+.label {
   pointer-events: none;
 }
