@@ -1,0 +1,13 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.pagination__header, .pagination__search, .pagination__suggestions, .pagination__content, .pagination__footer {
+  margin: 20px 0 20px 0;
+}
+
+.pagination-footer__separator {
+  margin: 15px 10px 0 10px;
+}
+
+.pagination-footer__link {
+  color: blue;
+}
