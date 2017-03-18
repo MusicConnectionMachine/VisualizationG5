@@ -30,7 +30,7 @@ export default class TimelineComponent extends React.Component {
     /* Prepare the data */
     let idCounter = 0;
     /* eslint-disable no-shadow */
-    let { max, min } = events.reduce(({ max, min }, event) => {
+    const { max, min } = events.reduce(({ max, min }, event) => {
       event.id = idCounter++;
       event.start = new Date(event.start);
       let localMax = event.start;
@@ -47,10 +47,6 @@ export default class TimelineComponent extends React.Component {
       };
     }, { max: -Infinity, min: Infinity });
     const margin = max.getYear() - min.getYear();
-    min = new Date(min);
-    max = new Date(max);
-    min.setMonth(min.getMonth() - margin * 3 - 1);
-    max.setMonth(max.getMonth() + margin * 3 + 1);
 
     /* Display the vis-timeline */
     const container = this.refs.visTimeline;
