@@ -1,0 +1,1 @@
+* Icon for marking external Links, used in the Timeline Component: made by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy).

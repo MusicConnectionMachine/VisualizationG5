@@ -9,6 +9,7 @@ module.exports = {
   entry: {
     homeApp: './src/home-app.js',
     searchApp: './src/search-app.js',
+    timelineApp: './src/timeline-app.js',
     personGraph: './src/person-graph.js',
   },
   output: {
@@ -28,6 +29,7 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'eslint' },
       { test: /\.scss$/, include: /components/, exclude: /node_modules/, loader: 'style!css?module!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/home-app.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/timeline-app.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/person-graph.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
@@ -52,6 +54,12 @@ module.exports = {
       inject: 'body',
       chunks: ['searchApp'],
     }),
+    new HtmlWebpackPlugin({
+      filename: 'timeline-app.html',
+      template: 'index.html',
+      inject: 'body',
+      chunks: ['timelineApp'],
+      }),
     new HtmlWebpackPlugin({
       filename: 'person-graph.html',
       template: 'index.html',
