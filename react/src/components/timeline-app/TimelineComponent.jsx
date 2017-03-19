@@ -33,16 +33,11 @@ export default class TimelineComponent extends React.Component {
     const { max, min } = events.reduce(({ max, min }, event) => {
       event.id = idCounter++;
       event.start = new Date(event.start);
-      let localMax = event.start;
-      if (event.end) {
-        event.end = new Date(event.end);
-        localMax = event.end;
-      }
       if (event.description) {
         event.description = '<p>' + event.description.replace(/\n/g, '</p><p>') + '</p>';
       }
       return {
-        max: localMax > max ? localMax : max,
+        max: event.start > max ? localMax : max,
         min: event.start < min ? event.start : min,
       };
     }, { max: -Infinity, min: Infinity });
