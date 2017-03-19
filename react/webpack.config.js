@@ -67,6 +67,8 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['personGraph'],
+    }),
+    new HtmlWebpackPlugin({
       filename: 'composers-app.html',
       template: 'index.html',
       inject: 'body',

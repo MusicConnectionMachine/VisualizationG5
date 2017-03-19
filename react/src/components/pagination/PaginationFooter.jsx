@@ -1,59 +1,56 @@
 import React from 'react';
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-const PaginationFooter = (props) => {
-  const {
-    currentPage,
-    lastPage,
-    handlePageClick,
-    className,
-  } = props;
+class PaginationFooter extends React.Component {
+  render() {
+    const {
+      currentPage,
+      lastPage,
+      className,
+      handlePageClick,
+    } = this.props;
 
-  return (
-    <div className={`pagination-footer ${className}`}>
-      <Pagination>
-        {currentPage > 1 && (
-          <PaginationItem>
-            <PaginationLink href="#/" onClick={() => handlePageClick(1)}>
+
+    const createClassName = (buttonPage) => {
+      return 'pagination-footer__button pagination-footer__button' + (currentPage === buttonPage ? '--selected' : '');
+    };
+
+    return (
+      <div className={`pagination-footer ${className}`}>
+        <div>
+          {currentPage > 1 && (
+            <span className={createClassName(1)} onClick={() => handlePageClick(1)}>
               {1}
-            </PaginationLink>
-          </PaginationItem>
-        )}
-        {currentPage > 3 && (
-          <span className="pagination-footer__separator">...</span>
-        )}
-        {currentPage > 2 && (
-          <PaginationItem>
-            <PaginationLink href="#/" onClick={() => handlePageClick(currentPage - 1)}>
+            </span>
+          )}
+          {currentPage > 3 && (
+            <span className="pagination-footer__separator">...</span>
+          )}
+          {currentPage > 2 && (
+            <span className={createClassName(currentPage - 1)} onClick={() => handlePageClick(currentPage - 1)}>
               {currentPage - 1}
-            </PaginationLink>
-          </PaginationItem>
-        )}
-        <PaginationItem>
-          <PaginationLink href="#/" onClick={() => handlePageClick(currentPage)}>
+            </span>
+          )}
+          <span className={createClassName(currentPage)} onClick={() => handlePageClick(currentPage)}>
             {currentPage}
-          </PaginationLink>
-        </PaginationItem>
-
-        {currentPage < lastPage && (
-          <PaginationItem>
-            <PaginationLink href="#/" onClick={() => handlePageClick(currentPage + 1)}>
+          </span>
+          {currentPage < lastPage && (
+            <span className={createClassName(currentPage + 1)} onClick={() => handlePageClick(currentPage + 1)}>
               {currentPage + 1}
-            </PaginationLink>
-          </PaginationItem>
-        )}
-        {currentPage + 2 < lastPage && (
-          <span className="pagination-footer__separator">...</span>
-        )}
-        {currentPage + 1 < lastPage && (
-          <PaginationItem>
-            <PaginationLink href="#/" onClick={() => handlePageClick(lastPage)}> {lastPage} </PaginationLink>
-          </PaginationItem>
-        )}
-      </Pagination>
-    </div>
-  );
-};
+            </span>
+          )}
+          {currentPage + 2 < lastPage && (
+            <span className="pagination-footer__separator">...</span>
+          )}
+          {currentPage + 1 < lastPage && (
+            <span className={createClassName(lastPage)} onClick={() => handlePageClick(lastPage)}>
+              {lastPage}
+            </span>
+          )}
+        </div>
+      </div>
+    );
+  }
+}
 
 PaginationFooter.propTypes = {
   className: React.PropTypes.string,

@@ -8,6 +8,24 @@
   margin: 15px 10px 0 10px;
 }
 
-.pagination-footer__link {
-  color: blue;
+.pagination-footer__button {
+  background-color: #b8bbc3;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  border-radius: 1px;
+  padding-top: 3px;
+  margin-right: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: white;
+  display: inline-block;
+
+
+  &--selected {
+    background-color: #6499ff;
+  }
+}
+
+.pagination-search__button {
+  cursor: pointer;
 }

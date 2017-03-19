@@ -9,21 +9,29 @@ const PaginationContent = (props) => {
     EntityComponent,
     entities,
     className,
+    loading,
   } = props;
 
   return (
     <div className={`${className}`}>
-      <ListGroup>
-        {_.map(entities, (entity, index) => (
-          <ListGroupItem key={index}><EntityComponent {...entity} /></ListGroupItem>
-        ))}
-      </ListGroup>
+      {loading && (
+        <div className="pagination-content__loading"> Loading content... </div>
+      )}
+
+      {!loading && (
+        <ListGroup>
+          {_.map(entities, (entity, index) => (
+            <ListGroupItem key={index}><EntityComponent {...entity} /></ListGroupItem>
+          ))}
+        </ListGroup>
+      )}
     </div>
   );
 };
 
 PaginationContent.propTypes = {
   className: React.PropTypes.string,
+  loading: React.PropTypes.bool.isRequired,
   entities: React.PropTypes.arrayOf(React.PropTypes.shape({
     title: React.PropTypes.string.isRequired,
   })).isRequired,

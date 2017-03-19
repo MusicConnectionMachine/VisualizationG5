@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from 'visualizationG5/components/pagination/pagination';
+import Pagination from 'visualizationG5/components/pagination/Pagination';
 
 import Composer from './Composer';
 import Suggestion from './Suggestion';
@@ -12,53 +12,68 @@ class Composers extends React.Component {
   constructor(props) {
     super(props);
 
-    this.limit = 15;
     this.state = {
       composers: [],
       composersTotalCount: 0,
       suggestions: [],
       currentPage: 1,
       showSuggestions: false,
+      limit: 10,
       query: '',
+      loading: false,
     };
   }
 
   componentWillMount() {
-    loadComposers().then(result => {
-      const { composers, composersTotalCount } = result;
-      this.setState({ composers, composersTotalCount, currentPage: 1 });
-    });
+    this.onSearchClick();
   }
 
   onPageClick(page) {
-    const { query } = this.state;
-    loadComposers(page, { query, limit: this.limit }).then(result => {
-      const { composers, composersTotalCount } = result;
-      this.setState({ composers, composersTotalCount, currentPage: page });
-    });
+    this.onSearchClick(page);
   }
 
-  onSearchChange(suggestion) {
-    loadSuggestions(suggestion).then(result => {
+  onSearchChange(query) {
+    if (query === '') {
+      return this.setState({ query }, () => this.onSearchClick());
+    }
+
+    this.setState({ query, showSuggestions: true, loading: true });
+    loadSuggestions(query).then(result => {
       const { suggestions } = result;
-      this.setState({ suggestions, query: suggestion, showSuggestions: true });
+      this.setState({
+        suggestions,
+        loading: false,
+      });
     });
   }
 
   onSuggestionClick(suggestion) {
     const currentPage = 1;
-    loadComposers(currentPage, { query: suggestion, limit: this.limit }).then(result => {
+    const { limit } = this.state;
+    this.setState({ showSuggestions: false, loading: true, query: suggestion });
+
+    loadComposers(currentPage, { limit, query: suggestion }).then(result => {
       const { composers, composersTotalCount } = result;
-      this.setState({ composers, composersTotalCount, currentPage, showSuggestions: false, query: suggestion });
+      this.setState({
+        composers,
+        composersTotalCount,
+        currentPage,
+        loading: false,
+      });
     });
   }
 
-  onSearchClick() {
-    const currentPage = 1;
-    const { query } = this.state;
-    loadComposers(currentPage, { query, limit: this.limit }).then(result => {
+  onSearchClick(currentPage = 1) {
+    const { query, limit } = this.state;
+    this.setState({ showSuggestions: false, loading: true, currentPage });
+
+    loadComposers(currentPage, { query, limit }).then(result => {
       const { composers, composersTotalCount } = result;
-      this.setState({ composers, composersTotalCount, currentPage, showSuggestions: false });
+      this.setState({
+        composers,
+        composersTotalCount,
+        loading: false,
+      });
     });
   }
 
@@ -69,6 +84,9 @@ class Composers extends React.Component {
       composersTotalCount,
       suggestions,
       showSuggestions,
+      query,
+      limit,
+      loading,
     } = this.state;
 
     return (
@@ -78,13 +96,15 @@ class Composers extends React.Component {
           SuggestionComponent={Suggestion}
           title="Composers"
           entities={composers}
+          query={query}
           showSuggestions={showSuggestions}
           suggestions={suggestions}
           currentPage={currentPage}
-          limit={this.limit}
+          limit={limit}
+          loading={loading}
           offset={0}
           entitiesTotalCount={composersTotalCount}
-          handleSearchChange={query => this.onSearchChange(query)}
+          handleSearchChange={_query => this.onSearchChange(_query)}
           handleSearchClick={() => this.onSearchClick()}
           handlePageClick={page => this.onPageClick(page)}
           handleSuggestionClick={suggestion => this.onSuggestionClick(suggestion)}

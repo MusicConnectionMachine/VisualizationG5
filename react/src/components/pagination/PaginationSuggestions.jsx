@@ -7,12 +7,21 @@ const PaginationSuggestions = (props) => {
     SuggestionComponent,
     suggestions,
     handleSuggestionClick,
+    loading,
   } = props;
 
   return (
     <div>
-      {_.map(suggestions, (suggestion, index) =>
-        <SuggestionComponent key={index} handleSuggestionClick={handleSuggestionClick} {...suggestion} />
+      {loading && (
+        <div> Loading suggestions... </div>
+      )}
+
+      {!loading && (
+        <div>
+          {_.map(suggestions, (suggestion, index) =>
+            <SuggestionComponent key={index} handleSuggestionClick={handleSuggestionClick} {...suggestion} />
+          )}
+        </div>
       )}
     </div>
   );
@@ -23,6 +32,7 @@ PaginationSuggestions.propTypes = {
     title: React.PropTypes.string.isRequired,
   })).isRequired,
   SuggestionComponent: React.PropTypes.func.isRequired,
+  loading: React.PropTypes.bool.isRequired,
   handleSuggestionClick: React.PropTypes.func.isRequired,
 };
 

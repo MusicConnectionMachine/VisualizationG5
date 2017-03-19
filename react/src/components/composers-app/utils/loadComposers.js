@@ -5,14 +5,16 @@ const composers = new Array(100).fill(undefined).map((_, index) => {
 });
 
 export default function loadComposers(page = 1, { limit = 15, query = '' } = {}) {
-  return new Promise(resolve => {
-    const begin = (page - 1) * 15;
-    const end = begin + limit;
-    const filteredComposers = composers.filter(entity => entity.title.toLowerCase().includes(query.toLowerCase()));
+  const begin = (page - 1) * 15;
+  const end = begin + limit;
+  const filteredComposers = composers.filter(entity => entity.title.toLowerCase().includes(query.toLowerCase()));
 
-    resolve({
-      composers: filteredComposers.slice(begin, end),
-      composersTotalCount: filteredComposers.length,
-    });
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({
+        composers: filteredComposers.slice(begin, end),
+        composersTotalCount: filteredComposers.length,
+      });
+    }, 750);
   });
 }

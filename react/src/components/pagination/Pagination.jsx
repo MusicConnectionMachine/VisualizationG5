@@ -24,6 +24,8 @@ const Pagination = (props) => {
     showSuggestions,
     suggestions,
     title,
+    query,
+    loading,
   } = props;
 
   const lastPage = Math.ceil(entitiesTotalCount / limit);
@@ -40,6 +42,7 @@ const Pagination = (props) => {
             />
             <PaginationSearch
               className="pagination__search"
+              query={query}
               handleSearchChange={handleSearchChange}
               handleSearchClick={handleSearchClick}
             />
@@ -47,6 +50,7 @@ const Pagination = (props) => {
               <PaginationSuggestions
                 className="pagination__suggestions"
                 suggestions={suggestions}
+                loading={loading}
                 SuggestionComponent={SuggestionComponent}
                 handleSuggestionClick={handleSuggestionClick}
               />
@@ -55,6 +59,7 @@ const Pagination = (props) => {
               <div>
                 <PaginationContent
                   className="pagination__content"
+                  loading={loading}
                   entities={relevantEntities}
                   EntityComponent={EntityComponent}
                 />
@@ -82,10 +87,12 @@ Pagination.propTypes = {
   handleSearchClick: React.PropTypes.func.isRequired,
   title: React.PropTypes.string.isRequired,
   showSuggestions: React.PropTypes.bool.isRequired,
+  loading: React.PropTypes.bool.isRequired,
   entitiesTotalCount: React.PropTypes.number.isRequired,
   currentPage: React.PropTypes.number.isRequired,
   limit: React.PropTypes.number.isRequired,
   offset: React.PropTypes.number.isRequired,
+  query: React.PropTypes.string.isRequired,
   entities: React.PropTypes.arrayOf(React.PropTypes.shape({
     title: React.PropTypes.string.isRequired,
   })).isRequired,
