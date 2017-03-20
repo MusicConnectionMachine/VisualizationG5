@@ -37,7 +37,7 @@ export default class TimelineComponent extends React.Component {
         event.description = '<p>' + event.description.replace(/\n/g, '</p><p>') + '</p>';
       }
       return {
-        max: event.start > max ? localMax : max,
+        max: event.start > max ? event.start : max,
         min: event.start < min ? event.start : min,
       };
     }, { max: -Infinity, min: Infinity });
