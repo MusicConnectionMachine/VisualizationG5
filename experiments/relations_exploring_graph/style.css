@@ -1,0 +1,42 @@
+#container {
+  width: 900px;
+  height: 282px;
+  border: 1px solid black;
+}
+
+#container .control-bar {
+  height: 30px;
+  background-color: #cdcdcd;
+  border-bottom: #555555 1px solid;
+}
+
+#container .control-bar h4 {
+  margin: 0;
+  padding-top: 7px;
+  padding-left: 10px;
+  width: 400px;
+  float: left;
+}
+
+#container .control-bar .search-field {
+  width: 250px;
+  margin-top: 5px;
+  margin-right: 10px;
+  float: right;
+}
+
+#container .control-bar .search-field input {
+  width: 250px;
+}
+
+#container svg {
+  background-color: aliceblue;
+}
+
+#container .tooltip {
+  max-width: 600px;
+  background-color: #eee;
+  opacity: 0.95;
+  padding: 0 6px;
+  border-radius: 6px;
+}

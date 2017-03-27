@@ -1,0 +1,2909 @@
+[
+  {
+    "sentence": " Wolfgang Amadeus Mozart was born to Leopold and Anna Maria Pertl Mozart in Getreidegasse 9 in the city of Salzburg, the capital of the sovereign Archbishopric of Salzburg, in what is now Austria, then part of the Holy Roman Empire.",
+    "instances": [
+      {
+        "quality": "0.9436221120476838",
+        "term1": "Wolfgang Amadeus Mozart",
+        "term2": "to Leopold and Anna Maria Pertl Mozart",
+        "relation": "was born"
+      }
+    ]
+  },
+  {
+    "sentence": "His only sibling who survived past birth was an older sister: Maria Anna, nicknamed Nannerl.",
+    "instances": [
+      {
+        "quality": "0.6214516678571286",
+        "term1": "His only sibling",
+        "term2": "past birth",
+        "relation": "survived"
+      },
+      {
+        "quality": "0.8202522134555205",
+        "term1": "His only sibling who survived past birth",
+        "term2": "an older sister: Maria Anna, nicknamed Nannerl",
+        "relation": "was"
+      },
+      {
+        "quality": "0.9125462839307745",
+        "term1": "an older sister",
+        "term2": "Nannerl",
+        "relation": "nicknamed"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart was baptized the day after his birth at St",
+    "instances": [
+      {
+        "quality": "0.7711002770011991",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "was baptized"
+      }
+    ]
+  },
+  {
+    "sentence": "Rupert's Cathedral.",
+    "instances": [
+      {
+        "quality": "Rupert's Cathedral.",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "The baptismal record gives his name in Latinized form as Joannes Chrysostomus Wolfgangus Theophilus Mozart.",
+    "instances": [
+      {
+        "quality": "0.8477538091726738",
+        "term1": "The baptismal record",
+        "term2": "his name",
+        "relation": "gives"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart generally called himself \"Wolfgang Amad Mozart\"[1]as an adult, but there were many variants.",
+    "instances": [
+      {
+        "quality": "0.8821938819052391",
+        "term1": "Mozart",
+        "term2": "as an adult",
+        "relation": "generally called"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart was baptized January 28, 1756, the day after his birth, at St",
+    "instances": [
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "was baptized"
+      }
+    ]
+  },
+  {
+    "sentence": "Rupert's Cathedral in Salzburg as Joannes Chrysostomus Wolfgangus Theophilus Mozart.",
+    "instances": [
+      {
+        "quality": "Rupert's Cathedral in Salzburg as Joannes Chrysostomus Wolfgangus Theophilus Mozart.",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "The baptismal register of the cathedral parish contains the entry shown below, written down in Latin by city chaplain Leopold Lamprecht.",
+    "instances": [
+      {
+        "quality": "0.9668186074902441",
+        "term1": "The baptismal register of the cathedral parish",
+        "term2": "the entry shown below, written down in Latin by city chaplain Leopold Lamprecht",
+        "relation": "contains"
+      },
+      {
+        "quality": "0.9199569125504766",
+        "term1": "the entry shown below",
+        "term2": "by city chaplain Leopold Lamprecht",
+        "relation": "written down"
+      }
+    ]
+  },
+  {
+    "sentence": "The parallel five-column format of the original document, seen in the figure, is transcribed below in five consecutive paragraphs.",
+    "instances": [
+      {
+        "quality": "0.9446156542204318",
+        "term1": "The parallel five-column format of the original document",
+        "term2": "",
+        "relation": "seen"
+      },
+      {
+        "quality": "0.9650966130727957",
+        "term1": "The parallel five-column format of the original document, seen in the figure",
+        "term2": "",
+        "relation": "is transcribed below"
+      }
+    ]
+  },
+  {
+    "sentence": "Material in brackets represents editorial additions by Otto Erich Deutsch (see below), intended for clarification.",
+    "instances": [
+      {
+        "quality": "0.9436221120476838",
+        "term1": "Material in brackets",
+        "term2": "editorial additions by Otto Erich Deutsch (see below",
+        "relation": "represents"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's father Leopold Mozart (17191787) was one of Europe's leading musical teachers.",
+    "instances": [
+      {
+        "quality": "0.949419443712137",
+        "term1": "Mozart's father",
+        "term2": "one of Europe's leading musical teachers",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8847999636040884",
+        "term1": "Leopold Mozart",
+        "term2": "Mozart",
+        "relation": "[is] father [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "His influential textbook Versuch einer grndlichen Violinschule, was published in 1756, the year of Mozart's birth (English, as \"A Treatise on the Fundamental Principles of Violin Playing\", transl.",
+    "instances": [
+      {
+        "quality": "0.7600770989182984",
+        "term1": "His influential textbook",
+        "term2": "the year of Mozart's birth (English, as \"A Treatise on the Fundamental Principles of Violin Playing\", transl",
+        "relation": "was published"
+      },
+      {
+        "quality": "0.8321671765816417",
+        "term1": "the Fundamental Principles of Violin",
+        "term2": "",
+        "relation": "Playing"
+      }
+    ]
+  },
+  {
+    "sentence": "He was deputy Kapellmeister to the court orchestra of the Archbishop of Salzburg, and a prolific and successful composer of instrumental music.",
+    "instances": [
+      {
+        "quality": "0.5680679595514976",
+        "term1": "He",
+        "term2": "deputy Kapellmeister",
+        "relation": "was"
+      }
+    ]
+  },
+  {
+    "sentence": "Leopold gave up composing when his son's outstanding musical talents became evident.[citation needed] They first came to light when Wolfgang was about three years old, and Leopold, proud of Wolfgang's achievements, gave him intensive musical training, including instruction in clavier, violin, and organ.",
+    "instances": [
+      {
+        "quality": "0.8848358350418233",
+        "term1": "Leopold",
+        "term2": "composing when his son's outstanding musical talents became evident",
+        "relation": "gave up"
+      },
+      {
+        "quality": "0.8273172415259126",
+        "term1": "Leopold",
+        "term2": "",
+        "relation": "gave up composing"
+      },
+      {
+        "quality": "0.9383119524695255",
+        "term1": "Wolfgang",
+        "term2": "about three years old",
+        "relation": "was"
+      },
+      {
+        "quality": "0.9377515788486008",
+        "term1": "Leopold, proud of Wolfgang's achievements",
+        "term2": "intensive musical training, including instruction in clavier, violin, and organ",
+        "relation": "gave"
+      },
+      {
+        "quality": "0.47777484130467596",
+        "term1": "his son's outstanding musical talents",
+        "term2": "evident",
+        "relation": "became"
+      },
+      {
+        "quality": "0.7130135287477929",
+        "term1": "citation",
+        "term2": "",
+        "relation": "needed"
+      },
+      {
+        "quality": "0.7441487518570273",
+        "term1": "They",
+        "term2": "to light",
+        "relation": "came"
+      }
+    ]
+  },
+  {
+    "sentence": "Leopold was Wolfgang's only teacher in his earliest years.",
+    "instances": [
+      {
+        "quality": "0.9085499454025062",
+        "term1": "Leopold",
+        "term2": "Wolfgang's only teacher in his earliest years",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8847999636040884",
+        "term1": "Leopold",
+        "term2": "Wolfgang",
+        "relation": "was only teacher [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "A note by Leopold in Nannerl's music book  the Nannerl Notenbuch  records that little Wolfgang had learned several of the pieces at the age of four.",
+    "instances": [
+      {
+        "quality": "0.9221804857987472",
+        "term1": "A note by Leopold in Nannerl's music book",
+        "term2": "that little Wolfgang had learned several of the pieces at the age of four",
+        "relation": "records"
+      },
+      {
+        "quality": "0.9100029960835063",
+        "term1": "little Wolfgang",
+        "term2": "several of the pieces at the age of four",
+        "relation": "had learned"
+      }
+    ]
+  },
+  {
+    "sentence": "1b), were written in 1761, when he was five years old.[2]",
+    "instances": [
+      {
+        "quality": "0.5222094630377523",
+        "term1": "he",
+        "term2": "five years old",
+        "relation": "was"
+      }
+    ]
+  },
+  {
+    "sentence": "During Mozart's formative years, his family made several European journeys in which the children were exhibited as child prodigies.",
+    "instances": [
+      {
+        "quality": "0.858712742009109",
+        "term1": "his family",
+        "term2": "several European journeys in which the children were exhibited as child prodigies",
+        "relation": "made"
+      },
+      {
+        "quality": "0.9432989093607181",
+        "term1": "the children",
+        "term2": "as child prodigies",
+        "relation": "were exhibited"
+      }
+    ]
+  },
+  {
+    "sentence": "These began with an exhibition in 1762 at the Court of the Elector of Bavaria in Munich, then in the same year at the Imperial Court in Vienna and Prague.",
+    "instances": [
+      {
+        "quality": "0.6975150372385567",
+        "term1": "These",
+        "term2": "with an exhibition in 1762 at the Court of the Elector of Bavaria in Munich",
+        "relation": "began"
+      }
+    ]
+  },
+  {
+    "sentence": "A long concert tour spanning three and a half years followed, taking the family to the courts of Munich, Mannheim, Paris, London,[3] The Hague, again to Paris, and back home via Zrich, Donaueschingen, and Munich.",
+    "instances": [
+      {
+        "quality": "0.9186941924198344",
+        "term1": "A long concert tour",
+        "term2": "three and a half years",
+        "relation": "spanning"
+      },
+      {
+        "quality": "0.8556671142986131",
+        "term1": "A long concert tour spanning three and a half years",
+        "term2": "",
+        "relation": "followed"
+      },
+      {
+        "quality": "0.9705128196813039",
+        "term1": "A long concert tour spanning three and a half years",
+        "term2": "to the courts of Munich, Mannheim, Paris, London,[3] The Hague, again to Paris, and back home via Zrich, Donaueschingen, and Munich",
+        "relation": "taking"
+      }
+    ]
+  },
+  {
+    "sentence": "During this trip Mozart met a great number of musicians and acquainted himself with the works of other composers.",
+    "instances": [
+      {
+        "quality": "0.9645011751708142",
+        "term1": "Mozart",
+        "term2": "a great number of musicians",
+        "relation": "met"
+      },
+      {
+        "quality": "0.9038160915897835",
+        "term1": "Mozart",
+        "term2": "with the works of other composers",
+        "relation": "acquainted"
+      }
+    ]
+  },
+  {
+    "sentence": "A particularly important influence was Johann Christian Bach, who met Mozart in London in 176465.",
+    "instances": [
+      {
+        "quality": "0.9474743154665046",
+        "term1": "A particularly important influence",
+        "term2": "Johann Christian Bach",
+        "relation": "was"
+      },
+      {
+        "quality": "0.949419443712137",
+        "term1": "Johann Christian Bach",
+        "term2": "Mozart",
+        "relation": "met"
+      }
+    ]
+  },
+  {
+    "sentence": "Bach's work is often taken to be an inspiration for Mozart's music.",
+    "instances": [
+      {
+        "quality": "0.9512666111846811",
+        "term1": "Bach's work",
+        "term2": "to be an inspiration for Mozart's music",
+        "relation": "is taken"
+      },
+      {
+        "quality": "0.9339862216393666",
+        "term1": "Bach's work",
+        "term2": "an inspiration for Mozart's music",
+        "relation": "to be"
+      }
+    ]
+  },
+  {
+    "sentence": "The family again went to Vienna in late 1767 and remained there until December 1768.",
+    "instances": [
+      {
+        "quality": "0.9573564967417968",
+        "term1": "The family",
+        "term2": "to Vienna",
+        "relation": "went"
+      },
+      {
+        "quality": "0.9045207649554154",
+        "term1": "The family",
+        "term2": "there",
+        "relation": "remained"
+      }
+    ]
+  },
+  {
+    "sentence": "On this trip Mozart contracted smallpox, and his healing was believed by Leopold as proof of God's plans concerning the child.[citation needed]",
+    "instances": [
+      {
+        "quality": "0.9534440626453463",
+        "term1": "Mozart",
+        "term2": "smallpox",
+        "relation": "contracted"
+      },
+      {
+        "quality": "0.6796597830231682",
+        "term1": "his healing",
+        "term2": "by Leopold",
+        "relation": "was believed"
+      },
+      {
+        "quality": "0.9329286852051247",
+        "term1": "God's plans",
+        "term2": "the child",
+        "relation": "concerning"
+      },
+      {
+        "quality": "0.7130135287477929",
+        "term1": "citation",
+        "term2": "",
+        "relation": "needed"
+      }
+    ]
+  },
+  {
+    "sentence": "After one year in Salzburg, three trips to Italy followed, this time with just Leopold, leaving Wolfgang's mother and sister at home.",
+    "instances": [
+      {
+        "quality": "0.9648470376892881",
+        "term1": "three trips to Italy",
+        "term2": "with just Leopold",
+        "relation": "followed"
+      }
+    ]
+  },
+  {
+    "sentence": "These took place from December 1769 to March 1771, from August to December 1771, and from October 1772 to March 1773.",
+    "instances": [
+      {
+        "quality": "0.5898102672166055",
+        "term1": "These",
+        "term2": "place",
+        "relation": "took"
+      }
+    ]
+  },
+  {
+    "sentence": "The first trip resembled the earlier journeys, with the purpose of displaying the now-teenaged Mozart's abilities as a performer and as a rapidly maturing composer.",
+    "instances": [
+      {
+        "quality": "0.9111779447320654",
+        "term1": "The first trip",
+        "term2": "the earlier journeys",
+        "relation": "resembled"
+      }
+    ]
+  },
+  {
+    "sentence": "SimpleArgument(G",
+    "instances": [
+      {
+        "quality": "0.9481947648689547",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "met"
+      }
+    ]
+  },
+  {
+    "sentence": "B",
+    "instances": [
+      {
+        "quality": "B",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart met G",
+    "instances": [
+      {
+        "quality": "Martini,List([11, 23))); SpatialArgument(in Bologna,List([24, 34)))",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "B",
+    "instances": [
+      {
+        "quality": "B",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "Martini in Bologna, and was accepted as a member of the famous Accademia Filarmonica.",
+    "instances": [
+      {
+        "quality": "Martini in Bologna, and was accepted as a member of the famous Accademia Filarmonica.",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart met G",
+    "instances": [
+      {
+        "quality": "0.9210233335200773",
+        "term1": "Mozart",
+        "term2": "as a member of the famous Accademia Filarmonica",
+        "relation": "was accepted"
+      }
+    ]
+  },
+  {
+    "sentence": "B",
+    "instances": [
+      {
+        "quality": "B",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "Martini in Bologna, and was accepted as a member of the famous Accademia Filarmonica.",
+    "instances": [
+      {
+        "quality": "Martini in Bologna, and was accepted as a member of the famous Accademia Filarmonica.",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "In Rome he heard Gregorio Allegri's Miserere once in performance in the Sistine Chapel then wrote it out in its entirety from memory, only returning to correct minor errors; thus producing the first illegal copy of this closely-guarded property of the Vatican.",
+    "instances": [
+      {
+        "quality": "0.4258913882219478",
+        "term1": "he",
+        "term2": "",
+        "relation": "heard then"
+      },
+      {
+        "quality": "0.17853087458024205",
+        "term1": "he",
+        "term2": "",
+        "relation": "heard then wrote out"
+      }
+    ]
+  },
+  {
+    "sentence": "In Milan Mozart wrote an opera Mitridate R di Ponto (1770), performed with success.",
+    "instances": [
+      {
+        "quality": "0.821954668216543",
+        "term1": "an opera Mitridate R di Ponto",
+        "term2": "",
+        "relation": "performed"
+      }
+    ]
+  },
+  {
+    "sentence": "This lead to further opera commissions, and Wolfgang and Leopold returned twice from Salzburg to Milan for the composition and premieres of Ascanio in Alba (1771) and Lucio Silla (1772).",
+    "instances": [
+      {
+        "quality": "0.9731614281707548",
+        "term1": "This lead to further opera commissions, and Wolfgang and Leopold",
+        "term2": "to Milan",
+        "relation": "returned"
+      }
+    ]
+  },
+  {
+    "sentence": "Toward the end of the final Italian journey Mozart wrote the first of his works that is still widely performed today, the solo cantata \"Exsultate, jubilate\", K.",
+    "instances": [
+      {
+        "quality": "0.9174666959940793",
+        "term1": "Mozart",
+        "term2": "the first of his works",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.6347995641655908",
+        "term1": "his works",
+        "term2": "",
+        "relation": "is widely performed"
+      }
+    ]
+  },
+  {
+    "sentence": "Following his final return with his father from Italy (13 March 1773), Mozart was employed as a court musician by the ruler of Salzburg Prince-Archbishop Hieronymus Colloredo.",
+    "instances": [
+      {
+        "quality": "0.9554598728085713",
+        "term1": "Mozart",
+        "term2": "as a court musician by the ruler of Salzburg Prince-Archbishop Hieronymus Colloredo",
+        "relation": "was employed"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart was a \"favorite son\" in Salzburg, where he had a great number of friends and admirers,[4] and he had the opportunity to compose in a great number of genres, including symphonies, sonatas, string quartets, serenades, and the occasional opera.",
+    "instances": [
+      {
+        "quality": "0.9481947648689547",
+        "term1": "Mozart",
+        "term2": "a \"favorite son\" in Salzburg",
+        "relation": "was"
+      },
+      {
+        "quality": "0.5222094630377523",
+        "term1": "he",
+        "term2": "a great number of friends and admirers",
+        "relation": "had"
+      },
+      {
+        "quality": "0.6367319478431899",
+        "term1": "he",
+        "term2": "the opportunity to compose in a great number of genres, including symphonies, sonatas, string quartets, serenades, and the occasional opera",
+        "relation": "had"
+      }
+    ]
+  },
+  {
+    "sentence": "Some of the works he produced during this early period are very widely performed today.",
+    "instances": [
+      {
+        "quality": "0.8872966301155124",
+        "term1": "the works",
+        "term2": "",
+        "relation": "produced"
+      },
+      {
+        "quality": "0.9052256377408016",
+        "term1": "Some of the works",
+        "term2": "",
+        "relation": "are very widely performed"
+      }
+    ]
+  },
+  {
+    "sentence": "For instance, during the period between April and December of 1775, Mozart developed an enthusiasm for violin concertos, producing a series of five (the only ones he ever wrote), steadily increasing in their musical sophistication.",
+    "instances": [
+      {
+        "quality": "0.9610033692204465",
+        "term1": "Mozart",
+        "term2": "an enthusiasm for violin concertos",
+        "relation": "developed"
+      },
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "a series of five",
+        "relation": "producing"
+      },
+      {
+        "quality": "0.8452144456330413",
+        "term1": "the only ones",
+        "term2": "",
+        "relation": "wrote"
+      }
+    ]
+  },
+  {
+    "sentence": "219) are now staples of the repertoire.",
+    "instances": [
+      {
+        "quality": "0.5025135004100942",
+        "term1": "219",
+        "term2": "staples of the repertoire",
+        "relation": "are"
+      }
+    ]
+  },
+  {
+    "sentence": "Nevertheless, Mozart gradually grew more discontented with Salzburg and made increasingly strenuous efforts to find a position elsewhere.",
+    "instances": [
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Mozart",
+        "term2": "more discontented with Salzburg",
+        "relation": "gradually grew"
+      },
+      {
+        "quality": "0.9210233335200773",
+        "term1": "Mozart",
+        "term2": "with Salzburg",
+        "relation": "more discontented"
+      },
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "increasingly strenuous efforts to find a position elsewhere",
+        "relation": "made"
+      }
+    ]
+  },
+  {
+    "sentence": "The reason seems to be in part his low salary, 150 florins per year (Leopold, the vice-Kapellmeister, made 250).[6] In addition, Mozart loved to compose operas, and Salzburg provided at best rare occasions for opera productions.",
+    "instances": [
+      {
+        "quality": "0.9197759696552441",
+        "term1": "Salzburg",
+        "term2": "",
+        "relation": "provided"
+      },
+      {
+        "quality": "0.8872966301155124",
+        "term1": "The reason",
+        "term2": "in part",
+        "relation": "to be"
+      },
+      {
+        "quality": "0.6943129930144679",
+        "term1": "Leopold",
+        "term2": "",
+        "relation": "made"
+      },
+      {
+        "quality": "0.6858040770297529",
+        "term1": "The reason",
+        "term2": "",
+        "relation": "seems"
+      },
+      {
+        "quality": "0.8982330273114404",
+        "term1": "Mozart",
+        "term2": "to compose operas",
+        "relation": "loved"
+      },
+      {
+        "quality": "0.8982330273114404",
+        "term1": "Mozart",
+        "term2": "operas",
+        "relation": "loved to compose"
+      }
+    ]
+  },
+  {
+    "sentence": "The situation became worse in 1775 when the court theater was closed, and the other theater in Salzburg was largely reserved for visiting troupes.[7]",
+    "instances": [
+      {
+        "quality": "0.7665350501724939",
+        "term1": "The situation",
+        "term2": "worse",
+        "relation": "became"
+      },
+      {
+        "quality": "0.8275220498795318",
+        "term1": "the court theater",
+        "term2": "closed",
+        "relation": "was"
+      },
+      {
+        "quality": "0.944056173886228",
+        "term1": "the other theater in Salzburg",
+        "term2": "for visiting troupes",
+        "relation": "was largely reserved"
+      },
+      {
+        "quality": "0.9344893211562376",
+        "term1": "the other theater in Salzburg",
+        "term2": "troupes",
+        "relation": "for visiting"
+      }
+    ]
+  },
+  {
+    "sentence": "Two long job-hunting expeditions interrupted this long Salzburg stay: Wolfgang and Leopold (they were both looking) visited Vienna from 14 July to 26 September 1773 and Munich from 6 December 1774 to March 1775.",
+    "instances": [
+      {
+        "quality": "0.9428419046403852",
+        "term1": "Two long job-hunting expeditions",
+        "term2": "this long Salzburg stay",
+        "relation": "interrupted"
+      },
+      {
+        "quality": "0.23494236697083196",
+        "term1": "they",
+        "term2": "",
+        "relation": "were looking"
+      }
+    ]
+  },
+  {
+    "sentence": "Neither visit was successful, though the Munich journey resulted in a popular success with the premiere of Mozart's opera La finta giardiniera[8]",
+    "instances": [
+      {
+        "quality": "0.8132903905488816",
+        "term1": "Neither visit",
+        "term2": "successful",
+        "relation": "was"
+      },
+      {
+        "quality": "0.9640827750857294",
+        "term1": "the Munich journey",
+        "term2": "in a popular success with the premiere of Mozart's opera La finta giardiniera",
+        "relation": "resulted"
+      }
+    ]
+  },
+  {
+    "sentence": "On September 23, 1777, Mozart began yet another job-hunting tour, this time accompanied by his mother Anna Maria.",
+    "instances": [
+      {
+        "quality": "0.9610033692204465",
+        "term1": "Mozart",
+        "term2": "yet another job-hunting tour",
+        "relation": "began"
+      },
+      {
+        "quality": "0.8348583869532935",
+        "term1": "this time",
+        "term2": "by his mother",
+        "relation": "accompanied"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Anna Maria",
+        "term2": "him",
+        "relation": "[is] mother [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "The visit included Munich, Mannheim, and Paris.[9] In Mannheim he became acquainted with members of the Mannheim orchestra, the best in Europe at the time.",
+    "instances": [
+      {
+        "quality": "0.9180804252893389",
+        "term1": "The visit",
+        "term2": "Munich, Mannheim, and Paris",
+        "relation": "included"
+      },
+      {
+        "quality": "0.4978219019954182",
+        "term1": "he",
+        "term2": "acquainted with members of the Mannheim orchestra",
+        "relation": "became"
+      },
+      {
+        "quality": "0.45592395356914683",
+        "term1": "he",
+        "term2": "with members of the Mannheim orchestra",
+        "relation": "acquainted"
+      }
+    ]
+  },
+  {
+    "sentence": "He also fell in love with Aloysia Weber, one of four daughters in a musical family.",
+    "instances": [
+      {
+        "quality": "0.5264558301022617",
+        "term1": "He",
+        "term2": "in love with Aloysia Weber",
+        "relation": "fell"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart moved on to Paris and attempted to build his career there, but was unsuccessful (he did obtain a job offer as organist at Versailles, but it was a job he did not want[10]).",
+    "instances": [
+      {
+        "quality": "0.4875515567406569",
+        "term1": "it",
+        "term2": "a job he did not want[10])",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8081411033049395",
+        "term1": "Mozart",
+        "term2": "to build his career there",
+        "relation": "attempted"
+      },
+      {
+        "quality": "0.8081411033049395",
+        "term1": "Mozart",
+        "term2": "his career",
+        "relation": "attempted to build"
+      },
+      {
+        "quality": "0.1948871917044894",
+        "term1": "he",
+        "term2": "",
+        "relation": "did not want"
+      },
+      {
+        "quality": "0.8192566902456899",
+        "term1": "Mozart",
+        "term2": "unsuccessful",
+        "relation": "was"
+      },
+      {
+        "quality": "0.44251022175651566",
+        "term1": "he",
+        "term2": "a job offer as organist at Versailles",
+        "relation": "did obtain"
+      },
+      {
+        "quality": "0.9169884650944797",
+        "term1": "Mozart",
+        "term2": "to Paris",
+        "relation": "moved"
+      }
+    ]
+  },
+  {
+    "sentence": "The visit to Paris was an especially unhappy one because Mozart's mother took ill and died there, June 23, 1778.[11] On his way back to Salzburg Mozart passed through Munich again, where Aloysia, now employed at the opera there as a singer, indicated she was no longer interested in him.[12]",
+    "instances": [
+      {
+        "quality": "0.9751389598371145",
+        "term1": "The visit to Paris",
+        "term2": "because Mozart's mother took ill and died there, June 23, 1778",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8019745835365614",
+        "term1": "Aloysia",
+        "term2": "she was no longer interested in him",
+        "relation": "indicated"
+      },
+      {
+        "quality": "0.3135276058215937",
+        "term1": "she",
+        "term2": "interested in him",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8306090960787457",
+        "term1": "Mozart's mother",
+        "term2": "ill",
+        "relation": "took"
+      },
+      {
+        "quality": "0.9339862216393666",
+        "term1": "Mozart's mother",
+        "term2": "",
+        "relation": "died"
+      },
+      {
+        "quality": "0.9453897488750478",
+        "term1": "Aloysia",
+        "term2": "as a singer",
+        "relation": "employed"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's discontent with Salzburg continued after his return.",
+    "instances": [
+      {
+        "quality": "0.9015729910252602",
+        "term1": "Mozart's discontent with Salzburg",
+        "term2": "",
+        "relation": "continued"
+      }
+    ]
+  },
+  {
+    "sentence": "The question arises why Mozart, despite his talent, was unable to find a job on this trip.",
+    "instances": [
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "a job on this trip",
+        "relation": "to find"
+      },
+      {
+        "quality": "0.6858040770297529",
+        "term1": "The question",
+        "term2": "",
+        "relation": "arises"
+      },
+      {
+        "quality": "0.9111549391406699",
+        "term1": "Mozart",
+        "term2": "unable to find a job on this trip",
+        "relation": "was"
+      }
+    ]
+  },
+  {
+    "sentence": "Maynard Solomon has suggested that the problem lay in conflict with father Leopold, who insisted that Mozart find a high-level position that would support the entire family.",
+    "instances": [
+      {
+        "quality": "0.913197594301744",
+        "term1": "a high-level position",
+        "term2": "the entire family",
+        "relation": "would support"
+      },
+      {
+        "quality": "0.8163272075854274",
+        "term1": "Maynard Solomon",
+        "term2": "that the problem lay in conflict with father Leopold",
+        "relation": "has suggested"
+      },
+      {
+        "quality": "0.8997345737322758",
+        "term1": "the problem",
+        "term2": "in conflict with father Leopold",
+        "relation": "lay"
+      },
+      {
+        "quality": "0.7831831991274393",
+        "term1": "father Leopold",
+        "term2": "that Mozart find a high-level position",
+        "relation": "insisted"
+      },
+      {
+        "quality": "0.8727673810701647",
+        "term1": "Mozart",
+        "term2": "a high-level position that would support the entire family",
+        "relation": "find"
+      }
+    ]
+  },
+  {
+    "sentence": "Wolfgang favored the alternative strategy of settling in a major city, working as a freelance, and cultivating the aristocracy to the point that he would be favored for an important job; this had worked earlier for other musicians such as Haydn.",
+    "instances": [
+      {
+        "quality": "0.45170382506656653",
+        "term1": "he",
+        "term2": "for an important job",
+        "relation": "would be favored"
+      },
+      {
+        "quality": "0.3629297645058087",
+        "term1": "this",
+        "term2": "for other musicians such as Haydn",
+        "relation": "had worked"
+      },
+      {
+        "quality": "0.8982330273114404",
+        "term1": "Wolfgang",
+        "term2": "the alternative strategy of settling in a major city",
+        "relation": "favored"
+      },
+      {
+        "quality": "0.852130044887511",
+        "term1": "Wolfgang",
+        "term2": "as a freelance",
+        "relation": "favored the alternative strategy of settling in a major city working"
+      },
+      {
+        "quality": "0.852130044887511",
+        "term1": "Wolfgang",
+        "term2": "the aristocracy",
+        "relation": "favored the alternative strategy of settling in a major city cultivating"
+      }
+    ]
+  },
+  {
+    "sentence": "The plan Leopold imposed, coupled with Mozart's youth (he was only 21 when he left Salzburg), seems to have had foreordained failure.[13]",
+    "instances": [
+      {
+        "quality": "0.944202714291666",
+        "term1": "The plan",
+        "term2": "Leopold",
+        "relation": "imposed"
+      },
+      {
+        "quality": "0.8321671765816417",
+        "term1": "The plan Leopold imposed,",
+        "term2": "",
+        "relation": "coupled"
+      },
+      {
+        "quality": "0.4165289098892234",
+        "term1": "he",
+        "term2": "only 21",
+        "relation": "was"
+      },
+      {
+        "quality": "0.5680679595514976",
+        "term1": "he",
+        "term2": "Salzburg",
+        "relation": "left"
+      },
+      {
+        "quality": "0.8073705620218985",
+        "term1": "The plan Leopold imposed,",
+        "term2": "",
+        "relation": "seems"
+      }
+    ]
+  },
+  {
+    "sentence": "In January 1781, Mozart's opera Idomeneo, premiered with \"considerable success\" (New Grove) in Munich.",
+    "instances": [
+      {
+        "quality": "0.7918942959137041",
+        "term1": "Mozart's opera Idomeneo",
+        "term2": "",
+        "relation": "premiered"
+      }
+    ]
+  },
+  {
+    "sentence": "The following March, the composer was summoned to Vienna, where his employer, Prince-Archbishop Colloredo of Salzburg, was attending the celebrations for the installation of the Emperor Joseph II.",
+    "instances": [
+      {
+        "quality": "0.9524232899707616",
+        "term1": "the composer",
+        "term2": "to Vienna",
+        "relation": "was summoned"
+      },
+      {
+        "quality": "0.7420153049579357",
+        "term1": "his employer",
+        "term2": "the celebrations for the installation of the Emperor Joseph II",
+        "relation": "was attending"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Prince",
+        "term2": "him",
+        "relation": "[is] employer [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart, who had just experienced success in Munich, was offended when Colloredo treated him as a mere servant, and particularly when the Archbishop forbade him to perform before the Emperor at Countess Thun's (for a fee that would have been fully half of his Salzburg salary).[14] In May the resulting quarrel intensified: Mozart attempted to resign, and was refused.",
+    "instances": [
+      {
+        "quality": "0.9210233335200773",
+        "term1": "Mozart",
+        "term2": "success in Munich",
+        "relation": "had just experienced"
+      },
+      {
+        "quality": "0.8371923815117108",
+        "term1": "a fee",
+        "term2": "fully half of his Salzburg salary",
+        "relation": "would have been"
+      },
+      {
+        "quality": "0.7400991314571976",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "was refused"
+      },
+      {
+        "quality": "0.8615585111461579",
+        "term1": "Colloredo",
+        "term2": "as a mere servant",
+        "relation": "treated"
+      },
+      {
+        "quality": "0.7639424379089015",
+        "term1": "Mozart",
+        "term2": "to resign",
+        "relation": "attempted"
+      },
+      {
+        "quality": "0.8352157366957643",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "was offended"
+      },
+      {
+        "quality": "0.7295353171650001",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "attempted to resign to resign"
+      },
+      {
+        "quality": "0.4978219019954182",
+        "term1": "him",
+        "term2": "",
+        "relation": "to perform"
+      }
+    ]
+  },
+  {
+    "sentence": "The following month, however, the delayed permission was granted, but a grossly insulting way: Mozart was dismissed literally \"with a kick in the arse\", administered by the Archbishop's steward, Count Arco.[15] In the meantime, Mozart had been noticing opportunities to earn a good living in Vienna, and he chose to stay there and develop his own freelance career.[16]",
+    "instances": [
+      {
+        "quality": "0.7508836390842847",
+        "term1": "the delayed permission",
+        "term2": "",
+        "relation": "was granted"
+      },
+      {
+        "quality": "0.263652756827333",
+        "term1": "he",
+        "term2": "to stay there and develop his own freelance career",
+        "relation": "chose"
+      },
+      {
+        "quality": "0.18947780198484504",
+        "term1": "he",
+        "term2": "his own freelance career",
+        "relation": "chose to develop"
+      },
+      {
+        "quality": "0.8803347548488738",
+        "term1": "Mozart",
+        "term2": "with a kick in the arse",
+        "relation": "was dismissed literally"
+      },
+      {
+        "quality": "0.9139478779591064",
+        "term1": "Mozart",
+        "term2": "opportunities to earn a good living in Vienna",
+        "relation": "had been noticing"
+      },
+      {
+        "quality": "0.19710908353723788",
+        "term1": "he",
+        "term2": "there",
+        "relation": "to stay"
+      },
+      {
+        "quality": "0.9210233335200773",
+        "term1": "Mozart",
+        "term2": "by the Archbishop's steward",
+        "relation": "administered"
+      },
+      {
+        "quality": "0.38089450366724514",
+        "term1": "Count Arco",
+        "term2": "Archbishop",
+        "relation": "[is] steward [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "In fact, Mozart's Vienna career began very well.",
+    "instances": [
+      {
+        "quality": "0.8182346120370801",
+        "term1": "Mozart's Vienna career",
+        "term2": "",
+        "relation": "began very well"
+      }
+    ]
+  },
+  {
+    "sentence": "He performed often as a pianist, notably in a competition before the Emperor with Muzio Clementi, December 24, 1781,[17] and according to the New Grove, he soon \"had established himself as the finest keyboard player in Vienna.\"[18] Mozart also prospered as a composer: during 17811782 he wrote the opera Die Entfhrung aus dem Serail (\"The Abduction from the Seraglio\"), which premiered July 16, 1782 and achieved a huge success.",
+    "instances": [
+      {
+        "quality": "0.9449486126097173",
+        "term1": "The Abduction from the Seraglio",
+        "term2": "July 16, 1782",
+        "relation": "premiered"
+      },
+      {
+        "quality": "0.9622360997484253",
+        "term1": "The Abduction from the Seraglio",
+        "term2": "a huge success",
+        "relation": "achieved"
+      },
+      {
+        "quality": "0.5768470905635936",
+        "term1": "he",
+        "term2": "the opera Die Entfhrung aus dem Serail",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.38480116862606223",
+        "term1": "he",
+        "term2": "as the finest keyboard player in Vienna",
+        "relation": "had established"
+      },
+      {
+        "quality": "0.4328394458044063",
+        "term1": "He",
+        "term2": "",
+        "relation": "performed"
+      },
+      {
+        "quality": "0.8818110676393391",
+        "term1": "Mozart",
+        "term2": "as a composer",
+        "relation": "prospered"
+      },
+      {
+        "quality": "0.6781176827319847",
+        "term1": "the opera",
+        "term2": "",
+        "relation": "Die"
+      }
+    ]
+  },
+  {
+    "sentence": "The work was soon being performed \"throughout German-speaking Europe\",[19] and fully established Mozart's reputation as a composer.",
+    "instances": [
+      {
+        "quality": "0.9159221601898307",
+        "term1": "The work",
+        "term2": "",
+        "relation": "was being performed"
+      },
+      {
+        "quality": "0.9210233335200773",
+        "term1": "German",
+        "term2": "Europe",
+        "relation": "speaking"
+      }
+    ]
+  },
+  {
+    "sentence": "Near the height of his quarrels with Archbishop Colloredo, Mozart moved in (May 1 or May 2, 1781) with the Weber family, who had moved to Vienna from Mannheim.",
+    "instances": [
+      {
+        "quality": "0.9304414839833636",
+        "term1": "Mozart",
+        "term2": "with the Weber family",
+        "relation": "moved"
+      }
+    ]
+  },
+  {
+    "sentence": "The father, Fridolin, had died, and the Webers were now taking in lodgers to make ends meet.[20] Aloysia, who had earlier rejected Mozart's suit, was now married to the actor Joseph Lange, and Mozart's interest shifted to the third daughter, Constanze.",
+    "instances": [
+      {
+        "quality": "0.6981802672629641",
+        "term1": "The father",
+        "term2": "",
+        "relation": "had died"
+      },
+      {
+        "quality": "0.9017835883942807",
+        "term1": "The father",
+        "term2": "to the actor",
+        "relation": "was married"
+      },
+      {
+        "quality": "0.9189494267911353",
+        "term1": "the Webers",
+        "term2": "to make ends meet",
+        "relation": "were taking in"
+      },
+      {
+        "quality": "0.8638966457783381",
+        "term1": "the Webers",
+        "term2": "ends meet",
+        "relation": "were taking in lodgers to make"
+      },
+      {
+        "quality": "0.49605349442544683",
+        "term1": "ends",
+        "term2": "",
+        "relation": "meet"
+      },
+      {
+        "quality": "0.9329286852051247",
+        "term1": "Mozart's interest",
+        "term2": "to the third daughter",
+        "relation": "shifted"
+      },
+      {
+        "quality": "0.9428581686445981",
+        "term1": "20] Aloysia",
+        "term2": "Mozart's suit",
+        "relation": "had rejected"
+      }
+    ]
+  },
+  {
+    "sentence": "The couple were married, with father Leopold's \"grudging consent\" (New Grove), on August 4, 1782.",
+    "instances": [
+      {
+        "quality": "0.7665350501724939",
+        "term1": "The couple",
+        "term2": "married",
+        "relation": "were"
+      }
+    ]
+  },
+  {
+    "sentence": "They had six children, of whom only two survived infancy: Carl Thomas (17841858) and Franz Xaver Wolfgang (17911844; later a minor composer himself).",
+    "instances": [
+      {
+        "quality": "0.80385626812773",
+        "term1": "They",
+        "term2": "six children, of whom only two survived infancy: Carl Thomas (17841858) and Franz Xaver Wolfgang",
+        "relation": "had"
+      }
+    ]
+  },
+  {
+    "sentence": "During 17821783, Mozart became closely acquainted with the work of J.",
+    "instances": [
+      {
+        "quality": "0.9610033692204465",
+        "term1": "Mozart",
+        "term2": "closely acquainted with the work of J.",
+        "relation": "became"
+      },
+      {
+        "quality": "0.9210233335200773",
+        "term1": "Mozart",
+        "term2": "with the work of J.",
+        "relation": "closely acquainted"
+      }
+    ]
+  },
+  {
+    "sentence": "Bach and G",
+    "instances": [
+      {
+        "quality": "0.9397001286877047",
+        "term1": "Baron Gottfried van Swieten",
+        "term2": "many manuscripts of works by the Baroque masters",
+        "relation": "owned"
+      }
+    ]
+  },
+  {
+    "sentence": "F",
+    "instances": [
+      {
+        "quality": "F",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "Handel as a result of the influence of Baron Gottfried van Swieten, who owned many manuscripts of works by the Baroque masters.",
+    "instances": [
+      {
+        "quality": "Handel as a result of the influence of Baron Gottfried van Swieten, who owned many manuscripts of works by the Baroque masters.",
+        "term1": "",
+        "term2": "",
+        "relation": ""
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's study of these works led first to a number of works imitating Baroque style and later had a powerful influence on his own personal musical language, for example the fugal passages in Die Zauberflte (\"The Magic Flute\"), and in the finale of Symphony No. 41.",
+    "instances": [
+      {
+        "quality": "0.9610278264682083",
+        "term1": "Mozart's study of these works",
+        "term2": "to a number of works",
+        "relation": "led"
+      },
+      {
+        "quality": "0.8396499491243721",
+        "term1": "works",
+        "term2": "Baroque style",
+        "relation": "imitating"
+      },
+      {
+        "quality": "0.9528539888228532",
+        "term1": "Mozart's study of these works",
+        "term2": "a powerful influence on his own personal musical language",
+        "relation": "had"
+      }
+    ]
+  },
+  {
+    "sentence": "In 1783, Wolfgang and Constanze visited Wolfgang's family in Salzburg, but the visit was not a success, as Leopold and Nannerl were, at best, only polite to Constanze.",
+    "instances": [
+      {
+        "quality": "0.9676347051283354",
+        "term1": "Wolfgang and Constanze",
+        "term2": "Wolfgang's family",
+        "relation": "visited"
+      },
+      {
+        "quality": "0.9472929138282772",
+        "term1": "the visit",
+        "term2": "a success, as Leopold and Nannerl were, at best, only polite to Constanze",
+        "relation": "was not"
+      },
+      {
+        "quality": "0.9331122000034606",
+        "term1": "Leopold and Nannerl",
+        "term2": "at best, only polite to Constanze",
+        "relation": "were"
+      }
+    ]
+  },
+  {
+    "sentence": "However, the visit sparked the composition of one of Mozart's great liturgical pieces, the Mass in C Minor, which, though not completed, was premiered in Salzburg.",
+    "instances": [
+      {
+        "quality": "0.9472929138282772",
+        "term1": "the visit",
+        "term2": "the composition of one of Mozart's great liturgical pieces",
+        "relation": "sparked"
+      },
+      {
+        "quality": "0.9449486126097173",
+        "term1": "the Mass in C Minor",
+        "term2": "",
+        "relation": "was premiered"
+      }
+    ]
+  },
+  {
+    "sentence": "Constanze sang in the premiere.[21]",
+    "instances": [
+      {
+        "quality": "0.9383119524695255",
+        "term1": "Constanze",
+        "term2": "",
+        "relation": "sang"
+      }
+    ]
+  },
+  {
+    "sentence": "At some (unknown) time following his move to Vienna, Mozart met Joseph Haydn and the two composers became friends; see Haydn and Mozart.",
+    "instances": [
+      {
+        "quality": "0.9477351832182775",
+        "term1": "Mozart",
+        "term2": "friends",
+        "relation": "became"
+      }
+    ]
+  },
+  {
+    "sentence": "When Haydn visited Vienna, they sometimes played together in an impromptu string quartet.",
+    "instances": [
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Haydn",
+        "term2": "Vienna",
+        "relation": "visited"
+      },
+      {
+        "quality": "0.7441487518570273",
+        "term1": "they",
+        "term2": "",
+        "relation": "played together"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's six quartets dedicated to Haydn (K.",
+    "instances": [
+      {
+        "quality": "0.9485479188231729",
+        "term1": "Mozart's six quartets",
+        "term2": "to Haydn",
+        "relation": "dedicated"
+      }
+    ]
+  },
+  {
+    "sentence": "Haydn was soon in awe of Mozart, and when he first heard the last three of Mozart's series he told the visiting Leopold, \"Before God and as an honest man I tell you that your son is the greatest composer known to me either in person or by name: He has taste, and, furthermore, the most profound knowledge of composition.\"[22]",
+    "instances": [
+      {
+        "quality": "0.9481947648689547",
+        "term1": "Haydn",
+        "term2": "in awe of Mozart",
+        "relation": "was"
+      },
+      {
+        "quality": "0.5994937517389187",
+        "term1": "he",
+        "term2": "the last three of Mozart's series",
+        "relation": "heard"
+      },
+      {
+        "quality": "0.8807736236589644",
+        "term1": "the greatest composer",
+        "term2": "to me",
+        "relation": "known"
+      },
+      {
+        "quality": "0.29487653219956067",
+        "term1": "he",
+        "term2": "Before God and as an honest man I tell you that your son is the greatest composer known to me either in person or by name: He has taste, and, furthermore, the most profound knowledge of composition.\"[22",
+        "relation": "told"
+      },
+      {
+        "quality": "0.5222094630377523",
+        "term1": "He",
+        "term2": "taste",
+        "relation": "has"
+      },
+      {
+        "quality": "0.14297869228022755",
+        "term1": "I",
+        "term2": "that your son is the greatest composer",
+        "relation": "tell"
+      },
+      {
+        "quality": "0.6105331906523841",
+        "term1": "your son",
+        "term2": "the greatest composer known to me either in person or by name",
+        "relation": "is"
+      }
+    ]
+  },
+  {
+    "sentence": "During the years 17821785, Mozart put on a series of concerts in which he appeared as soloist in his own piano concertos.",
+    "instances": [
+      {
+        "quality": "0.9534440626453463",
+        "term1": "Mozart",
+        "term2": "a series of concerts",
+        "relation": "put on"
+      },
+      {
+        "quality": "0.5508709715731925",
+        "term1": "he",
+        "term2": "",
+        "relation": "appeared"
+      }
+    ]
+  },
+  {
+    "sentence": "He wrote three or four concertos for each concert season, and since space in the theaters was scarce, he booked unconventional venues: a large room in the Trattnerhof, an apartment building; and the ballroom of the Mehlgrube, a restaurant.[23] The concerts were very popular, and the works Mozart composed for them are considered among his finest.",
+    "instances": [
+      {
+        "quality": "0.6563611942936285",
+        "term1": "the works Mozart composed for them",
+        "term2": "",
+        "relation": "are considered"
+      },
+      {
+        "quality": "0.39746064682094406",
+        "term1": "he",
+        "term2": "unconventional venues",
+        "relation": "booked"
+      },
+      {
+        "quality": "0.39746064682094406",
+        "term1": "He",
+        "term2": "three or four concertos for each concert season",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.7665350501724939",
+        "term1": "The concerts",
+        "term2": "very popular",
+        "relation": "were"
+      },
+      {
+        "quality": "0.8103687806061152",
+        "term1": "the works",
+        "term2": "for them",
+        "relation": "composed"
+      }
+    ]
+  },
+  {
+    "sentence": "Solomon writes that during this period Mozart created \"a harmonious connection between an eager composer-performer and a delighted audience, which was given the opportunity of witnessing the transformation and perfection of a major musical genre.\"[24]",
+    "instances": [
+      {
+        "quality": "0.9329156546550058",
+        "term1": "a delighted audience",
+        "term2": "the opportunity of witnessing the transformation and perfection of a major musical genre",
+        "relation": "was given"
+      },
+      {
+        "quality": "0.8661499809177662",
+        "term1": "Solomon",
+        "term2": "that during this period Mozart created \"a harmonious connection between an eager composer-performer and a delighted audience",
+        "relation": "writes"
+      },
+      {
+        "quality": "0.9563670665299645",
+        "term1": "Mozart",
+        "term2": "a harmonious connection between an eager composer-performer and a delighted audience",
+        "relation": "created"
+      }
+    ]
+  },
+  {
+    "sentence": "With the substantial money Mozart earned in his concerts and elsewhere, his family adopted a rather plush lifestyle.",
+    "instances": [
+      {
+        "quality": "0.8247751551634085",
+        "term1": "the substantial money",
+        "term2": "",
+        "relation": "earned"
+      },
+      {
+        "quality": "0.6381012045821894",
+        "term1": "his family",
+        "term2": "a rather plush lifestyle",
+        "relation": "adopted"
+      }
+    ]
+  },
+  {
+    "sentence": "They moved to an expensive apartment, with a rent of 460 florins.[25] Mozart also bought a fine fortepiano from Anton Walter for about 900 florins, and a billiard table for about 300.[26] The Mozarts also sent their son Karl Thomas to an expensive boarding school[27] and kept servants.",
+    "instances": [
+      {
+        "quality": "0.6155020116081594",
+        "term1": "They",
+        "term2": "to an expensive apartment",
+        "relation": "moved"
+      },
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Mozart",
+        "term2": "from Anton Walter",
+        "relation": "also bought"
+      },
+      {
+        "quality": "0.8726869446304376",
+        "term1": "The Mozarts",
+        "term2": "to an expensive boarding school",
+        "relation": "also sent"
+      },
+      {
+        "quality": "0.9340463819568752",
+        "term1": "The Mozarts",
+        "term2": "servants",
+        "relation": "kept"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Karl Thomas",
+        "term2": "theirs",
+        "relation": "[is] also sent son [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "These choices inhibited saving, and were the partial cause of a stressful financial situation for the Mozart family a few years later.[28]",
+    "instances": [
+      {
+        "quality": "0.7665350501724939",
+        "term1": "These choices",
+        "term2": "saving",
+        "relation": "inhibited"
+      },
+      {
+        "quality": "0.9382433616531214",
+        "term1": "These choices",
+        "term2": "the partial cause of a stressful financial situation for the Mozart family",
+        "relation": "were"
+      }
+    ]
+  },
+  {
+    "sentence": "Despite the great success of Die Entfhrung aus dem Serail, Mozart did little writing of operas during the years that followed it, producing only two unfinished works and the one-act Der Schauspieldirektor.",
+    "instances": [
+      {
+        "quality": "0.9383119524695255",
+        "term1": "Mozart",
+        "term2": "little writing of operas",
+        "relation": "did"
+      }
+    ]
+  },
+  {
+    "sentence": "He focused instead on his career as a piano soloist and writer of concertos.",
+    "instances": [
+      {
+        "quality": "0.41763505952380825",
+        "term1": "He",
+        "term2": "on his career as a piano soloist and writer of concertos",
+        "relation": "focused instead"
+      }
+    ]
+  },
+  {
+    "sentence": "However, around the end of 1785, Mozart reshifted his focus again: he ceased to write piano concertos on a regular basis,[29] and began his famous operatic collaboration with the librettist Lorenzo da Ponte.",
+    "instances": [
+      {
+        "quality": "0.2743125465364158",
+        "term1": "he",
+        "term2": "his famous operatic collaboration with the librettist",
+        "relation": "began"
+      },
+      {
+        "quality": "0.39746064682094406",
+        "term1": "he",
+        "term2": "to write piano concertos on a regular basis",
+        "relation": "ceased"
+      },
+      {
+        "quality": "0.8989985208148807",
+        "term1": "Mozart",
+        "term2": "his focus",
+        "relation": "reshifted"
+      },
+      {
+        "quality": "0.39746064682094406",
+        "term1": "he",
+        "term2": "piano concertos",
+        "relation": "ceased to write"
+      }
+    ]
+  },
+  {
+    "sentence": "1786 saw the Vienna premiere of The Marriage of Figaro, which was quite successful in Vienna and even more so in a Prague production later the same year.",
+    "instances": [
+      {
+        "quality": "0.6560783464719421",
+        "term1": "1786",
+        "term2": "the Vienna premiere of The Marriage of Figaro",
+        "relation": "saw"
+      },
+      {
+        "quality": "0.9570739882679937",
+        "term1": "the Vienna premiere of The Marriage of Figaro",
+        "term2": "quite successful in Vienna",
+        "relation": "was even more so"
+      }
+    ]
+  },
+  {
+    "sentence": "The Prague success led to a commission for a second Mozart-Da Ponte opera, Don Giovanni, which premiered 1787 to acclaim in Prague and was also produced, with some success, in Vienna in 1788.",
+    "instances": [
+      {
+        "quality": "0.9485955390117107",
+        "term1": "The Prague success",
+        "term2": "to a commission",
+        "relation": "led"
+      },
+      {
+        "quality": "0.9541798734941929",
+        "term1": "a second Mozart-Da Ponte opera",
+        "term2": "to acclaim in Prague",
+        "relation": "premiered"
+      },
+      {
+        "quality": "0.9541798734941929",
+        "term1": "a second Mozart-Da Ponte opera",
+        "term2": "",
+        "relation": "to acclaim"
+      },
+      {
+        "quality": "0.8356593566184201",
+        "term1": "a second Mozart-Da Ponte opera",
+        "term2": "",
+        "relation": "was also produced"
+      }
+    ]
+  },
+  {
+    "sentence": "Both operas are considered among Mozart's most important works and are mainstays of the operatic repertoire today; their musical complexity caused difficulty for both listeners and performers alike at their premieres.",
+    "instances": [
+      {
+        "quality": "0.8872966301155124",
+        "term1": "Both operas",
+        "term2": "mainstays of the operatic repertoire today",
+        "relation": "are"
+      },
+      {
+        "quality": "0.6086156255123426",
+        "term1": "their musical complexity",
+        "term2": "difficulty",
+        "relation": "caused"
+      },
+      {
+        "quality": "0.8997345737322758",
+        "term1": "Both operas",
+        "term2": "",
+        "relation": "are considered"
+      }
+    ]
+  },
+  {
+    "sentence": "In December 1787 Mozart finally obtained a steady post under aristocratic patronage.",
+    "instances": [
+      {
+        "quality": "0.954194008328487",
+        "term1": "Mozart",
+        "term2": "a steady post under aristocratic patronage",
+        "relation": "obtained"
+      }
+    ]
+  },
+  {
+    "sentence": "Emperor Joseph II appointed him as his \"chamber composer\", a post vacated the previous month when Gluck died.",
+    "instances": [
+      {
+        "quality": "0.883042269491254",
+        "term1": "Emperor Joseph II",
+        "term2": "as his \"chamber composer",
+        "relation": "appointed"
+      },
+      {
+        "quality": "0.6851245473586616",
+        "term1": "his \"chamber composer",
+        "term2": "",
+        "relation": "vacated"
+      },
+      {
+        "quality": "0.6341926298761225",
+        "term1": "Gluck",
+        "term2": "",
+        "relation": "died"
+      }
+    ]
+  },
+  {
+    "sentence": "It was not a full-time job, however.",
+    "instances": [
+      {
+        "quality": "0.45170382506656653",
+        "term1": "It",
+        "term2": "however",
+        "relation": "was not"
+      }
+    ]
+  },
+  {
+    "sentence": "It paid only 800 florins per year, and merely required Mozart to compose dances for the annual balls in the Redoutensaal.",
+    "instances": [
+      {
+        "quality": "0.45170382506656653",
+        "term1": "It",
+        "term2": "only 800 florins per year",
+        "relation": "paid"
+      },
+      {
+        "quality": "0.5733539311623552",
+        "term1": "It",
+        "term2": "to compose dances for the annual balls in the Redoutensaal",
+        "relation": "merely required"
+      },
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Mozart",
+        "term2": "for the annual balls in the Redoutensaal",
+        "relation": "to compose"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart complained to Constanze that the pay was \"too much for what I do, too little for what I could do.\"[30] However, even this much proved important to Mozart later on when hard times arrived.",
+    "instances": [
+      {
+        "quality": "0.22598218974525264",
+        "term1": "I",
+        "term2": "for what I could do",
+        "relation": "do too little"
+      },
+      {
+        "quality": "0.1948871917044894",
+        "term1": "I",
+        "term2": "",
+        "relation": "could do"
+      }
+    ]
+  },
+  {
+    "sentence": "Court records show that Joseph's intent was explicitly to help make sure that Mozart, whom he esteemed, did not leave Vienna to seek better prospects elsewhere.[31]",
+    "instances": [
+      {
+        "quality": "0.8130384687097769",
+        "term1": "Court records",
+        "term2": "that Joseph's intent was explicitly",
+        "relation": "show"
+      },
+      {
+        "quality": "0.8497034242090806",
+        "term1": "Joseph's intent",
+        "term2": "to help make sure that Mozart, whom he esteemed, did not leave Vienna",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8997788535941768",
+        "term1": "Mozart",
+        "term2": "to seek better prospects elsewhere",
+        "relation": "did not leave"
+      },
+      {
+        "quality": "0.8818110676393391",
+        "term1": "Mozart",
+        "term2": "better prospects",
+        "relation": "did not leave Vienna to seek"
+      },
+      {
+        "quality": "0.1948871917044894",
+        "term1": "he",
+        "term2": "",
+        "relation": "esteemed"
+      }
+    ]
+  },
+  {
+    "sentence": "Toward the end of the decade, Mozart's career declined.",
+    "instances": [
+      {
+        "quality": "0.9539354177697028",
+        "term1": "Mozart's career",
+        "term2": "",
+        "relation": "declined"
+      }
+    ]
+  },
+  {
+    "sentence": "Around 1786 he had ceased to appear frequently in public concerts, and his income dropped.[32] This was in general a difficult time for musicians in Vienna, since between 1788 and 1791 Austria was at war (see Austro-Turkish War (17881791)), and both the general level of prosperity and the ability of the aristocracy to support music had declined.[33]",
+    "instances": [
+      {
+        "quality": "0.5953989801302345",
+        "term1": "he",
+        "term2": "to appear frequently in public concerts",
+        "relation": "had ceased"
+      },
+      {
+        "quality": "0.41051436014453063",
+        "term1": "he",
+        "term2": "",
+        "relation": "to appear"
+      },
+      {
+        "quality": "0.3412722652635442",
+        "term1": "his income",
+        "term2": "32",
+        "relation": "dropped"
+      },
+      {
+        "quality": "0.8587533150007607",
+        "term1": "both the general level of prosperity and the ability of the aristocracy",
+        "term2": "",
+        "relation": "had declined"
+      },
+      {
+        "quality": "0.4953945753189672",
+        "term1": "This",
+        "term2": "in general a difficult time for musicians in Vienna",
+        "relation": "was"
+      },
+      {
+        "quality": "0.9645011751708142",
+        "term1": "Austria",
+        "term2": "at war",
+        "relation": "was"
+      }
+    ]
+  },
+  {
+    "sentence": "By mid 1788, Mozart and his family moved from central Vienna to cheaper lodgings in the suburb of Alsergrund.[34] Mozart began to borrow money, most often from his friend and fellow Mason Michael Puchberg; \"a dismal series of begging letters\" (New Grove) survives.",
+    "instances": [
+      {
+        "quality": "0.9017692064117712",
+        "term1": "Mozart",
+        "term2": "to borrow money",
+        "relation": "began"
+      },
+      {
+        "quality": "0.9017692064117712",
+        "term1": "Mozart",
+        "term2": "money",
+        "relation": "began to borrow"
+      }
+    ]
+  },
+  {
+    "sentence": "Maynard Solomon and others have suggested the Mozart suffered from depression at this time, and it seems his output rate sank somewhat (see Kchel-Verzeichnis).",
+    "instances": [
+      {
+        "quality": "0.9365537152932235",
+        "term1": "Maynard Solomon and others",
+        "term2": "the Mozart suffered from depression at this time",
+        "relation": "have suggested"
+      },
+      {
+        "quality": "0.9100029960835063",
+        "term1": "the Mozart",
+        "term2": "from depression",
+        "relation": "suffered"
+      }
+    ]
+  },
+  {
+    "sentence": "The major works of the period include the last three symphonies (1788: 39, 40, 41; it is not certain whether these were performed in Mozart's lifetime), and the last of the three Da Ponte operas, Cosi fan tutte, premiered 1790.",
+    "instances": [
+      {
+        "quality": "0.8056360478309452",
+        "term1": "Cosi fan tutte",
+        "term2": "1790",
+        "relation": "premiered"
+      },
+      {
+        "quality": "0.18272787056513734",
+        "term1": "it",
+        "term2": "certain",
+        "relation": "is not"
+      },
+      {
+        "quality": "0.9134445971725461",
+        "term1": "The major works of the period",
+        "term2": "the last three symphonies",
+        "relation": "include"
+      },
+      {
+        "quality": "0.5253826545600935",
+        "term1": "these",
+        "term2": "",
+        "relation": "were performed"
+      }
+    ]
+  },
+  {
+    "sentence": "During this time Mozart made long journeys hoping to improve his fortunes: a visit in spring of 1789 to Leipzig, Dresden, and Berlin (see Mozart's Berlin journey), and a 1790 visit to Frankfurt, Mannheim, and other German cities.",
+    "instances": [
+      {
+        "quality": "0.9174666959940793",
+        "term1": "Mozart",
+        "term2": "long journeys hoping to improve his fortunes",
+        "relation": "made"
+      },
+      {
+        "quality": "0.8348583869532935",
+        "term1": "long journeys",
+        "term2": "to improve his fortunes",
+        "relation": "hoping"
+      }
+    ]
+  },
+  {
+    "sentence": "The trips produced only isolated success and did not solve Mozart's financial problems.",
+    "instances": [
+      {
+        "quality": "0.7323734373534755",
+        "term1": "The trips",
+        "term2": "",
+        "relation": "produced"
+      },
+      {
+        "quality": "0.9111779447320654",
+        "term1": "The trips produced",
+        "term2": "success",
+        "relation": "only isolated"
+      },
+      {
+        "quality": "0.9125462839307745",
+        "term1": "The trips produced",
+        "term2": "Mozart's financial problems",
+        "relation": "did not solve"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's last year was, until his final illness struck, one of great productivity and (in the view of biographer Maynard Solomon) personal recovery.[35] During this time Mozart wrote a great deal of music, including some of the works for which he is most admired today: the opera The Magic Flute, the final piano concerto (K.",
+    "instances": [
+      {
+        "quality": "0.4308651002528787",
+        "term1": "his final illness",
+        "term2": "",
+        "relation": "struck"
+      },
+      {
+        "quality": "0.5222094630377523",
+        "term1": "he",
+        "term2": "most admired",
+        "relation": "is"
+      },
+      {
+        "quality": "0.9363952964201756",
+        "term1": "Mozart",
+        "term2": "a great deal of music, including some of the works",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.8270481116613718",
+        "term1": "Mozart's last year",
+        "term2": "",
+        "relation": "was"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's financial situation, which in 1790 was the source of extreme anxiety to him, also began to improve.",
+    "instances": [
+      {
+        "quality": "0.943371458577792",
+        "term1": "Mozart's financial situation",
+        "term2": "the source of extreme anxiety to him",
+        "relation": "was"
+      },
+      {
+        "quality": "0.7918942959137041",
+        "term1": "Mozart's financial situation",
+        "term2": "",
+        "relation": "began"
+      },
+      {
+        "quality": "0.7918942959137041",
+        "term1": "Mozart's financial situation",
+        "term2": "",
+        "relation": "to improve"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "1790",
+        "term2": "extreme anxiety",
+        "relation": "was the source of"
+      }
+    ]
+  },
+  {
+    "sentence": "Although the evidence is uncertain[36] it appears that admiring wealthy patrons in Hungary and in Amsterdam pledged annuities to Mozart, in return for the occasional composition.",
+    "instances": [
+      {
+        "quality": "0.8132903905488816",
+        "term1": "the evidence",
+        "term2": "uncertain",
+        "relation": "is"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart also probably made considerable money from the sale of dance music that wrote for his job as Imperial chamber composer.[37] He ceased to borrow large sums from Puchberg and made a start on paying off his debts.[38]",
+    "instances": [
+      {
+        "quality": "0.8103687806061152",
+        "term1": "dance music",
+        "term2": "for his job as Imperial chamber composer",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.44251022175651566",
+        "term1": "He",
+        "term2": "to borrow large sums from Puchberg",
+        "relation": "ceased"
+      },
+      {
+        "quality": "0.885845353961811",
+        "term1": "Mozart",
+        "term2": "from the sale of dance music",
+        "relation": "probably made"
+      },
+      {
+        "quality": "0.44251022175651566",
+        "term1": "He",
+        "term2": "from Puchberg",
+        "relation": "ceased to borrow"
+      },
+      {
+        "quality": "0.2743125465364158",
+        "term1": "He",
+        "term2": "a start on paying off his debts",
+        "relation": "made"
+      }
+    ]
+  },
+  {
+    "sentence": "Lastly, Mozart experienced great satisfaction in the public success of some his works, notably The Magic Flute (performed many times even during the short period between its premiere and Mozart's death)[39] and the Little Masonic Cantata K.",
+    "instances": [
+      {
+        "quality": "0.9231320349505967",
+        "term1": "Mozart",
+        "term2": "great satisfaction",
+        "relation": "experienced"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart fell ill while in Prague, for the September 6 premiere of his opera La clemenza di Tito, written in 1791 on commission for the coronation festivities of the Emperor.[41] He was able to continue his professional functions for some time, for instance conducting the premiere of The Magic Flute on September 30.",
+    "instances": [
+      {
+        "quality": "0.9409423788824951",
+        "term1": "Mozart",
+        "term2": "ill",
+        "relation": "fell"
+      },
+      {
+        "quality": "0.4875515567406569",
+        "term1": "He",
+        "term2": "able to continue his professional functions for some time, for instance",
+        "relation": "was"
+      },
+      {
+        "quality": "0.2743125465364158",
+        "term1": "He",
+        "term2": "his professional functions",
+        "relation": "to continue"
+      },
+      {
+        "quality": "0.9105129651916236",
+        "term1": "instance",
+        "term2": "the premiere of The Magic Flute",
+        "relation": "conducting"
+      }
+    ]
+  },
+  {
+    "sentence": "The illness intensified on November 20, at which point Mozart became bedridden, suffering from swelling, pain, and vomiting.",
+    "instances": [
+      {
+        "quality": "0.9180804252893389",
+        "term1": "The illness",
+        "term2": "",
+        "relation": "intensified"
+      },
+      {
+        "quality": "0.8016573080327372",
+        "term1": "Mozart",
+        "term2": "bedridden",
+        "relation": "became"
+      },
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "from swelling, pain, and vomiting",
+        "relation": "suffering"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart was tended in his final illness by Constanze, her mother Ccilia Weber, her youngest sister Sophie Haibel, and the family doctor, Thomas Franz Closset.",
+    "instances": [
+      {
+        "quality": "0.8821938819052391",
+        "term1": "Mozart",
+        "term2": "by Constanze",
+        "relation": "was tended"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Ccilia Weber",
+        "term2": "hers",
+        "relation": "[is] mother [of]"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Sophie Haibel",
+        "term2": "hers",
+        "relation": "[is] youngest sister [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "There is evidence that he was mentally occupied with the task of finishing his Requiem (see Death of Wolfgang Amadeus Mozart).",
+    "instances": [
+      {
+        "quality": "0.46321337686369213",
+        "term1": "he",
+        "term2": "with the task of finishing his Requiem (see Death of Wolfgang Amadeus Mozart",
+        "relation": "was mentally occupied"
+      },
+      {
+        "quality": "0.31264665573320355",
+        "term1": "he",
+        "term2": "his Requiem (see Death of Wolfgang Amadeus Mozart",
+        "relation": "of finishing"
+      }
+    ]
+  },
+  {
+    "sentence": "However, the evidence that he actually dictated passages to Sssmayr is very slim.[42]",
+    "instances": [
+      {
+        "quality": "0.4978219019954182",
+        "term1": "he",
+        "term2": "passages to Sssmayr",
+        "relation": "actually dictated"
+      },
+      {
+        "quality": "0.6874217138786747",
+        "term1": "the evidence that he actually dictated passages to Sssmayr",
+        "term2": "very slim",
+        "relation": "is"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart died at 1 in the morning on December 5.",
+    "instances": [
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "died"
+      }
+    ]
+  },
+  {
+    "sentence": "His burial arrangements were exceedingly simple: Mozart's body was sewn in a linen sack, and transferred from a reusable coffin to a common grave with five or six other bodies.",
+    "instances": [
+      {
+        "quality": "0.9216169339561846",
+        "term1": "Mozart's body",
+        "term2": "to a common grave",
+        "relation": "transferred"
+      },
+      {
+        "quality": "0.7659409299407446",
+        "term1": "Mozart's body",
+        "term2": "",
+        "relation": "was sewn"
+      },
+      {
+        "quality": "0.3540862778486437",
+        "term1": "His burial arrangements",
+        "term2": "exceedingly simple",
+        "relation": "were"
+      }
+    ]
+  },
+  {
+    "sentence": "No friends or family were present to witness the burial.[43] These procedures reflected common practice at the time, traceable to a decree of Joseph II from 1784 governing funeral arrangements; see Josephinism.[44] Maynard Solomon suggests that the simple funeral may have reflected Mozart's own wishes.[45]",
+    "instances": [
+      {
+        "quality": "0.9052256377408016",
+        "term1": "No friends or family",
+        "term2": "the burial",
+        "relation": "to witness"
+      }
+    ]
+  },
+  {
+    "sentence": "The cause of Mozart's death cannot be determined with certainty.",
+    "instances": [
+      {
+        "quality": "0.9489461080096143",
+        "term1": "The cause of Mozart's death",
+        "term2": "with certainty",
+        "relation": "can not be determined"
+      }
+    ]
+  },
+  {
+    "sentence": "His death record listed \"hitziges Frieselfieber\" (\"severe miliary fever,\" referring to a rash that looks like millet seeds), a description that does not suffice to identify the cause as it would be diagnosed in modern medicine.",
+    "instances": [
+      {
+        "quality": "0.660764174608617",
+        "term1": "His death record",
+        "term2": "hitziges Frieselfieber",
+        "relation": "listed"
+      },
+      {
+        "quality": "0.45170382506656653",
+        "term1": "it",
+        "term2": "in modern medicine",
+        "relation": "would be diagnosed"
+      },
+      {
+        "quality": "0.8872966301155124",
+        "term1": "a rash",
+        "term2": "like millet seeds",
+        "relation": "looks"
+      },
+      {
+        "quality": "0.8583748249202758",
+        "term1": "a description",
+        "term2": "to identify the cause",
+        "relation": "does not suffice"
+      },
+      {
+        "quality": "0.8583748249202758",
+        "term1": "a description",
+        "term2": "the cause",
+        "relation": "does not suffice to identify"
+      }
+    ]
+  },
+  {
+    "sentence": "Dozens of theories have been proposed, including trichinosis, influenza, mercury poisoning, and a rare kidney ailment.",
+    "instances": [
+      {
+        "quality": "0.7508836390842847",
+        "term1": "Dozens of theories",
+        "term2": "",
+        "relation": "have been proposed"
+      }
+    ]
+  },
+  {
+    "sentence": "The practice of bleeding medical patients, common at that time, is also cited as a contributing cause.",
+    "instances": [
+      {
+        "quality": "0.9205578370056476",
+        "term1": "The practice of bleeding medical patients",
+        "term2": "as a contributing cause",
+        "relation": "is also cited"
+      }
+    ]
+  },
+  {
+    "sentence": "However, the most widely accepted version is that he died of acute rheumatic fever; he had had three or even four known attacks of it since his childhood, and this particular disease has a tendency to recur, leaving increasingly serious consequences each time, such as rampant infection and heart valve damage.[46]",
+    "instances": [
+      {
+        "quality": "0.9128726341611778",
+        "term1": "this particular disease",
+        "term2": "a tendency to recur",
+        "relation": "has"
+      },
+      {
+        "quality": "0.8375624398393795",
+        "term1": "this particular disease",
+        "term2": "increasingly serious consequences",
+        "relation": "has a tendency to recur leaving"
+      },
+      {
+        "quality": "0.2560951955542683",
+        "term1": "he",
+        "term2": "three or even four known attacks of it",
+        "relation": "had had"
+      },
+      {
+        "quality": "0.7159357992962173",
+        "term1": "the most widely accepted version",
+        "term2": "that he died of acute rheumatic fever",
+        "relation": "is"
+      },
+      {
+        "quality": "0.3880890333449538",
+        "term1": "he",
+        "term2": "of acute rheumatic fever",
+        "relation": "died"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's extremely spare funeral did not reflect his standing with the public as a composer: memorial services and concerts in Vienna and Prague were well attended.[47] Indeed, during the period following his death, Mozart's musical reputation rose substantially; Solomon describes an \"unprecedented wave of enthusiasm\"[48] for his work.",
+    "instances": [
+      {
+        "quality": "0.8414017173886251",
+        "term1": "memorial services and concerts in Vienna and Prague",
+        "term2": "",
+        "relation": "were well attended"
+      },
+      {
+        "quality": "0.8800134566082508",
+        "term1": "Mozart's extremely spare funeral",
+        "term2": "his standing with the public as a composer",
+        "relation": "did not reflect"
+      },
+      {
+        "quality": "0.8887798956645899",
+        "term1": "Solomon",
+        "term2": "an \"unprecedented wave of enthusiasm\"[48] for his work",
+        "relation": "describes"
+      },
+      {
+        "quality": "0.9563556479054137",
+        "term1": "Mozart's musical reputation",
+        "term2": "substantially",
+        "relation": "rose"
+      }
+    ]
+  },
+  {
+    "sentence": "Biographies were written (initially by Schlichtegroll, Niemetschek, and Nissen), and publishers vied to produce complete editions of his works.[49]",
+    "instances": [
+      {
+        "quality": "0.8691627739576013",
+        "term1": "Biographies",
+        "term2": "by Schlichtegroll, Niemetschek, and Nissen",
+        "relation": "were written initially"
+      },
+      {
+        "quality": "0.7860970668106112",
+        "term1": "publishers",
+        "term2": "to produce complete editions of his works",
+        "relation": "vied"
+      },
+      {
+        "quality": "0.7860970668106112",
+        "term1": "publishers",
+        "term2": "complete editions of his works",
+        "relation": "vied to produce"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart's physical appearance was described by tenor Michael Kelly, in his Reminiscences: \"a remarkable small man, very thin and pale, with a profusion of fine, fair hair of which he was rather vain.\" His early biographer Niemetschek wrote, \"there was nothing special about [his] physique ...",
+    "instances": [
+      {
+        "quality": "0.9485479188231729",
+        "term1": "Mozart's physical appearance",
+        "term2": "by tenor Michael Kelly",
+        "relation": "was described"
+      },
+      {
+        "quality": "0.27813615858960106",
+        "term1": "he",
+        "term2": "rather vain",
+        "relation": "was"
+      },
+      {
+        "quality": "0.37292110021924113",
+        "term1": "His early biographer",
+        "term2": "there was nothing special about [his] physique",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Niemetschek",
+        "term2": "Him",
+        "relation": "[is] early biographer [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "He was small and his countenance, except for his large intense eyes, gave no signs of his genius.\" His facial complexion was pitted, a reminder of his childhood case of smallpox.",
+    "instances": [
+      {
+        "quality": "0.3723576963542719",
+        "term1": "He",
+        "term2": "small and his countenance",
+        "relation": "was"
+      }
+    ]
+  },
+  {
+    "sentence": "He loved elegant clothing: Kelly remembered him at a rehearsal: he \"was on the stage with his crimson pelisse and gold-laced cocked hat, giving the time of the music to the orchestra.\" Of his voice Constanze later wrote that it \"was a tenor, rather soft in speaking and delicate in singing, but when anything excited him, or it became necessary to exert it, it was both powerful and energetic\".[50]",
+    "instances": [
+      {
+        "quality": "0.6295566058103538",
+        "term1": "it",
+        "term2": "both powerful and energetic",
+        "relation": "was"
+      },
+      {
+        "quality": "0.4156352414322218",
+        "term1": "he",
+        "term2": "on the stage",
+        "relation": "was"
+      },
+      {
+        "quality": "0.8273172415259126",
+        "term1": "Kelly",
+        "term2": "him",
+        "relation": "remembered"
+      },
+      {
+        "quality": "0.3880890333449538",
+        "term1": "He",
+        "term2": "elegant clothing",
+        "relation": "loved"
+      },
+      {
+        "quality": "0.8211012035398638",
+        "term1": "anything",
+        "term2": "him",
+        "relation": "excited"
+      },
+      {
+        "quality": "0.41051436014453063",
+        "term1": "he",
+        "term2": "to the orchestra",
+        "relation": "giving"
+      },
+      {
+        "quality": "0.23342488409721882",
+        "term1": "he",
+        "term2": "that it \"was a tenor, rather soft in speaking and delicate in singing",
+        "relation": "wrote"
+      },
+      {
+        "quality": "0.5328511304732865",
+        "term1": "it",
+        "term2": "a tenor, rather soft in speaking and delicate in singing",
+        "relation": "was"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Constanze",
+        "term2": "him",
+        "relation": "[is] voice [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart worked very hard, a great deal of the time, and finished works where necessary at a tremendous pace.",
+    "instances": [
+      {
+        "quality": "0.7711002770011991",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "worked very hard"
+      },
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "at a tremendous pace",
+        "relation": "finished"
+      }
+    ]
+  },
+  {
+    "sentence": "When composing he often made sketches and drafts, though (unlike Beethoven's sketches) these are mostly not preserved, Constanze having destroyed them after his death.[51]",
+    "instances": [
+      {
+        "quality": "0.2598654533974166",
+        "term1": "these",
+        "term2": "",
+        "relation": "are mostly not preserved"
+      },
+      {
+        "quality": "0.8273172415259126",
+        "term1": "Constanze",
+        "term2": "them",
+        "relation": "having destroyed"
+      },
+      {
+        "quality": "0.48918084395049954",
+        "term1": "he",
+        "term2": "sketches and drafts",
+        "relation": "made"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart also enjoyed billiards and liked dancing.",
+    "instances": [
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "billiards",
+        "relation": "enjoyed"
+      },
+      {
+        "quality": "0.9064683704715875",
+        "term1": "Mozart",
+        "term2": "dancing",
+        "relation": "liked"
+      }
+    ]
+  },
+  {
+    "sentence": "He kept pets (a canary, a starling and a dog), and kept a horse for recreational riding.[52]",
+    "instances": [
+      {
+        "quality": "0.5222094630377523",
+        "term1": "He",
+        "term2": "pets",
+        "relation": "kept"
+      },
+      {
+        "quality": "0.4802217740069371",
+        "term1": "He",
+        "term2": "for recreational riding",
+        "relation": "kept"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart lived at the center of Viennese musical life, and knew a great number of people, including not just his fellow musicians, but also theatrical performers, fellow transplanted Salzburgers, and many aristocrats, including a fairly close acquaintance with the Emperor, Joseph II.",
+    "instances": [
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Mozart",
+        "term2": "",
+        "relation": "lived"
+      },
+      {
+        "quality": "0.930882026918769",
+        "term1": "Mozart",
+        "term2": "a great number of people, including not just his fellow musicians, but also theatrical performers, fellow transplanted Salzburgers, and many aristocrats, including a fairly close acquaintance with the Emperor",
+        "relation": "knew"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart had a considerable number of friends, of whom Solomon estimates the three closest were Gottfried Janequin, Count August Hatzfeld, and Sigmund Barisani; others included the singers Franz Xaver Gerl and Benedikt Schack, Haydn (mentioned above), and the horn player Ignaz Leutgeb (with whom Mozart carried on a curious kind of friendly mockery, Leutgeb being always the butt of Mozart's practical jokes).[53]",
+    "instances": [
+      {
+        "quality": "0.9684151308577411",
+        "term1": "the horn player Ignaz Leutgeb",
+        "term2": "Mozart",
+        "relation": "carried"
+      },
+      {
+        "quality": "0.96796638366217",
+        "term1": "a considerable number of friends, of whom",
+        "term2": "Solomon",
+        "relation": "estimates"
+      },
+      {
+        "quality": "0.9324144673478683",
+        "term1": "Leutgeb",
+        "term2": "the butt of Mozart's practical jokes",
+        "relation": "being"
+      },
+      {
+        "quality": "0.8713075742434684",
+        "term1": "others",
+        "term2": "the singers",
+        "relation": "included"
+      },
+      {
+        "quality": "0.9591880408624087",
+        "term1": "Mozart",
+        "term2": "a considerable number of friends, of whom Solomon estimates",
+        "relation": "had"
+      },
+      {
+        "quality": "0.6913609614424517",
+        "term1": "the three closest",
+        "term2": "Gottfried Janequin, Count August Hatzfeld, and Sigmund Barisani",
+        "relation": "were"
+      }
+    ]
+  },
+  {
+    "sentence": "Particularly in his youth, Mozart had a striking fondness for scatological and sexual humor, which is preserved in his many surviving letters, notably those written to his cousin Anna Maria Thekla Mozart around 17771778, but also in his correspondence with his sister Nannerl.[54] Mozart even wrote scatological music, the canons \"Leck mich im Arsch\" (\"Lick me in the arse\") K.",
+    "instances": [
+      {
+        "quality": "0.9122481357509644",
+        "term1": "Mozart",
+        "term2": "a striking fondness for scatological and sexual humor, which is preserved in his many surviving letters, notably those written to his cousin Anna Maria Thekla Mozart around 17771778, but also in his correspondence with his sister Nannerl.[54] Mozart even wrote scatological music, the canons \"Leck mich im Arsch\" (\"Lick me in the arse\") K.",
+        "relation": "had"
+      },
+      {
+        "quality": "0.9197759696552441",
+        "term1": "Mozart",
+        "term2": "scatological music",
+        "relation": "even wrote"
+      },
+      {
+        "quality": "0.8383054502364456",
+        "term1": "scatological and sexual humor",
+        "term2": "",
+        "relation": "is preserved"
+      },
+      {
+        "quality": "0.4167147161839597",
+        "term1": "notably those",
+        "term2": "to his cousin",
+        "relation": "written"
+      },
+      {
+        "quality": "0.5",
+        "term1": "Mozart",
+        "term2": "him",
+        "relation": "[is] youth [of]"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Anna Maria Thekla Mozart",
+        "term2": "him",
+        "relation": "[is] cousin [of]"
+      },
+      {
+        "quality": "0.3853208301752743",
+        "term1": "Nannerl",
+        "term2": "him",
+        "relation": "[is] sister [of]"
+      }
+    ]
+  },
+  {
+    "sentence": "231 and \"Leck mir den Arsch fein recht schn sauber\" (\"Lick me in the arse nice and clean\") K.",
+    "instances": [
+      {
+        "quality": "0.9642085744698567",
+        "term1": "Leck mir den Arsch fein",
+        "term2": "schn sauber",
+        "relation": "recht"
+      }
+    ]
+  },
+  {
+    "sentence": "Mozart was influenced by the ideas of the eighteenth-century European Enlightenment as an adult, and became a Freemason in 1785.[55] His lodge was specifically Catholic, rather than deistic, and he worked fervently and successfully to convert his father before the latter's death in 1787.[citation needed] Die Zauberflte, his penultimate opera, includes Masonic themes and allegory.",
+    "instances": [
+      {
+        "quality": "0.9567562066335041",
+        "term1": "Mozart",
+        "term2": "by the ideas of the eighteenth-century European Enlightenment as an adult",
+        "relation": "was influenced"
+      },
+      {
+        "quality": "0.7130135287477929",
+        "term1": "citation",
+        "term2": "",
+        "relation": "needed"
+      },
+      {
+        "quality": "0.9210233335200773",
+        "term1": "Mozart",
+        "term2": "a Freemason",
+        "relation": "became"
+      },
+      {
+        "quality": "0.9143456855143793",
+        "term1": "Die Zauberflte",
+        "term2": "Masonic themes and allegory",
+        "relation": "includes"
+      },
+      {
+        "quality": "0.4519476217796412",
+        "term1": "His lodge",
+        "term2": "specifically Catholic",
+        "relation": "was"
+      },
+      {
+        "quality": "0.31514110785598926",
+        "term1": "he",
+        "term2": "to convert his father before the latter's death in 1787",
+        "relation": "worked fervently"
+      },
+      {
+        "quality": "0.183516546672029",
+        "term1": "he",
+        "term2": "his father",
+        "relation": "worked fervently to convert"
+      }
+    ]
+  }
+]

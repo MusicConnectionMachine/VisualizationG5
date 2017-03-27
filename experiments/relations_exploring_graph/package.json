@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "popper.js": "^1.0.8",
+    "tooltip.js": "^1.0.5"
+  }
+}
