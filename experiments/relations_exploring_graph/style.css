@@ -32,3 +32,11 @@
 #container svg {
   background-color: aliceblue;
 }
+
+#container .tooltip {
+  max-width: 600px;
+  background-color: #eee;
+  opacity: 0.95;
+  padding: 0 6px;
+  border-radius: 6px;
+}

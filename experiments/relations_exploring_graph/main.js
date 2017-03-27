@@ -90,6 +90,20 @@ class Chart {
     })();
   }
 
+
+  _createTooltips() {
+    // TODO Delete old tooltips
+    this.nodes.forEach((node) => {
+      console.log(document.getElementById('bubble-' + node.id));
+      new Tooltip(document.getElementById('bubble-' + node.id),  {
+        title: node.term1 + ' ' + node.relation + ' ' + node.term2,
+        container: document.getElementById('container'),
+        template: `<div class="tooltip"><h5 class="tooltip-inner"></h5><p>${node.sentence}</p></div>`
+      });
+    })
+  }
+
+
   _getNextColor() {
     return this._colorGenerator.next().value;
   }
@@ -200,6 +214,8 @@ class Chart {
 
     force.alphaTarget(1).restart();
     this.force = force;
+
+    this._createTooltips();
   }
 
 
