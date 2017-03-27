@@ -94,7 +94,6 @@ class Chart {
   _createTooltips() {
     // TODO Delete old tooltips
     this.nodes.forEach((node) => {
-      console.log(document.getElementById('bubble-' + node.id));
       new Tooltip(document.getElementById('bubble-' + node.id),  {
         title: node.term1 + ' ' + node.relation + ' ' + node.term2,
         container: document.getElementById('container'),
