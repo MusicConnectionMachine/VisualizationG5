@@ -1,0 +1,44 @@
+@import 'common';
+
+.application__relations {
+  margin-top: 30px;
+}
+
+.application__search__field {
+  margin: 20px 0 20px 0;
+}
+
+.entity__title {
+  margin-bottom: 0;
+}
+
+.entity, .relation {
+  text-align: center;
+  font-size: 14px;
+}
+
+.entity-list__suggestions, .relation-list__suggestions {
+  text-align: center;
+}
+
+.entity-list__suggestions__title, .relation-list__suggestions__title {
+  border-bottom: 1px solid #999999;
+  padding-bottom: 10px;
+}
+.entity-list__suggestions__suggestion-list__item, .relation-list__suggestions__suggestion-list__item {
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.entity-suggestion__title, .relation-suggestion__title {
+  margin-bottom: 0;
+}
+
+.entity-list__entity-list__item, .relation-list__entity-list__item {
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 9px;
+}
