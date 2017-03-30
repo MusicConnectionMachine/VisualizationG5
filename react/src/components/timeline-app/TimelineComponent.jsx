@@ -1,4 +1,5 @@
 import * as ReactDOM from 'react-dom';
+import _ from 'lodash';
 import React from 'react';
 import vis from 'vis';
 import '../../../node_modules/vis/dist/vis.min.css';
@@ -8,18 +9,26 @@ import '../../../scss/timeline-app.scss';
 export default class TimelineComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.dataSet = null;
   }
 
 
   componentDidMount() {
-    if (this.props.data) {
-      this.drawTimeline(this.props.data.events);
+    if (this.props.events) {
+      this.drawTimeline(this.props.events);
     }
   }
 
 
   componentWillReceiveProps(nextProps) {
-    this.drawTimeline(nextProps.data.events);
+    if (!this.dataSet) {
+      this.drawTimeline(nextProps.events);
+    } else {
+      const oldEvents = this.props.events;
+      const newEvents = nextProps.events;
+      this.dataSet.remove(_.differenceBy(oldEvents, newEvents, event => event.id).map(event => event.id));
+      this.dataSet.add(_.differenceBy(newEvents, oldEvents, event => event.id));
+    }
   }
 
 
@@ -28,10 +37,8 @@ export default class TimelineComponent extends React.Component {
    */
   drawTimeline(events) {
     /* Prepare the data */
-    let idCounter = 0;
     /* eslint-disable no-shadow */
     const { max, min } = events.reduce(({ max, min }, event) => {
-      event.id = idCounter++;
       event.start = new Date(event.start);
       if (event.description) {
         event.description = '<p>' + event.description.replace(/\n/g, '</p><p>') + '</p>';
@@ -45,7 +52,7 @@ export default class TimelineComponent extends React.Component {
 
     /* Display the vis-timeline */
     const container = this.refs.visTimeline;
-    const items = new vis.DataSet(events);
+    this.dataSet = new vis.DataSet(events);
     const options = {
       align: 'left',
       format: {
@@ -70,8 +77,7 @@ export default class TimelineComponent extends React.Component {
           year: '',
         },
       },
-      maxHeight: '25em',
-      minHeight: '10em',
+      height: '100%',
       orientation: 'top',
       selectable: false,
       showCurrentTime: false,
@@ -100,7 +106,7 @@ export default class TimelineComponent extends React.Component {
       zoomMin: 1000 * 60 * 60 * 24 * 3,
       zoomMax: 1000 * 60 * 60 * 24 * 365 * (margin + 10) * 2,
     };
-    const timeline = new vis.Timeline(container, items, options);
+    const timeline = new vis.Timeline(container, this.dataSet, options);
 
     /* Create the tooltips */
     events.forEach((event) => {
@@ -168,5 +174,5 @@ export default class TimelineComponent extends React.Component {
 
 
 TimelineComponent.propTypes = {
-  data: React.PropTypes.any,
+  events: React.PropTypes.array,
 };

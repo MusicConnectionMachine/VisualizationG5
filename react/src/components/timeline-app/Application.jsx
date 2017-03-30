@@ -8,14 +8,30 @@ class Application extends React.Component {
     super(props);
     this.state = {
       data: null,
+      selectedEvents: null,
     };
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
 
   componentWillMount() {
     MockDataService.fetchData(null).then((data) => {
-      this.setState({ data });
+      data.events.forEach((event, i) => event.id = i);
+      this.setState({ data, selectedEvents: data.events });
     });
+  }
+
+
+  handleSearchChange(e) {
+    const value = e.target.value.toLowerCase();
+    if (!value) {
+      this.setState({ selectedEvents: this.state.data.events });
+    } else {
+      this.setState({
+        selectedEvents: this.state.data.events.filter(event =>
+          event.title.toLowerCase().includes(value) || (event.description && event.description.toLowerCase().includes(value))),
+      });
+    }
   }
 
 
@@ -23,8 +39,11 @@ class Application extends React.Component {
     if (this.state.data) {
       return (
         <div>
-          <h4>Chronicles of { this.state.data.name }</h4>
-          <TimelineComponent data={ this.state.data }/>
+          <div className="timeline__control-bar">
+            <h4>Chronicles of { this.state.data.name }</h4>
+            <input type="text" placeholder="Search..." onChange={this.handleSearchChange} />
+          </div>
+          <TimelineComponent events={ this.state.selectedEvents }/>
         </div>
       );
     }

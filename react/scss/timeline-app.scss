@@ -1,6 +1,9 @@
 @import 'common';
 
 .timeline {
+  height: 250px;
+  width: 900px;
+
   .vis-item {
     background-color: #eee;
     border-color: #444;
@@ -8,6 +11,28 @@
 
   .vis-tooltip {
     display: none;
+  }
+
+  &__control-bar {
+    height: 30px;
+    width: 900px;
+    background-color: #cdcdcd;
+    border-bottom: #555555 1px solid;
+
+    h4 {
+      margin: 0;
+      padding-top: 7px;
+      padding-left: 10px;
+      width: 400px;
+      float: left;
+    }
+
+    input {
+      width: 250px;
+      margin-top: 5px;
+      margin-right: 10px;
+      float: right;
+    }
   }
 
   &__itembox {
