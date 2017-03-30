@@ -38,7 +38,7 @@ class Application extends React.Component {
   render() {
     if (this.state.data) {
       return (
-        <div>
+        <div className="timeline">
           <div className="timeline__control-bar">
             <h4>Chronicles of { this.state.data.name }</h4>
             <input type="text" placeholder="Search..." onChange={this.handleSearchChange} />
