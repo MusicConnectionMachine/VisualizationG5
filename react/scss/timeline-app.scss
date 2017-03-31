@@ -4,7 +4,8 @@ $control-bar-height: 40px;
 $full-screen-padding: 20px;
 
 .timeline {
-  width: 900px;
+  max-width: 1100px;
+  min-width: 500px;
 }
 
 .timeline__control-bar {
@@ -127,6 +128,7 @@ $full-screen-padding: 20px;
 .timeline--full-screen {
   padding: $full-screen-padding;
   width: calc(100% - #{2 * $full-screen-padding});
+  max-width: none;
   background-color: white;
   z-index: 5;
   position: fixed;
@@ -141,5 +143,18 @@ $full-screen-padding: 20px;
 
   .timeline__body {
     height: calc(100vh - #{2 * $full-screen-padding + $control-bar-height});
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .timeline__control-bar {
+    height: auto;
+  }
+
+  .timeline__control-bar__search-field {
+    float: none;
+    clear: both;
+    margin: 10px;
+    width: calc(100% - 25px);
   }
 }
