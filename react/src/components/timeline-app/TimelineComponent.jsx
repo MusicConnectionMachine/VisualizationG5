@@ -41,7 +41,7 @@ export default class TimelineComponent extends React.Component {
     const { max, min } = events.reduce(({ max, min }, event) => {
       event.start = new Date(event.start);
       if (event.description) {
-        event.description = '<p>' + event.description.replace(/\n/g, '</p><p>') + '</p>';
+        event.descriptionHtml = '<p>' + event.description.replace(/\n/g, '</p><p>') + '</p>';
       }
       return {
         max: event.start > max ? event.start : max,
@@ -112,8 +112,8 @@ export default class TimelineComponent extends React.Component {
     events.forEach((event) => {
       const date = event.start;
       let tooltipContent = `<p class="timeline__body__tooltip__date">${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}</p>`;
-      if (event.description) {
-        tooltipContent += event.description;
+      if (event.descriptionHtml) {
+        tooltipContent += event.descriptionHtml;
       }
       tooltipContent += `<span class="timeline__body__tooltip__arrow"></span>`;
       const tooltipNode = document.createElement('div');

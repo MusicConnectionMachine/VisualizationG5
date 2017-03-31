@@ -1,6 +1,8 @@
 import MockDataService from './MockDataService';
+import Papa from 'papaparse';
 import React from 'react';
 import TimelineComponent from './TimelineComponent';
+import Utils from '../../Utils';
 
 
 class Application extends React.Component {
@@ -11,6 +13,7 @@ class Application extends React.Component {
       selectedEvents: null,
       fullScreenMode: false,
     };
+    this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);
     this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
@@ -22,6 +25,21 @@ class Application extends React.Component {
       this.setState({ data, selectedEvents: data.events });
     });
   }
+
+
+  handleDownloadCsvClick() {
+    const csv = Papa.unparse({
+      fields: ['date', 'title', 'description', 'source'],
+      data: this.state.selectedEvents.map(event => [
+        `${event.start.getFullYear()}-${event.start.getMonth() + 1}-${event.start.getDate()}`,
+        event.title,
+        event.description,
+        event.link,
+      ]),
+    });
+    Utils.download('events.csv', csv, 'text/csv');
+  }
+
 
   handleFullScreenClick() {
     this.setState({ fullScreenMode: !this.state.fullScreenMode });
@@ -47,7 +65,8 @@ class Application extends React.Component {
         <div className={`timeline ${this.state.fullScreenMode ? 'timeline--full-screen' : ''}`}>
           <div className="timeline__control-bar">
             <h4 className="timeline__control-bar__title">Chronicles of { this.state.data.name }</h4>
-            <a href="#"><div className="timeline__control-bar__full-button" onClick={this.handleFullScreenClick} /></a>
+            <a href="#"><div className="timeline__control-bar__button timeline__control-bar__full-button" onClick={this.handleFullScreenClick} /></a>
+            <a href="#"><div className="timeline__control-bar__button timeline__control-bar__download-button" onClick={this.handleDownloadCsvClick} /></a>
             <input className="timeline__control-bar__search-field" type="text" placeholder="Search..." onChange={this.handleSearchChange} />
           </div>
           <TimelineComponent events={ this.state.selectedEvents }/>
