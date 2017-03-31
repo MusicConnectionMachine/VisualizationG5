@@ -9,7 +9,9 @@ class Application extends React.Component {
     this.state = {
       data: null,
       selectedEvents: null,
+      fullScreenMode: false,
     };
+    this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
@@ -19,6 +21,10 @@ class Application extends React.Component {
       data.events.forEach((event, i) => event.id = i);
       this.setState({ data, selectedEvents: data.events });
     });
+  }
+
+  handleFullScreenClick() {
+    this.setState({ fullScreenMode: !this.state.fullScreenMode });
   }
 
 
@@ -38,10 +44,11 @@ class Application extends React.Component {
   render() {
     if (this.state.data) {
       return (
-        <div className="timeline">
+        <div className={`timeline ${this.state.fullScreenMode ? 'timeline--full-screen' : ''}`}>
           <div className="timeline__control-bar">
-            <h4>Chronicles of { this.state.data.name }</h4>
-            <input type="text" placeholder="Search..." onChange={this.handleSearchChange} />
+            <h4 className="timeline__control-bar__title">Chronicles of { this.state.data.name }</h4>
+            <a href="#"><div className="timeline__control-bar__full-button" onClick={this.handleFullScreenClick} /></a>
+            <input className="timeline__control-bar__search-field" type="text" placeholder="Search..." onChange={this.handleSearchChange} />
           </div>
           <TimelineComponent events={ this.state.selectedEvents }/>
         </div>
