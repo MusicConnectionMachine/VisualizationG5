@@ -16,6 +16,7 @@
     "jquery": "2.2.4",
     "lodash": "4.17.2",
     "normalize.css": "3.0.3",
+    "papaparse": "^4.2.0",
     "react": "15.4.1",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
@@ -25,8 +26,8 @@
     "reactstrap": "^4.3.0",
     "recharts": "0.19.1",
     "shallowequal": "0.2.2",
-    "vis": "^4.18.1",
     "style-loader": "0.13.2",
+    "vis": "^4.18.1",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.1",
     "whatwg-fetch": "2.0.1"
