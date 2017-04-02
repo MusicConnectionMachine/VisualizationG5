@@ -1,4 +1,4 @@
-# VisualizationG5 [![Join the chat at https://gitter.im/MusicConnectionMachine/VisualizationG5](https://badges.gitter.im/MusicConnectionMachine/VisualizationG5.svg)](https://gitter.im/MusicConnectionMachine/VisualizationG5?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# VisualizationG5 [![Join the chat at https://gitter.im/MusicConnectionMachine/VisualizationG5](https://badges.gitter.im/MusicConnectionMachine/VisualizationG5.svg)](https://gitter.im/MusicConnectionMachine/VisualizationG5?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/46497d2554a4407aa2be616823f8a05d)](https://www.codacy.com/app/kordianbruck/VisualizationG5?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MusicConnectionMachine/VisualizationG5&amp;utm_campaign=Badge_Grade)
 
 In this repository we will build a visualization of the other teams aggregated data
 
