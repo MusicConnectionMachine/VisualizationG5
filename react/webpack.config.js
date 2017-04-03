@@ -12,6 +12,7 @@ module.exports = {
     timelineApp: './src/timeline-app.js',
     personGraph: './src/person-graph.js',
     composersApp: './src/composers-app.js',
+    relationsApp: './src/relations-app.js',
   },
   output: {
     path: __dirname + '/../express/react',
@@ -33,6 +34,7 @@ module.exports = {
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/timeline-app.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/person-graph.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/composers-app.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/relations-app.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.png$/, loader: 'file' },
@@ -73,6 +75,12 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['composersApp'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'relations-app.html',
+      template: 'index.html',
+      inject: 'body',
+      chunks: ['relationsApp'],
     }),
   ],
   sassLoader: {
