@@ -33,7 +33,7 @@
                         <li><a href="#features">Features</a></li>
                         <li><a href="#demo">Demo</a></li>
                         <li><a href="#embedding">Embedding</a></li>
-                        <li><a href="#embeddingExample">Example</a></li>
+                        <li><a href="#embeddingToComponent">Component Instructions</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -48,7 +48,7 @@
                     <div class="col-sm-6">
                         <h2>Timeline Component</h2>
                         <p>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            The Timeline Component presents all the interesting events and life stations of composers. Here you can have access to very interesting facts - illustrated in a very lovely and easy understanding way.
                         </p>
                     </div>
                     <div class="col-sm-6">
@@ -103,19 +103,6 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="card" id="embeddingExample">
-                <div class="page-header">
-                    <h1>Embedding the Widget on your Website <small>Example for Imslp.org</small></h1>
-                </div>
-                <h3>HTML</h3>
-                <figure class="highlight">
-                    <pre><code class="language-html" data-lang="html"><span class="tag">&lt;iframe</span> <span class="attr">width=</span><span class="style">"100%"</span> <span class="attr">height=</span><span class="style">"300px"</span> <span class="attr">id="</span><span class="style">widget</span><span class="attr">"</span><span class="tag">&gt;</span><br><span class="tag">&lt;/iframe&gt;</span></code></pre>
-                </figure>
-                <h3>JavaScript</h3>
-                <figure class="highlight">
-                    <pre><code class="language-html" data-lang="html"><span class="function">function</span> <span class="functionName">startUpWidget()</span> {<br>    <span class="comment">//Transform URL to Information</span><br>    <span class="var">var</span> <span class="varName">url</span> = window.location.href;<br>    <span class="var">var</span> <span class="varName">indexToCutOut</span> = <span class="varName">url</span>.indexOf(<span class="string">"wiki"</span>) + 5;<br>    <span class="var">var</span> <span class="varName">urlAppendix</span>;<br>    <span class="comment">//If Category => Composer</span><br>    if (<span class="varName">url</span>.indexOf(<span class="string">"Category"</span>) >= 0) {<br>        <span class="varName">indexToCutOut</span> = <span class="varName">indexToCutOut</span> + 9;<br>        <span class="varName">url</span> = <span class="varName">url</span>.slice(<span class="varName">indexToCutOut</span>);<br>        <span class="var">var</span> <span class="varName">lastname</span> = <span class="varName">url</span>.slice(0,<span class="varName">url</span>.indexOf(<span class="string">","</span>));<br>        <span class="var">var</span> <span class="varName">firstname</span> = <span class="varName">url</span>.slice(<span class="varName">url</span>.indexOf(<span class="string">","</span>)+2)<br>        <span class="varName">urlAppendix</span> = <span class="string"> "Composer:"</span> + <span class="varName">firstname</span> + <span class="string">"_"</span> + <span class="varName">lastname</span>;<br>    }<br>    else {<br>        <span class="varName">url</span> = <span class="varName">url</span>.slice(<span class="varName">indexToCutOut</span>);<br>        <span class="var">var</span> <span class="varName">composition</span> = <span class="varName">url</span>.slice(0,<span class="varName">url</span>.indexOf(<span class="string">"("</span>)-1);<br>        <span class="var">var</span> <span class="varName">composerPart</span> = <span class="varName">url</span>.slice(<span class="varName">url</span>.indexOf(<span class="string">"("</span>)+1);<br>        <span class="var">var</span> <span class="varName">lastname</span> = <span class="varName">composerPart</span>.slice(0,<span class="varName">composerPart</span>.indexOf(","));<br>        <span class="var">var</span> <span class="varName">firstname</span> = <span class="varName">composerPart</span>.slice(<span class="varName">composerPart</span>.indexOf(",")+2,<span class="varName">composerPart</span>.length-1);<br>        <span class="var">var</span> <span class="varName">composer</span> = <span class="varName">firstname</span> + "_" + <span class="varName">lastname</span>;<br>        <span class="varName">urlAppendix</span> = <span class="string">"Composition:"</span> + <span class="varName">composition</span> + <span class="string">";Composer:"</span> + <span class="varName">composer</span>;<br>    }<br>    <span class="comment">//CHANGE URL to domain</span><br>    <span class="tag">document</span>.getElementById(<span class="style">"widget"</span>).src = <span class="string">"WIDGET-URL"</span> + <span class="string">"?"</span> + <span class="varName">urlAppendix</span>;<br>}<br><span class="functionName">startUpWidget()</span>;</code></pre>
-                </figure>
             </div>
             <div class="card" id="embeddingToComponent">
                 <div class="page-header">
