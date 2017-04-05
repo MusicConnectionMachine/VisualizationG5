@@ -1,0 +1,92 @@
+body {
+    background: url("roberta-sorge-125543.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+#features {
+    margin-top: 120px;
+}
+
+.card {
+    margin-top: 60px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 15px 15px;
+}
+
+#relationsComponent {
+    margin-top: 2%;
+}
+
+.tag {
+    color:#2f6f9f;
+}
+
+.attr {
+    color: #4f9fcf;
+}
+
+.style {
+    color: #d44950;
+}
+
+.comment {
+    color: #999;
+}
+
+.function {
+    color: #d44950;
+}
+
+.functionName {
+    color: #4f9fcf;
+}
+
+.var {
+    color: #C30;
+}
+
+.varName {
+    color: #c18401;
+}
+
+.string {
+    color: #008200;
+}
+
+@media (min-width: 959px) {
+
+    .nav {
+        height:75px;
+    }
+
+    nav.container-fluid {
+        height:100%;
+    }
+
+    #navbar {
+        height:100%;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+        font-family: 'Raleway', Open-Sans;
+        letter-spacing: 1px;
+        padding-top: 25px;
+    }
+
+    #navItems {
+        padding-top: 15px;
+        font-size: 20px;
+    }
+}
