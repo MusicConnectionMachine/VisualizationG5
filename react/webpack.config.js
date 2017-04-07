@@ -35,6 +35,7 @@ module.exports = {
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/person-graph.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/composers-app.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.scss$/, include: path.normalize(__dirname + '/scss/relations-app.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/feedback-component.scss'), loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.png$/, loader: 'file' },

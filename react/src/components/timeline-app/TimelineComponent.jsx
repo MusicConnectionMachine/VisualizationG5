@@ -1,16 +1,19 @@
 import * as ReactDOM from 'react-dom';
 import _ from 'lodash';
+import NotificationSystem from 'react-notification-system';
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import vis from 'vis';
 import '../../../node_modules/vis/dist/vis.min.css';
 import '../../../scss/timeline-app.scss';
+import FeedbackComponent from '../FeedbackComponent';
 
 
 export default class TimelineComponent extends React.Component {
   constructor(props) {
     super(props);
     this.dataSet = null;
+    this.notificationSystem = null;
     this.state = {
       timelineReady: false,
     };
@@ -28,6 +31,16 @@ export default class TimelineComponent extends React.Component {
     this.dataSet.remove(_.differenceBy(oldEvents, newEvents, event => event.id).map(event => event.id));
     this.dataSet.add(_.differenceBy(newEvents, oldEvents, event => event.id));
   }
+
+
+  handleFeedback(e, eventId) { // eslint-disable-line
+    // TODO Send feedback to the back-end
+    this.notificationSystem.addNotification({
+      message: 'Thank you for the feedback!',
+      level: 'success',
+      position: 'tc',
+      autoDismiss: 2,
+    });
   }
 
 
@@ -82,6 +95,11 @@ export default class TimelineComponent extends React.Component {
           <div>
             <div className={className} id={`timeline__body__itembox__${event.id}`}>
               { event.icon ? <div className="timeline__body__itembox__imagebox"><img src={event.icon} /></div> : '' }
+              <FeedbackComponent
+                onLiked={this.handleFeedback.bind(this, event.id)}
+                onDisliked={this.handleFeedback.bind(this, event.id)}
+                onMarkedAsWrong={this.handleFeedback.bind(this, event.id)}
+              />
               <div
                 className="timeline__body__itembox__titlebox"
                 data-for={`timeline__body__tooltip__${event.id}`} data-tip
@@ -119,6 +137,7 @@ export default class TimelineComponent extends React.Component {
             {description && description.split('\n').map(p => <p>{p}</p>)}
           </ReactTooltip>
         ))}
+        <NotificationSystem ref={(ns) => { this.notificationSystem = ns; }} />
       </div>
     );
   }
