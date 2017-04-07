@@ -112,35 +112,9 @@ $full-screen-padding: 20px;
   }
 }
 
-.timeline__body__tooltip {
-  visibility: hidden;
-  padding: 5px 8px;
-  background-color: #eee;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.5s;
-  max-width: 70%;
-
-  &--visible {
-    visibility: visible;
-    opacity: 0.95;
-  }
-}
-
 .timeline__body__tooltip__date {
-  font-style: italic;
+  font-weight: bold;
   font-size: small;
-}
-
-.timeline__body__tooltip__arrow {
-  position: fixed;
-  margin-top: -10px;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #555 transparent;
 }
 
 .timeline--full-screen {

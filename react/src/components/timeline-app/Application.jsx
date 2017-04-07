@@ -21,7 +21,10 @@ class Application extends React.Component {
 
   componentWillMount() {
     MockDataService.fetchData(null).then((data) => {
-      data.events.forEach((event, i) => event.id = i);
+      data.events.forEach((event, i) => {
+        event.id = i;
+        event.start = new Date(event.start);
+      });
       this.setState({ data, selectedEvents: data.events });
     });
   }
