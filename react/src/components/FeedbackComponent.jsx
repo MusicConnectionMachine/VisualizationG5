@@ -22,7 +22,7 @@ export default function FeedbackComponent(props) {
             Very interesting!
           </button>
           <button type="button" className="btn btn-secondary" onClick={onDisliked}>
-            Less intersting!
+            Less interesting!
           </button>
           <button type="button" className="btn btn-secondary" onClick={onMarkedAsWrong}>
             Wrong information!
