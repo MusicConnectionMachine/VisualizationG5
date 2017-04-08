@@ -21,7 +21,10 @@ class Application extends React.Component {
 
   componentWillMount() {
     MockDataService.fetchData(null).then((data) => {
-      data.events.forEach((event, i) => event.id = i);
+      data.events.forEach((event, i) => {
+        event.id = i;
+        event.start = new Date(event.start);
+      });
       this.setState({ data, selectedEvents: data.events });
     });
   }
@@ -63,11 +66,28 @@ class Application extends React.Component {
     if (this.state.data) {
       return (
         <div className={`timeline ${this.state.fullScreenMode ? 'timeline--full-screen' : ''}`}>
-          <div className="timeline__control-bar">
-            <h4 className="timeline__control-bar__title">Chronicles of { this.state.data.name }</h4>
-            <a href="#"><div className="timeline__control-bar__button timeline__control-bar__full-button" onClick={this.handleFullScreenClick} /></a>
-            <a href="#"><div className="timeline__control-bar__button timeline__control-bar__download-button" onClick={this.handleDownloadCsvClick} /></a>
-            <input className="timeline__control-bar__search-field" type="text" placeholder="Search..." onChange={this.handleSearchChange} />
+          <div className="timeline__control-bar row">
+            <h5 className="timeline__control-bar__title col-12 col-sm-8 col-md-6">
+              Chronicles of { this.state.data.name }
+            </h5>
+            <div className="col-12 col-sm-4 col-md-6 timeline__control-bar__search-field">
+              <input
+                className="form-control"
+                type="text" placeholder="Search..." onChange={this.handleSearchChange}
+              />
+            </div>
+            <a href="#">
+              <div
+                className="timeline__control-bar__button timeline__control-bar__full-button"
+                onClick={this.handleFullScreenClick}
+              />
+            </a>
+            <a href="#">
+              <div
+                className="timeline__control-bar__button timeline__control-bar__download-button"
+                onClick={this.handleDownloadCsvClick}
+              />
+            </a>
           </div>
           <TimelineComponent events={ this.state.selectedEvents }/>
         </div>
