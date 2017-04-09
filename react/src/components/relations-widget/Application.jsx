@@ -3,6 +3,7 @@ import Papa from 'papaparse';
 
 import Utils from '../../Utils';
 import SearchField from './SearchField';
+import RelationList from './RelationList';
 import loadRelations from './remote/loadRelations';
 import '../../../scss/relations-widget.scss';
 
@@ -23,27 +24,27 @@ class Application extends React.Component {
 
   componentWillMount() {
     const { entity } = this.props;
-    loadRelations(entity).then(relations => {
+    loadRelations(entity).then(data => {
       this.setState({
-        relations,
-        relationsFiltered: relations,
+        relations: data.relations,
+        relationsFiltered: data.relations,
       });
     });
   }
 
   onSearchChange(query) {
-    if(!query) {
-      this.setState(state => {
-        relationsFiltered: state.relations
-      });
+    if (!query) {
+      this.setState(state => ({
+        relationsFiltered: state.relations,
+      }));
     } else {
-      this.setState(state => {
+      this.setState(state => ({
         relationsFiltered: state.relations.filter(relation =>
           relation.entity1.toLowerCase().includes(query) ||
           relation.relation.toLowerCase().includes(query) ||
           relation.entity2.toLowerCase().includes(query)
-        )
-      });
+        ),
+      }));
     }
   }
 
@@ -62,12 +63,9 @@ class Application extends React.Component {
   }
 
   onFullScreenClick() {
-    console.log('hey');
-    this.setState((state) => {
-      return {
-        fullScreenMode: !state.fullScreenMode
-      };
-    });
+    this.setState(state => ({
+      fullScreenMode: !state.fullScreenMode,
+    }));
   }
 
   render() {
@@ -84,7 +82,7 @@ class Application extends React.Component {
           </h5>
           <div className="col-12 col-sm-8 col-md-6 widget__control-bar__search-field">
             <SearchField
-              className="relation__search__field"
+              className="relation-widget__search__field"
               handleSearchChange={this.onSearchChange}
             />
           </div>
@@ -101,6 +99,10 @@ class Application extends React.Component {
             />
           </a>
         </div>
+        <RelationList
+          relations={ relationsFiltered }
+          className="widget__body"
+        />
       </div>
     );
   }

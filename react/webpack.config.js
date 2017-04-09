@@ -63,7 +63,7 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['timelineApp'],
-      }),
+    }),
     new HtmlWebpackPlugin({
       filename: 'person-graph.html',
       template: 'index.html',
