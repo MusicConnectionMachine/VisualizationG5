@@ -1,0 +1,24 @@
+@import 'variables';
+
+// Override variables here
+$control-bar-height: (
+  xs: 90px,
+  sm: 45px,
+  md: 45px
+);
+$control-bar__title-align: (
+  xs: left,
+  sm: left,
+  md: left
+);
+
+@import 'common';
+
+// Custom widget styles
+.relation__search__field {
+  margin-top: 3px;
+}
+
+.widget__control-bar__title {
+  line-height: 45px;
+}

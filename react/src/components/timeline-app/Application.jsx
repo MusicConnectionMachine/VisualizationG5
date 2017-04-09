@@ -65,12 +65,12 @@ class Application extends React.Component {
   render() {
     if (this.state.data) {
       return (
-        <div className={`timeline ${this.state.fullScreenMode ? 'timeline--full-screen' : ''}`}>
-          <div className="timeline__control-bar row">
-            <h5 className="timeline__control-bar__title col-12 col-sm-8 col-md-6">
+        <div className={`widget ${this.state.fullScreenMode ? 'widget--full-screen' : ''}`}>
+          <div className="widget__control-bar row">
+            <h5 className="widget__control-bar__title col-12 col-sm-8 col-md-6">
               Chronicles of { this.state.data.name }
             </h5>
-            <div className="col-12 col-sm-4 col-md-6 timeline__control-bar__search-field">
+            <div className="col-12 col-sm-4 col-md-6 widget__control-bar__search-field">
               <input
                 className="form-control"
                 type="text" placeholder="Search..." onChange={this.handleSearchChange}
@@ -78,13 +78,13 @@ class Application extends React.Component {
             </div>
             <a href="#">
               <div
-                className="timeline__control-bar__button timeline__control-bar__full-button"
+                className="widget__control-bar__button widget__control-bar__full-button"
                 onClick={this.handleFullScreenClick}
               />
             </a>
             <a href="#">
               <div
-                className="timeline__control-bar__button timeline__control-bar__download-button"
+                className="widget__control-bar__button widget__control-bar__download-button"
                 onClick={this.handleDownloadCsvClick}
               />
             </a>
