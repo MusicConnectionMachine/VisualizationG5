@@ -68,7 +68,7 @@ export default class RelationList extends React.Component {
         </Pagination>
 
         <Popover
-          placement="bottom center"
+          placement="top center"
           target={this.state.popoverTarget ? this.state.popoverTarget : 'popoverTarget'}
           isOpen={this.state.popoverOpen}
         >
@@ -87,7 +87,7 @@ export default class RelationList extends React.Component {
         <Alert
           isOpen={this.state.alertOpen}
           toggle={() => this.onDismiss()}
-          color="info" style={{ position: 'absolute', bottom: 0, left: 20, right: 20, height: '50px' }}
+          color="info" style={{ position: 'absolute', top: 330, left: 20, right: 20, height: '50px' }}
         >
           Thanks for your feedback. We'll have a look at it.
         </Alert>
