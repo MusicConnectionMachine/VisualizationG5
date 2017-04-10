@@ -32,6 +32,13 @@ export default class RelationList extends React.Component {
     this.setState({ alertOpen: false });
   }
 
+  handleReport() {
+    this.setState({ alertOpen: true, popoverOpen: false });
+    setTimeout(() => {
+      this.setState({ alertOpen: false });
+    }, 3000)
+  }
+
   render() {
     const { relations, className } = this.props;
 
@@ -55,7 +62,7 @@ export default class RelationList extends React.Component {
             <div style={{ marginTop: '5px', marginBottom: '15px' }}> {this.state.popoverContent} </div>
             <Input style={{ fontSize: '14px' }} placeholder="optional comment..." />
             <Button
-              onClick={() => this.setState({ alertOpen: true, popoverOpen: false })}
+              onClick={() => this.handleReport()}
               style={{ float: 'right', marginTop: '15px', marginBottom: '5px', fontSize: '14px' }} color="primary"> Report </Button>
           </PopoverContent>
         </Popover>
