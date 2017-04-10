@@ -22,3 +22,15 @@ $control-bar__title-align: (
 .widget__control-bar__title {
   line-height: 45px;
 }
+
+.relation-widget-list__item {
+  border-bottom: #555555 1px solid;
+}
+
+.relation-item {
+  height: 40px;
+  font-size: 14px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
