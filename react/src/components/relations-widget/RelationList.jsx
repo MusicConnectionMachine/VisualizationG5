@@ -10,14 +10,28 @@ const MAX_PAGES = 10;
 export default class RelationList extends React.Component {
   constructor(props) {
     super(props);
-    this.togglePopover = this.togglePopover.bind(this);
+    this.toggleSourcePopover = this.toggleSourcePopover.bind(this);
+    this.toggleFlagPopover = this.toggleFlagPopover.bind(this);
 
     this.state = {
-      popoverOpen: false,
+      flagPopoverOpen: false,
+      sourcePopoverOpen: false,
       alertOpen: false,
       popoverTitle: '',
       popoverContent: '',
       popoverTarget: '',
+      sourceRelation: {
+        source: {
+          text: '',
+          url: '',
+        },
+      },
+      flagRelation: {
+        source: {
+          text: '',
+          url: '',
+        },
+      },
     };
   }
 
@@ -25,17 +39,29 @@ export default class RelationList extends React.Component {
     this.setState({ alertOpen: false });
   }
 
-  togglePopover(relation = {}) {
+  toggleSourcePopover(relation = {}) {
+    this.setState(prevState => {
+      return ({
+        sourceRelation: relation,
+        sourcePopoverOpen: !_.isEqual(relation, prevState.sourceRelation),
+        popoverTitle: 'Sources',
+        popoverTarget: '_' + relation.id,
+      });
+    });
+  }
+
+  toggleFlagPopover(relation = {}) {
     this.setState(prevState => ({
-      popoverOpen: !prevState.popoverOpen,
-      popoverTitle: 'You are about to report the following relationshiop:',
+      flagPopoverOpen: !_.isEqual(relation, prevState.flagRelation),
+      flagRelation: relation,
+      popoverTitle: 'Flag',
       popoverContent: relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2,
       popoverTarget: '_' + relation.id,
     }));
   }
 
   handleReport() {
-    this.setState({ alertOpen: true, popoverOpen: false });
+    this.setState({ alertOpen: true, flagPopoverOpen: false });
     setTimeout(() => {
       this.setState({ alertOpen: false });
     }, 3000);
@@ -46,14 +72,15 @@ export default class RelationList extends React.Component {
 
     const numberPages = Math.min(MAX_PAGES, Math.ceil(relations.length / LIMIT));
     const displayRelations = relations.slice((page - 1) * LIMIT, page * LIMIT);
-
     return (
-      <div id="popoverTarget" className={`relation-widget__body ${className}`}>
-        {_.map(displayRelations, relation =>
+      <div className={`relation-widget__body ${className}`}>
+        {_.map(displayRelations, (relation, index) =>
           <RelationItem
-            togglePopover={this.togglePopover}
+            showRelationDetails={this.props.showRelationDetails}
+            toggleSourcePopover={this.toggleSourcePopover}
+            toggleFlagPopover={this.toggleFlagPopover}
             key={relation.id}
-            className="relation-widget-list__item"
+            className={ index !== 0 ? 'relation-widget-list__item' : '' }
             relation={relation}
           />
         )}
@@ -68,13 +95,14 @@ export default class RelationList extends React.Component {
         </Pagination>
 
         <Popover
-          placement="top center"
-          target={this.state.popoverTarget ? this.state.popoverTarget : 'popoverTarget'}
-          isOpen={this.state.popoverOpen}
+          placement="top"
+          target={'_' + this.state.popoverTarget}
+          isOpen={this.state.flagPopoverOpen}
         >
-          <PopoverTitle style={{ fontSize: '14px' }}>{this.state.popoverTitle}</PopoverTitle>
+          <PopoverTitle style={{ fontSize: '16px' }}>Flag</PopoverTitle>
           <PopoverContent style={{ textAlign: 'center' }}>
-            <div style={{ marginTop: '5px', marginBottom: '15px' }}> {this.state.popoverContent} </div>
+            <p> <b> You are about to report the following relationship: </b> </p>
+            <div style={{ marginBottom: '15px' }}> {this.state.popoverContent} </div>
             <Input style={{ fontSize: '14px' }} placeholder="optional comment..." />
             <Button
               onClick={() => this.handleReport()}
@@ -82,6 +110,17 @@ export default class RelationList extends React.Component {
             >
               Report
             </Button>
+          </PopoverContent>
+        </Popover>
+        <Popover
+          placement="bottom"
+          target={this.state.popoverTarget}
+          isOpen={this.state.sourcePopoverOpen}
+        >
+          <PopoverTitle style={{ fontSize: '16px' }}>Source</PopoverTitle>
+          <PopoverContent style={{ textAlign: 'center' }}>
+            <div> {this.state.sourceRelation.source.text} </div>
+            <div> {this.state.sourceRelation.source.url} </div>
           </PopoverContent>
         </Popover>
         <Alert
@@ -101,5 +140,6 @@ RelationList.propTypes = {
   relations: React.PropTypes.array.isRequired,
   className: React.PropTypes.string,
   handlePageChange: React.PropTypes.func,
+  showRelationDetails: React.PropTypes.func,
   page: React.PropTypes.number,
 };

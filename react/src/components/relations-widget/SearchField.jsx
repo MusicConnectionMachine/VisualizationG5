@@ -7,6 +7,7 @@ const SearchField = props => (
     <InputGroup>
       <InputGroupAddon>Search</InputGroupAddon>
       <Input
+        value={props.query}
         placeholder="Enter a composer, music piece, work, relation to filter..."
         onChange={(e) => props.handleSearchChange(e.target.value.toLowerCase())}
       />
@@ -16,6 +17,7 @@ const SearchField = props => (
 
 SearchField.propTypes = {
   className: React.PropTypes.string,
+  query: React.PropTypes.string,
   handleSearchChange: React.PropTypes.func.isRequired,
 };
 

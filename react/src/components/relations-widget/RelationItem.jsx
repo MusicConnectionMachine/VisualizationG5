@@ -7,7 +7,6 @@ export default class RelationItem extends React.Component {
     super(props);
     this.state = {
       mouseOver: false,
-      showPopover: false,
     };
   }
 
@@ -15,20 +14,27 @@ export default class RelationItem extends React.Component {
     const { relation, className } = this.props;
 
     return (
-      <div id={'_' + relation.id} className={`relation-item ${className}`}>
+      <div className={`relation-item ${className}`}>
         <Row
           onMouseOver={() => this.setState({ mouseOver: true })}
           onMouseOut={() => this.setState({ mouseOver: false })}
         >
-          <Col>{ relation.relation }</Col>
-          <Col>{ relation.entity2 }</Col>
+          <Col id={'_' + relation.id} > <span style={{ cursor: 'pointer' }} onClick={() => this.props.showRelationDetails(relation)}> { relation.relation } </span> </Col>
+          <Col id={'__' + relation.id} >{ relation.entity2 } </Col>
           <Col style={ this.state.mouseOver ? {} : { visibility: 'hidden' } }>
             <Button
-              onClick={() => this.props.togglePopover(relation)}
+              onClick={() => this.props.toggleSourcePopover(relation)}
+              color="link"
+              style={{ position: 'absolute', right: '70px', top: '-7px', fontSize: '14px' }}
+            >
+              Source
+            </Button>
+            <Button
+              onClick={() => this.props.toggleFlagPopover(relation)}
               color="link"
               style={{ position: 'absolute', right: '20px', top: '-7px', fontSize: '14px' }}
             >
-              Source | Flag
+              Flag
             </Button>
           </Col>
         </Row>
@@ -41,5 +47,7 @@ export default class RelationItem extends React.Component {
 RelationItem.propTypes = {
   relation: React.PropTypes.any,
   className: React.PropTypes.string,
-  togglePopover: React.PropTypes.func,
+  toggleFlagPopover: React.PropTypes.func,
+  toggleSourcePopover: React.PropTypes.func,
+  showRelationDetails: React.PropTypes.func,
 };
