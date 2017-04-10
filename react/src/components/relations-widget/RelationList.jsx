@@ -1,9 +1,11 @@
 import React from 'react';
 import _ from 'lodash';
-import { Alert, Input, Button, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink, Alert, Input, Button, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
 import RelationItem from './RelationItem.jsx';
 
+const LIMIT = 5;
+const MAX_PAGES = 10;
 
 export default class RelationList extends React.Component {
   constructor(props) {
@@ -19,6 +21,10 @@ export default class RelationList extends React.Component {
     };
   }
 
+  onDismiss() {
+    this.setState({ alertOpen: false });
+  }
+
   togglePopover(relation = {}) {
     this.setState(prevState => ({
       popoverOpen: !prevState.popoverOpen,
@@ -28,23 +34,22 @@ export default class RelationList extends React.Component {
     }));
   }
 
-  onDismiss() {
-    this.setState({ alertOpen: false });
-  }
-
   handleReport() {
     this.setState({ alertOpen: true, popoverOpen: false });
     setTimeout(() => {
       this.setState({ alertOpen: false });
-    }, 3000)
+    }, 3000);
   }
 
   render() {
-    const { relations, className } = this.props;
+    const { relations, className, page } = this.props;
+
+    const numberPages = Math.min(MAX_PAGES, Math.ceil(relations.length / LIMIT));
+    const displayRelations = relations.slice((page - 1) * LIMIT, page * LIMIT);
 
     return (
       <div id="popoverTarget" className={`relation-widget__body ${className}`}>
-        {_.map(relations, relation =>
+        {_.map(displayRelations, relation =>
           <RelationItem
             togglePopover={this.togglePopover}
             key={relation.id}
@@ -52,6 +57,16 @@ export default class RelationList extends React.Component {
             relation={relation}
           />
         )}
+        <Pagination style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          {new Array(numberPages).fill(undefined).map((____, index) =>
+            <PaginationItem key={index}>
+              <PaginationLink style={ index + 1 === page ? { backgroundColor: '#DDDDDD', fontColor: '#004d90' } : {}} href="#" onClick={() => this.props.handlePageChange(index + 1)}>
+                {index + 1}
+              </PaginationLink>
+            </PaginationItem>
+          )}
+        </Pagination>
+
         <Popover
           placement="bottom center"
           target={this.state.popoverTarget ? this.state.popoverTarget : 'popoverTarget'}
@@ -63,13 +78,17 @@ export default class RelationList extends React.Component {
             <Input style={{ fontSize: '14px' }} placeholder="optional comment..." />
             <Button
               onClick={() => this.handleReport()}
-              style={{ float: 'right', marginTop: '15px', marginBottom: '5px', fontSize: '14px' }} color="primary"> Report </Button>
+              style={{ float: 'right', marginTop: '15px', marginBottom: '5px', fontSize: '14px' }} color="primary"
+            >
+              Report
+            </Button>
           </PopoverContent>
         </Popover>
         <Alert
           isOpen={this.state.alertOpen}
           toggle={() => this.onDismiss()}
-          color="info" style={{ position: 'absolute', bottom: 0, left: 20, right: 20, height: '50px' }}>
+          color="info" style={{ position: 'absolute', bottom: 0, left: 20, right: 20, height: '50px' }}
+        >
           Thanks for your feedback. We'll have a look at it.
         </Alert>
       </div>
@@ -81,4 +100,6 @@ export default class RelationList extends React.Component {
 RelationList.propTypes = {
   relations: React.PropTypes.array.isRequired,
   className: React.PropTypes.string,
+  handlePageChange: React.PropTypes.func,
+  page: React.PropTypes.number,
 };

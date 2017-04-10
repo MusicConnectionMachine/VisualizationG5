@@ -15,6 +15,7 @@ class Application extends React.Component {
       relations: [],
       relationsFiltered: [],
       fullScreenMode: false,
+      page: 1,
     };
 
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -39,6 +40,7 @@ class Application extends React.Component {
       }));
     } else {
       this.setState(state => ({
+        page: 1,
         relationsFiltered: state.relations.filter(relation =>
           relation.entity1.toLowerCase().includes(query) ||
           relation.relation.toLowerCase().includes(query) ||
@@ -66,6 +68,10 @@ class Application extends React.Component {
     this.setState(state => ({
       fullScreenMode: !state.fullScreenMode,
     }));
+  }
+
+  handlePageChange(page) {
+    this.setState({ page });
   }
 
   render() {
@@ -100,6 +106,8 @@ class Application extends React.Component {
           </a>
         </div>
         <RelationList
+          page={this.state.page}
+          handlePageChange={(page) => this.handlePageChange(page)}
           relations={ relationsFiltered }
           className="widget__body"
         />
