@@ -1,0 +1,36 @@
+#container {
+  width: 900px;
+  height: 282px;
+  border: 1px solid black;
+}
+
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.entry rect {
+  fill: white;
+  stroke-width: 0.5;
+  stroke: rgb(50, 50, 50);
+}
+
+.entry--highlight rect {
+  fill: rgb(224, 224, 224);
+  stroke-width: 1;
+  stroke: rgb(50, 50, 50);
+}
+
+.entry a:hover, .entry a:visited, .entry a:focus {
+  text-decoration: none;
+}
+
+.connection {
+  stroke: gray;
+  fill: none;
+  pointer-events:all;
+}
+
+.connection--highlight {
+  stroke-width: 2;
+}
