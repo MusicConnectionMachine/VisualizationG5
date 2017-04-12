@@ -21,9 +21,9 @@ export default class FlagPopover extends React.Component {
         isOpen={isOpen}
       >
         <PopoverTitle style={{ fontSize: '16px' }}>Source</PopoverTitle>
-        <PopoverContent style={{ textAlign: 'center' }}>
-          <div> {source.text} </div>
-          <div> {source.url} </div>
+        <PopoverContent style={{ textAlign: 'center', height: '190px', width: '300px' }}>
+          <div>{source.text}</div>
+          <div>{source.url}</div>
         </PopoverContent>
       </Popover>
     );
