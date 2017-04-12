@@ -37,7 +37,7 @@ export default class FlagPopover extends React.Component {
               float: 'right',
               marginTop: '15px',
               marginBottom: '5px',
-              fontSize: '14px'
+              fontSize: '14px',
             }}
             color="primary"
           >

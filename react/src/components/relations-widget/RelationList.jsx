@@ -1,9 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
-import { Pagination, PaginationItem, PaginationLink, Alert, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink, Alert } from 'reactstrap';
 
 import RelationItem from './RelationItem';
 import FlagPopover from './FlagPopover';
+import SourcePopover from './SourcePopover';
 
 const LIMIT = 5;
 const MAX_PAGES = 10;
@@ -101,17 +102,11 @@ export default class RelationList extends React.Component {
           content={this.state.popoverContent}
           handleSubmit={this.handleReport}
         />
-        <Popover
-          placement="bottom"
-          target={this.state.popoverTarget}
+        <SourcePopover
+          target={'relation-popover-target'}
           isOpen={this.state.sourcePopoverOpen}
-        >
-          <PopoverTitle style={{ fontSize: '16px' }}>Source</PopoverTitle>
-          <PopoverContent style={{ textAlign: 'center' }}>
-            <div> {this.state.sourceRelation.source.text} </div>
-            <div> {this.state.sourceRelation.source.url} </div>
-          </PopoverContent>
-        </Popover>
+          source={this.state.sourceRelation.source}
+        />
         <Alert
           isOpen={this.state.alertOpen}
           toggle={() => this.onDismiss()}

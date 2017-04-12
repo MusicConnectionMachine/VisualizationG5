@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 import Utils from '../../Utils';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
-import RelationDetails from './RelationDetails';
+import RelationDetails from './RelationDetails.jsx';
 import loadRelations from './remote/loadRelations';
 import loadRelationEntities from './remote/loadRelationEntities';
 import '../../../scss/relations-widget.scss';
