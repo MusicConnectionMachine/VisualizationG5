@@ -1,8 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
-import { Pagination, PaginationItem, PaginationLink, Alert, Input, Button, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink, Alert, Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
-import RelationItem from './RelationItem.jsx';
+import RelationItem from './RelationItem';
+import FlagPopover from './FlagPopover';
 
 const LIMIT = 5;
 const MAX_PAGES = 10;
@@ -84,7 +85,7 @@ export default class RelationList extends React.Component {
             relation={relation}
           />
         )}
-        <Pagination style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+        <Pagination id="relation-popover-target" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           {new Array(numberPages).fill(undefined).map((____, index) =>
             <PaginationItem key={index}>
               <PaginationLink style={ index + 1 === page ? { backgroundColor: '#DDDDDD', fontColor: '#004d90' } : {}} href="#" onClick={() => this.props.handlePageChange(index + 1)}>
@@ -94,24 +95,12 @@ export default class RelationList extends React.Component {
           )}
         </Pagination>
 
-        <Popover
-          placement="top"
-          target={'_' + this.state.popoverTarget}
+        <FlagPopover
+          target={'relation-popover-target'}
           isOpen={this.state.flagPopoverOpen}
-        >
-          <PopoverTitle style={{ fontSize: '16px' }}>Flag</PopoverTitle>
-          <PopoverContent style={{ textAlign: 'center' }}>
-            <p> <b> You are about to report the following relationship: </b> </p>
-            <div style={{ marginBottom: '15px' }}> {this.state.popoverContent} </div>
-            <Input style={{ fontSize: '14px' }} placeholder="optional comment..." />
-            <Button
-              onClick={() => this.handleReport()}
-              style={{ float: 'right', marginTop: '15px', marginBottom: '5px', fontSize: '14px' }} color="primary"
-            >
-              Report
-            </Button>
-          </PopoverContent>
-        </Popover>
+          content={this.state.popoverContent}
+          handleSubmit={this.handleReport}
+        />
         <Popover
           placement="bottom"
           target={this.state.popoverTarget}
