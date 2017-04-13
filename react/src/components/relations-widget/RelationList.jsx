@@ -17,17 +17,19 @@ export default class RelationList extends React.Component {
 
     this.state = {
       popover: {
-        isOpen: {
-          source: false,
-          flag: false,
+        sourcePopover: {
+          isOpen: false,
+        },
+        flagPopover: {
+          isOpen: false,
+          content: '',
         },
         selectedRelation: {
           source: {
             text: '',
             url: '',
-          }
+          },
         },
-        content: '',
       },
       alertOpen: false,
     };
@@ -38,41 +40,56 @@ export default class RelationList extends React.Component {
   }
 
   toggleSourcePopover(relation = {}) {
-
     this.setState(prevState => {
-      // TODO: Extend state to avoid overwriting
-      //var newPopoverState = _.extend({}, prevState.selected);
-      return ({
-        popover: {
-          isOpen: {
-            source: !_.isEqual(relation, prevState.popover.selectedRelation),
+      return _.merge({}, prevState,
+        {
+          popover: {
+            sourcePopover: {
+              isOpen: !_.isEqual(relation, prevState.popover.selectedRelation) ||
+                      !prevState.popover.sourcePopover.isOpen,
+            },
+            flagPopover: {
+              isOpen: false,
+            },
+            selectedRelation: relation,
           },
-          selectedRelation: relation,
-        },
-      });
+        }
+      );
     });
   }
 
   toggleFlagPopover(relation = {}) {
-    this.setState(prevState => ({
-      popover: {
-        flag: {
-          source: !_.isEqual(relation, prevState.popover.selectedRelation),
-        },
-        selectedRelation: relation,
-        content: relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2,
-      },
-    }));
+    this.setState(prevState => {
+      return _.merge({}, prevState,
+        {
+          popover: {
+            flagPopover: {
+              isOpen: !_.isEqual(relation, prevState.popover.selectedRelation) ||
+                      !prevState.popover.flagPopover.isOpen,
+              content: relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2,
+            },
+            sourcePopover: {
+              isOpen: false,
+            },
+            selectedRelation: relation,
+          },
+        }
+      );
+    });
   }
 
   handleReport() {
-    this.setState({
-      alertOpen: true,
-      popover: {
-        isOpen: {
-          flag: false,
-        },
-      },
+    this.setState(prevState => {
+      return _.merge({}, prevState,
+        {
+          popover: {
+            flagPopover: {
+              isOpen: false,
+            },
+          },
+          alertOpen: true,
+        }
+      );
     });
     setTimeout(() => {
       this.setState({ alertOpen: false });
@@ -108,13 +125,13 @@ export default class RelationList extends React.Component {
 
         <FlagPopover
           target={'relation-popover-target'}
-          isOpen={this.state.popover.isOpen.flag}
-          content={this.state.popover.content}
+          isOpen={this.state.popover.flagPopover.isOpen}
+          content={this.state.popover.flagPopover.content}
           handleSubmit={this.handleReport}
         />
         <SourcePopover
           target={'relation-popover-target'}
-          isOpen={this.state.popover.isOpen.source}
+          isOpen={this.state.popover.sourcePopover.isOpen}
           source={this.state.popover.selectedRelation.source}
         />
         <Alert

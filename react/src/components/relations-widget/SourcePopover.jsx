@@ -2,7 +2,7 @@ import React from 'react';
 import { Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
 
-export default class FlagPopover extends React.Component {
+export default class SourcePopover extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -30,11 +30,11 @@ export default class FlagPopover extends React.Component {
   }
 }
 
-FlagPopover.propTypes = {
+SourcePopover.propTypes = {
   target: React.PropTypes.string,
   isOpen: React.PropTypes.bool,
   source: React.PropTypes.shape({
     text: React.PropTypes.string,
-    url: React.PropTypes.number,
+    url: React.PropTypes.string,
   }),
 };
