@@ -20,8 +20,8 @@ export default class SourcePopover extends React.Component {
         target={target}
         isOpen={isOpen}
       >
-        <PopoverTitle style={{ fontSize: '16px' }}>Source</PopoverTitle>
-        <PopoverContent style={{ textAlign: 'center', height: '190px', width: '300px' }}>
+        <PopoverTitle className="popover__title">Source</PopoverTitle>
+        <PopoverContent className="popover__content">
           <div>{source.text}</div>
           <div>{source.url}</div>
         </PopoverContent>

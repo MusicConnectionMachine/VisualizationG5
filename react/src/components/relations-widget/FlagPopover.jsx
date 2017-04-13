@@ -21,27 +21,23 @@ export default class FlagPopover extends React.Component {
         target={target}
         isOpen={isOpen}
       >
-        <PopoverTitle style={{ fontSize: '16px' }}>
-          Flag
-        </PopoverTitle>
-        <PopoverContent style={{ textAlign: 'center' }}>
-          <p> <b> You are about to report the following relationship: </b> </p>
-          <div style={{ marginBottom: '15px' }}> {content} </div>
+        <PopoverTitle className="popover__title">Report a problem</PopoverTitle>
+        <PopoverContent className="popover__content">
+          <p>You are about to report the following relationship:</p>
+          <span> {content} </span>
           <Input
-            style={{ fontSize: '14px' }}
-            placeholder="optional comment..."
+            style={{ fontSize: '14px', width: '300px', margin: '0 auto' }}
+            placeholder="Optional comment..."
           />
           <Button
             onClick={() => handleSubmit()}
             style={{
-              float: 'right',
               marginTop: '15px',
-              marginBottom: '5px',
               fontSize: '14px',
             }}
             color="primary"
           >
-            Report
+            Submit Report
           </Button>
         </PopoverContent>
       </Popover>

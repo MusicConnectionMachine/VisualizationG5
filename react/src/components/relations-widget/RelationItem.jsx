@@ -26,14 +26,12 @@ export default class RelationItem extends React.Component {
               onClick={() => this.props.toggleSourcePopover(relation)}
               color="link"
               className="relation-item__button reference-icon"
-            >
-            </Button>
+            />
             <Button
               onClick={() => this.props.toggleFlagPopover(relation)}
               color="link"
               className="relation-item__button flag-icon"
-            >
-            </Button>
+            />
           </Col>
         </Row>
       </div>
