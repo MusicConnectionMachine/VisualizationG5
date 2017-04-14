@@ -13,6 +13,7 @@ export default class FlagPopover extends React.Component {
       isOpen,
       content,
       handleSubmit,
+      close,
     } = this.props;
 
     return (
@@ -21,7 +22,10 @@ export default class FlagPopover extends React.Component {
         target={target}
         isOpen={isOpen}
       >
-        <PopoverTitle className="popover__title">Report a problem</PopoverTitle>
+        <PopoverTitle className="popover__title">
+          <span style={{ float: 'right', cursor: 'pointer', color: '#0275d8' }} onClick={() => close()}> Close </span>
+          Report a problem
+        </PopoverTitle>
         <PopoverContent className="popover__content">
           <p>You are about to report the following relationship:</p>
           <span> {content} </span>
@@ -50,4 +54,5 @@ FlagPopover.propTypes = {
   isOpen: React.PropTypes.bool,
   content: React.PropTypes.string,
   handleSubmit: React.PropTypes.func,
+  close: React.PropTypes.func,
 };

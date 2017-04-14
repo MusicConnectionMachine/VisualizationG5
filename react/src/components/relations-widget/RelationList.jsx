@@ -14,6 +14,7 @@ export default class RelationList extends React.Component {
     super(props);
     this.toggleSourcePopover = this.toggleSourcePopover.bind(this);
     this.toggleFlagPopover = this.toggleFlagPopover.bind(this);
+    this.closePopover = this.closePopover.bind(this);
 
     this.state = {
       popover: {
@@ -55,6 +56,27 @@ export default class RelationList extends React.Component {
           },
         }
       );
+    });
+  }
+
+  // This is so DRY, You'll need a moisturizer
+  closePopover() {
+    this.setState({
+      popover: {
+        sourcePopover: {
+          isOpen: false,
+        },
+        flagPopover: {
+          isOpen: false,
+          content: '',
+        },
+        selectedRelation: {
+          source: {
+            text: '',
+            url: '',
+          },
+        },
+      },
     });
   }
 
@@ -128,17 +150,19 @@ export default class RelationList extends React.Component {
           target={'relation-popover-target'}
           isOpen={this.state.popover.flagPopover.isOpen}
           content={this.state.popover.flagPopover.content}
-          handleSubmit={this.handleReport}
+          handleSubmit={this.handleReport.bind(this)}
+          close={this.closePopover}
         />
         <SourcePopover
           target={'relation-popover-target'}
           isOpen={this.state.popover.sourcePopover.isOpen}
           source={this.state.popover.selectedRelation.source}
+          close={this.closePopover}
         />
         <Alert
           isOpen={this.state.alertOpen}
           toggle={() => this.onDismiss()}
-          color="info" style={{ position: 'absolute', top: 330, left: 20, right: 20, height: '50px' }}
+          color="info" style={{ position: 'absolute', top: 230, left: 20, right: 20, height: '50px' }}
         >
           Thanks for your feedback. We'll have a look at it.
         </Alert>

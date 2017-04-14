@@ -12,6 +12,7 @@ export default class SourcePopover extends React.Component {
       target,
       isOpen,
       source,
+      close,
     } = this.props;
 
     return (
@@ -20,7 +21,10 @@ export default class SourcePopover extends React.Component {
         target={target}
         isOpen={isOpen}
       >
-        <PopoverTitle className="popover__title">Source</PopoverTitle>
+        <PopoverTitle className="popover__title">
+          <span style={{ float: 'right', cursor: 'pointer', color: '#0275d8' }} onClick={() => close()}> Close </span>
+          Source
+        </PopoverTitle>
         <PopoverContent className="popover__content">
           <div>{source.text}</div>
           <div>{source.url}</div>
@@ -37,4 +41,5 @@ SourcePopover.propTypes = {
     text: React.PropTypes.string,
     url: React.PropTypes.string,
   }),
+  close: React.PropTypes.func,
 };
