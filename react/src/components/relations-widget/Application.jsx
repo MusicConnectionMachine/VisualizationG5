@@ -32,6 +32,7 @@ class Application extends React.Component {
       relationEntitiesFiltered: [],
       relationEntitiesPage: 1,
       query: '',
+      mainViewQuery: '',
     };
 
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -60,7 +61,6 @@ class Application extends React.Component {
     } else {
       this.setState({
         query,
-        page: 1,
         relationEntitiesPage: 1,
         entity2RelationsPage: 1,
       });
@@ -79,6 +79,7 @@ class Application extends React.Component {
         }));
       } else {
         this.setState(state => ({
+          mainViewQuery: query,
           relationsFiltered: state.relations.filter(relation =>
             relation.entity1.toLowerCase().includes(query) ||
             relation.relation.toLowerCase().includes(query) ||
@@ -134,7 +135,7 @@ class Application extends React.Component {
   }
 
   showRelationList() {
-    this.setState({ entity2: null, relation: null, query: '' });
+    this.setState(prevState => ({ entity2: null, relation: null, query: prevState.mainViewQuery }));
   }
 
   render() {
