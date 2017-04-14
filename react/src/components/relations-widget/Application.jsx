@@ -55,6 +55,7 @@ class Application extends React.Component {
         query,
         relationsFiltered: state.relations,
         relationEntitiesFiltered: state.relationEntities,
+        entity2RelationsFiltered: state.entity2Relations,
       }));
     } else {
       this.setState({
@@ -70,7 +71,7 @@ class Application extends React.Component {
             return entity.entity2.toLowerCase().includes(query);
           }),
         }));
-      } else if (this.state.entity) {
+      } else if (this.state.entity2) {
         this.setState(state => ({
           entity2RelationsFiltered: state.entity2Relations.filter(relation => {
             return relation.relation.toLowerCase().includes(query);
@@ -133,7 +134,7 @@ class Application extends React.Component {
   }
 
   showRelationList() {
-    this.setState({ relation: null, query: '' });
+    this.setState({ entity2: null, relation: null, query: '' });
   }
 
   render() {
