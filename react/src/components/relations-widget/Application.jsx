@@ -4,9 +4,11 @@ import Papa from 'papaparse';
 import Utils from '../../Utils';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
-import RelationDetails from './RelationDetails.jsx';
+import RelationDetails from './RelationDetails';
+import EntityDetails from './EntityDetails';
 import loadRelations from './remote/loadRelations';
 import loadRelationEntities from './remote/loadRelationEntities';
+import loadEntityRelations from './remote/loadEntityRelations';
 import '../../../scss/relations-widget.scss';
 
 class Application extends React.Component {
@@ -18,7 +20,13 @@ class Application extends React.Component {
       relationsFiltered: [],
       fullScreenMode: false,
       showRelationDetails: false,
+      showEntity2Details: false,
       page: 1,
+      entity: null,
+      entity2: null,
+      entity2Relations: [],
+      entity2RelationsFiltered: [],
+      entity2RelationsPage: 1,
       relation: null,
       relationEntities: [],
       relationEntitiesFiltered: [],
@@ -49,20 +57,27 @@ class Application extends React.Component {
         relationEntitiesFiltered: state.relationEntities,
       }));
     } else {
+      this.setState({
+        query,
+        page: 1,
+        relationEntitiesPage: 1,
+        entity2RelationsPage: 1,
+      });
+
       if (this.state.relation) {
         this.setState(state => ({
-          query,
-          page: 1,
-          relationEntitiesPage: 1,
           relationEntitiesFiltered: state.relationEntities.filter(entity => {
             return entity.entity2.toLowerCase().includes(query);
           }),
         }));
+      } else if (this.state.entity) {
+        this.setState(state => ({
+          entity2RelationsFiltered: state.entity2Relations.filter(relation => {
+            return relation.relation.toLowerCase().includes(query);
+          }),
+        }));
       } else {
         this.setState(state => ({
-          query,
-          page: 1,
-          relationEntitiesPage: 1,
           relationsFiltered: state.relations.filter(relation =>
             relation.entity1.toLowerCase().includes(query) ||
             relation.relation.toLowerCase().includes(query) ||
@@ -87,7 +102,6 @@ class Application extends React.Component {
     Utils.download('relations.csv', csv, 'text/csv');
   }
 
-  // TODO: Not working as expected
   onFullScreenClick() {
     this.setState(state => ({
       fullScreenMode: !state.fullScreenMode,
@@ -102,10 +116,20 @@ class Application extends React.Component {
     this.setState({ relationEntitiesPage });
   }
 
+  handleEntityRelationsPage(entity2RelationsPage) {
+    this.setState({ entity2RelationsPage });
+  }
+
   showRelationDetails(relation) {
     this.setState({ relation });
     loadRelationEntities(relation)
       .then(({ relationEntities }) => this.setState({ relationEntities, relationEntitiesFiltered: relationEntities, query: '' }));
+  }
+
+  showEntity2Details(entity) {
+    this.setState({ entity2: entity });
+    loadEntityRelations(entity)
+      .then(({ entity2Relations }) => this.setState({ entity2Relations, entity2RelationsFiltered: entity2Relations, query: '' }));
   }
 
   showRelationList() {
@@ -120,6 +144,10 @@ class Application extends React.Component {
       relationEntitiesPage,
       relationEntitiesFiltered,
       query,
+      entity,
+      entity2,
+      entity2RelationsPage,
+      entity2RelationsFiltered,
     } = this.state;
 
     return (
@@ -141,30 +169,40 @@ class Application extends React.Component {
               onClick={this.onFullScreenClick}
             />
           </a>
-          {!relation &&
+          {!relation && !entity && (
             <a href="#">
               <div
                 className="widget__control-bar__button widget__control-bar__download-button"
                 onClick={this.onDownloadCsvClick}
               />
             </a>
-          }
+          )}
         </div>
-        {!relation && (
+        {!relation && !entity2 && (
           <RelationList
             page={this.state.page}
             showRelationDetails={_relation => this.showRelationDetails(_relation)}
+            showEntity2Details={_entity => this.showEntity2Details(_entity)}
             handlePageChange={(page) => this.handlePageChange(page)}
             relations={ relationsFiltered }
             className="widget__body"
           />
         )}
-        {relation && (
+        {relation && !entity2 && (
           <RelationDetails
             relation={relation}
             relationEntitiesPage={relationEntitiesPage}
             handleRelationEntitiesPage={page => this.handleRelationEntitiesPage(page)}
             relationEntities={relationEntitiesFiltered}
+            showRelationList={() => this.showRelationList()}
+          />
+        )}
+        {entity2 && !relation && (
+          <EntityDetails
+            entity2={entity2}
+            entity2RelationsPage={entity2RelationsPage}
+            handleEntityRelationsPage={page => this.handleEntityRelationsPage(page)}
+            entity2Relations={entity2RelationsFiltered}
             showRelationList={() => this.showRelationList()}
           />
         )}

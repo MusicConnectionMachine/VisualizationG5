@@ -106,6 +106,7 @@ export default class RelationList extends React.Component {
         {_.map(displayRelations, (relation, index) =>
           <RelationItem
             showRelationDetails={this.props.showRelationDetails}
+            showEntity2Details={this.props.showEntity2Details}
             toggleSourcePopover={this.toggleSourcePopover}
             toggleFlagPopover={this.toggleFlagPopover}
             key={relation.id}
@@ -152,5 +153,6 @@ RelationList.propTypes = {
   className: React.PropTypes.string,
   handlePageChange: React.PropTypes.func,
   showRelationDetails: React.PropTypes.func,
+  showEntity2Details: React.PropTypes.func,
   page: React.PropTypes.number,
 };
