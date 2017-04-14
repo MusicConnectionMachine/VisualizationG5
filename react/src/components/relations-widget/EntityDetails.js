@@ -18,11 +18,6 @@ export default class EntityDetails extends React.Component {
         <div>
           <Row>
             <Col>
-              <div className={`relation-item `}>
-                {entity2}
-              </div>
-            </Col>
-            <Col>
               <div
                 key={displayRelations[0].id} id={'_' + displayRelations[0].id}
                 className={`relation-item `}
@@ -30,9 +25,22 @@ export default class EntityDetails extends React.Component {
                 {displayRelations[0].relation}
               </div>
             </Col>
+            <Col>
+              <div className={`relation-item `}>
+                {entity2}
+              </div>
+            </Col>
           </Row>
 
           <Row className="relation-widget-list__item">
+            <Col>
+              <div
+                key={displayRelations[1].id} id={'_' + displayRelations[1].id}
+                className={`relation-item`}
+              >
+                {displayRelations[1].relation}
+              </div>
+            </Col>
             <Col>
               <div className={`relation-item`}>
                 <p
@@ -43,25 +51,17 @@ export default class EntityDetails extends React.Component {
                 </p>
               </div>
             </Col>
-            <Col>
-              <div
-                key={displayRelations[1].id} id={'_' + displayRelations[1].id}
-                className={`relation-item`}
-              >
-                {displayRelations[1].relation}
-              </div>
-            </Col>
           </Row>
           {_.map(displayRelations, (relation, index) => {
             return index > 1
               ? <Row key={relation.id} >
-              <Col> {null} </Col>
-              <Col>
-                <div id={'_' + relation.id} className={`relation-item relation-widget-list__item`}>
-                  {relation.relation}
-                </div>
-              </Col>
-            </Row>
+                  <Col>
+                    <div id={'_' + relation.id} className={`relation-item relation-widget-list__item`}>
+                      {relation.relation}
+                    </div>
+                  </Col>
+                  <Col> {null} </Col>
+                </Row>
               : null;
           })}
         </div>
