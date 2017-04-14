@@ -45,8 +45,7 @@
 }
 
 .widget--full-screen {
-  padding: $full-screen-padding;
-  width: calc(100% - #{2 * $full-screen-padding});
+  width: 100%;
   max-width: none;
   background-color: white;
   z-index: 5;
