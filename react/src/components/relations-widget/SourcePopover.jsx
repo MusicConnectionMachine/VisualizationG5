@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { Popover, PopoverTitle, PopoverContent } from 'reactstrap';
 
 
@@ -11,7 +12,7 @@ export default class SourcePopover extends React.Component {
     const {
       target,
       isOpen,
-      source,
+      sources,
       close,
     } = this.props;
 
@@ -23,11 +24,15 @@ export default class SourcePopover extends React.Component {
       >
         <PopoverTitle className="popover__title">
           <span style={{ float: 'right', cursor: 'pointer', color: '#0275d8' }} onClick={() => close()}> Close </span>
-          Source
+          Sources
         </PopoverTitle>
         <PopoverContent className="popover__content">
-          <div>{source.text}</div>
-          <div>{source.url}</div>
+          {_.map(sources, source =>
+            <div className="popover__content__source-item" key={source.id}>
+              <p>{source.text}</p>
+              <a href={source.url}>{source.url}</a>
+            </div>
+          )}
         </PopoverContent>
       </Popover>
     );
@@ -37,9 +42,10 @@ export default class SourcePopover extends React.Component {
 SourcePopover.propTypes = {
   target: React.PropTypes.string,
   isOpen: React.PropTypes.bool,
-  source: React.PropTypes.shape({
+  sources: React.PropTypes.arrayOf(React.PropTypes.shape({
+    id: React.PropTypes.number,
     text: React.PropTypes.string,
     url: React.PropTypes.string,
-  }),
+  })),
   close: React.PropTypes.func,
 };

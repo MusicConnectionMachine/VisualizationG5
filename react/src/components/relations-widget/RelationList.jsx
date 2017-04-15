@@ -26,10 +26,7 @@ export default class RelationList extends React.Component {
           content: '',
         },
         selectedRelation: {
-          source: {
-            text: '',
-            url: '',
-          },
+          sources: [],
         },
       },
       alertOpen: false,
@@ -71,10 +68,7 @@ export default class RelationList extends React.Component {
           content: '',
         },
         selectedRelation: {
-          source: {
-            text: '',
-            url: '',
-          },
+          sources: [],
         },
       },
     });
@@ -156,7 +150,7 @@ export default class RelationList extends React.Component {
         <SourcePopover
           target={'relation-popover-target'}
           isOpen={this.state.popover.sourcePopover.isOpen}
-          source={this.state.popover.selectedRelation.source}
+          sources={this.state.popover.selectedRelation.sources}
           close={this.closePopover}
         />
         <Alert

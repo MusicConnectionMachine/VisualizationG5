@@ -2,10 +2,11 @@ const entity2Relations = new Array(50).fill(undefined).map((_, index) => {
   return {
     id: index,
     relation: `Relation${(index + 7) % 25}`,
-    source: {
+    sources: [{
+      id: 1,
       text: `Source text${index}`,
       url: `Source url${index}`,
-    },
+    }],
   };
 });
 

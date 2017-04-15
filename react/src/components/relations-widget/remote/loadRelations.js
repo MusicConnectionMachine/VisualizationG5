@@ -4,10 +4,23 @@ const relations = new Array(50).fill(undefined).map((_, index) => {
     entity1: 'Mozart',
     relation: `relation${index % 10} to`,
     entity2: `Entity${(index + 7) % 25}`,
-    source: {
-      text: `Source text${index}`,
-      url: `Source url${index}`,
-    },
+    sources: [
+      {
+        id: 1,
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis nunc a nisi consectetur, suscipit fringilla mi vestibulum. Donec pellentesque`,
+        url: `http://example.com/`,
+      },
+      {
+        id: 2,
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis nunc a nisi consectetur, suscipit fringilla mi vestibulum. Donec pellentesque`,
+        url: `http://example.com/`,
+      },
+      {
+        id: 3,
+        text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis nunc a nisi consectetur, suscipit fringilla mi vestibulum. Donec pellentesque`,
+        url: `http://example.com/`,
+      },
+    ],
   };
 });
 
