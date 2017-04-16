@@ -125,6 +125,7 @@ export default class RelationList extends React.Component {
             showEntity2Details={this.props.showEntity2Details}
             toggleSourcePopover={this.toggleSourcePopover}
             toggleFlagPopover={this.toggleFlagPopover}
+            query={this.props.query}
             key={relation.id}
             className={ index !== 0 ? 'relation-widget-list__item' : '' }
             relation={relation}
@@ -168,6 +169,7 @@ export default class RelationList extends React.Component {
 
 RelationList.propTypes = {
   relations: React.PropTypes.array.isRequired,
+  query: React.PropTypes.string,
   className: React.PropTypes.string,
   handlePageChange: React.PropTypes.func,
   showRelationDetails: React.PropTypes.func,

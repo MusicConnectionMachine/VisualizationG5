@@ -81,7 +81,6 @@ class Application extends React.Component {
         this.setState(state => ({
           mainViewQuery: query,
           relationsFiltered: state.relations.filter(relation =>
-            relation.entity1.toLowerCase().includes(query) ||
             relation.relation.toLowerCase().includes(query) ||
             relation.entity2.toLowerCase().includes(query)
           ),
@@ -183,6 +182,7 @@ class Application extends React.Component {
         {!relation && !entity2 && (
           <RelationList
             page={this.state.page}
+            query={query}
             showRelationDetails={_relation => this.showRelationDetails(_relation)}
             showEntity2Details={_entity => this.showEntity2Details(_entity)}
             handlePageChange={(page) => this.handlePageChange(page)}
@@ -193,6 +193,7 @@ class Application extends React.Component {
         {relation && !entity2 && (
           <RelationDetails
             relation={relation}
+            query={query}
             relationEntitiesPage={relationEntitiesPage}
             handleRelationEntitiesPage={page => this.handleRelationEntitiesPage(page)}
             relationEntities={relationEntitiesFiltered}
@@ -202,6 +203,7 @@ class Application extends React.Component {
         {entity2 && !relation && (
           <EntityDetails
             entity2={entity2}
+            query={query}
             entity2RelationsPage={entity2RelationsPage}
             handleEntityRelationsPage={page => this.handleEntityRelationsPage(page)}
             entity2Relations={entity2RelationsFiltered}
