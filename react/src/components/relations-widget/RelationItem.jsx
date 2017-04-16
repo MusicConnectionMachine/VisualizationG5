@@ -19,16 +19,17 @@ export default class RelationItem extends React.Component {
         <Row
           onMouseOver={() => this.setState({ mouseOver: true })}
           onMouseOut={() => this.setState({ mouseOver: false })}
+          className="relation-item__row"
         >
           <Col
             id={'_' + relation.id}
-            style={{ cursor: 'pointer' }}
+            className="relation-item__relation"
             onClick={() => this.props.showRelationDetails(relation)}
             dangerouslySetInnerHTML={createHighlightedText(query, relation.relation)}
           />
           <Col
             id={'__' + relation.id}
-            style={{ cursor: 'pointer' }}
+            className="relation-item__entity"
             onClick={() => this.props.showEntity2Details(relation.entity2)}
             dangerouslySetInnerHTML={createHighlightedText(query, relation.entity2)}
           />

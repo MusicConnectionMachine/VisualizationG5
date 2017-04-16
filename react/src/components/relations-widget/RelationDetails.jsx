@@ -48,56 +48,56 @@ export default class RelationDetails extends React.Component {
 
     return (
       <div id="popoverTarget" className={`relation-widget__body ${className}`}>
-          <Row>
+        <div className="relation-item">
+          <Row className="relation-item__row">
             <Col>
-              <div className={`relation-item `}>
                 {relation.relation}
-              </div>
             </Col>
             <Col>
               {displayEntities.length > 0 &&
               <div
                 key={displayEntities[0].id} id={'_' + displayEntities[0].id}
-                className={`relation-item `}
                 dangerouslySetInnerHTML={createHighlightedText(query, displayEntities[0].entity2)}
               />
               }
             </Col>
           </Row>
-
-          <Row className="relation-widget-list__item">
+        </div>
+        <div className="relation-item">
+          <Row className="relation-widget-list__item relation-item__row">
             <Col>
-              <div className={`relation-item`}>
-                <p
+                <span
                   onClick={() => this.props.showRelationList()}
                   style={{ color: '#0275d8', cursor: 'pointer' }}
                 >
                   {`< Go Back to All Relations`}
-                </p>
-              </div>
+                </span>
             </Col>
             <Col>
               {displayEntities.length > 1 &&
               <div
-                key={displayEntities[1].id} id={'_' + displayEntities[1].id}
-                className={`relation-item`}
+                key={displayEntities[1].id}
+                id={'_' + displayEntities[1].id}
                 dangerouslySetInnerHTML={createHighlightedText(query, displayEntities[1].entity2)}
               />
               }
             </Col>
           </Row>
+        </div>
           {_.map(displayEntities, (entity, index) => {
             return index > 1
-              ? <Row key={entity.id} >
+              ? <div className="relation-item">
+                <Row key={entity.id} className="relation-item__row">
                   <Col> {null} </Col>
                   <Col>
                     <div
                       id={'_' + entity.id}
-                      className={`relation-item relation-widget-list__item`}
+                      className={`relation-widget-list__item`}
                       dangerouslySetInnerHTML={createHighlightedText(query, entity.entity2)}
                     />
                   </Col>
                 </Row>
+              </div>
               : null;
           })}
         <Pagination style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
