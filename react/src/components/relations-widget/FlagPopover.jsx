@@ -23,7 +23,11 @@ export default class FlagPopover extends React.Component {
         isOpen={isOpen}
       >
         <PopoverTitle className="popover__title">
-          <span style={{ float: 'right', cursor: 'pointer', color: '#0275d8' }} onClick={() => close()}> Close </span>
+          <Button
+            onClick={() => close()}
+            color="link"
+            className="popover__close-button close-icon"
+          />
           Report a problem
         </PopoverTitle>
         <PopoverContent className="popover__content">

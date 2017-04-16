@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Popover, PopoverTitle, PopoverContent, Button } from 'reactstrap';
 
 
 export default class SharePopover extends React.Component {
@@ -22,7 +22,11 @@ export default class SharePopover extends React.Component {
         isOpen={isOpen}
       >
         <PopoverTitle className="popover__title">
-          <span style={{ float: 'right', cursor: 'pointer', color: '#0275d8' }} onClick={() => close()}> Close </span>
+          <Button
+            onClick={() => close()}
+            color="link"
+            className="popover__close-button close-icon"
+          />
           Share
         </PopoverTitle>
         <PopoverContent className="popover__content">

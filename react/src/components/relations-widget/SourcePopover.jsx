@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Popover, PopoverTitle, PopoverContent } from 'reactstrap';
+import { Popover, PopoverTitle, PopoverContent, Button } from 'reactstrap';
 
 
 export default class SourcePopover extends React.Component {
@@ -23,7 +23,11 @@ export default class SourcePopover extends React.Component {
         isOpen={isOpen}
       >
         <PopoverTitle className="popover__title">
-          <span style={{ float: 'right', cursor: 'pointer', color: '#0275d8' }} onClick={() => close()}> Close </span>
+          <Button
+            onClick={() => close()}
+            color="link"
+            className="popover__close-button close-icon"
+          />
           Sources
         </PopoverTitle>
         <PopoverContent className="popover__content">

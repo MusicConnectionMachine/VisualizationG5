@@ -8,3 +8,4 @@ Timeline Component
 * Flag icon: made by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver)
 * Source icon: made by [SimpleIcon](http://www.flaticon.com/authors/simpleicon)
 * Share icon: made by [Gregor Cresnar](http://www.flaticon.com/authors/gregor-cresnar)
+* Close icon: made by [Hadrien](http://www.flaticon.com/authors/hadrien)
