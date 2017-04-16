@@ -54,6 +54,9 @@ class Application extends React.Component {
     if (!query) {
       this.setState(state => ({
         query,
+        relationEntitiesPage: 1,
+        entity2RelationsPage: 1,
+        page: 1,
         relationsFiltered: state.relations,
         relationEntitiesFiltered: state.relationEntities,
         entity2RelationsFiltered: state.entity2Relations,
@@ -61,24 +64,25 @@ class Application extends React.Component {
     } else {
       this.setState({
         query,
-        relationEntitiesPage: 1,
-        entity2RelationsPage: 1,
       });
 
       if (this.state.relation) {
         this.setState(state => ({
+          relationEntitiesPage: 1,
           relationEntitiesFiltered: state.relationEntities.filter(entity => {
             return entity.entity2.toLowerCase().includes(query);
           }),
         }));
       } else if (this.state.entity2) {
         this.setState(state => ({
+          entity2RelationsPage: 1,
           entity2RelationsFiltered: state.entity2Relations.filter(relation => {
             return relation.relation.toLowerCase().includes(query);
           }),
         }));
       } else {
         this.setState(state => ({
+          page: 1,
           mainViewQuery: query,
           relationsFiltered: state.relations.filter(relation =>
             relation.relation.toLowerCase().includes(query) ||
@@ -124,13 +128,13 @@ class Application extends React.Component {
   showRelationDetails(relation) {
     this.setState({ relation });
     loadRelationEntities(relation)
-      .then(({ relationEntities }) => this.setState({ relationEntities, relationEntitiesFiltered: relationEntities, query: '' }));
+      .then(({ relationEntities }) => this.setState({ relationEntitiesPage: 1, relationEntities, relationEntitiesFiltered: relationEntities, query: '' }));
   }
 
   showEntity2Details(entity) {
     this.setState({ entity2: entity });
     loadEntityRelations(entity)
-      .then(({ entity2Relations }) => this.setState({ entity2Relations, entity2RelationsFiltered: entity2Relations, query: '' }));
+      .then(({ entity2Relations }) => this.setState({ entity2RelationsPage: 1, entity2Relations, entity2RelationsFiltered: entity2Relations, query: '' }));
   }
 
   showRelationList() {

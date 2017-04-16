@@ -47,8 +47,6 @@ export default class RelationDetails extends React.Component {
 
     return (
       <div id="popoverTarget" className={`relation-widget__body ${className}`}>
-        {displayEntities.length > 2 &&
-        <div>
           <Row>
             <Col>
               <div className={`relation-item `}>
@@ -56,12 +54,14 @@ export default class RelationDetails extends React.Component {
               </div>
             </Col>
             <Col>
+              {displayEntities.length > 0 &&
               <div
                 key={displayEntities[0].id} id={'_' + displayEntities[0].id}
                 className={`relation-item `}
               >
                 {displayEntities[0].entity2}
               </div>
+              }
             </Col>
           </Row>
 
@@ -77,12 +77,14 @@ export default class RelationDetails extends React.Component {
               </div>
             </Col>
             <Col>
+              {displayEntities.length > 1 &&
               <div
                 key={displayEntities[1].id} id={'_' + displayEntities[1].id}
                 className={`relation-item`}
               >
                 {displayEntities[1].entity2}
               </div>
+              }
             </Col>
           </Row>
           {_.map(displayEntities, (entity, index) => {
@@ -97,8 +99,6 @@ export default class RelationDetails extends React.Component {
                 </Row>
               : null;
           })}
-        </div>
-        }
         <Pagination style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           {new Array(numberPages).fill(undefined).map((____, index) =>
             <PaginationItem key={index}>
