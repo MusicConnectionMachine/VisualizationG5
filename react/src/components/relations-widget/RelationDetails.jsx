@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import createHighlightedText from './utils/createHighlightedText';
 
 const LIMIT = 5;
 const MAX_PAGES = 10;
@@ -40,7 +41,7 @@ export default class RelationDetails extends React.Component {
   }
 
   render() {
-    const { relationEntities, className, relationEntitiesPage, relation } = this.props;
+    const { relationEntities, query, className, relationEntitiesPage, relation } = this.props;
 
     const numberPages = Math.min(MAX_PAGES, Math.ceil(relationEntities.length / LIMIT));
     const displayEntities = relationEntities.slice((relationEntitiesPage - 1) * LIMIT, relationEntitiesPage * LIMIT);
@@ -58,9 +59,8 @@ export default class RelationDetails extends React.Component {
               <div
                 key={displayEntities[0].id} id={'_' + displayEntities[0].id}
                 className={`relation-item `}
-              >
-                {displayEntities[0].entity2}
-              </div>
+                dangerouslySetInnerHTML={createHighlightedText(query, displayEntities[0].entity2)}
+              />
               }
             </Col>
           </Row>
@@ -81,9 +81,8 @@ export default class RelationDetails extends React.Component {
               <div
                 key={displayEntities[1].id} id={'_' + displayEntities[1].id}
                 className={`relation-item`}
-              >
-                {displayEntities[1].entity2}
-              </div>
+                dangerouslySetInnerHTML={createHighlightedText(query, displayEntities[1].entity2)}
+              />
               }
             </Col>
           </Row>
@@ -92,9 +91,11 @@ export default class RelationDetails extends React.Component {
               ? <Row key={entity.id} >
                   <Col> {null} </Col>
                   <Col>
-                    <div id={'_' + entity.id} className={`relation-item relation-widget-list__item`}>
-                      {entity.entity2}
-                    </div>
+                    <div
+                      id={'_' + entity.id}
+                      className={`relation-item relation-widget-list__item`}
+                      dangerouslySetInnerHTML={createHighlightedText(query, entity.entity2)}
+                    />
                   </Col>
                 </Row>
               : null;
@@ -116,6 +117,7 @@ export default class RelationDetails extends React.Component {
 
 RelationDetails.propTypes = {
   handleRelationEntitiesPage: React.PropTypes.func.isRequired,
+  query: React.PropTypes.string,
   relationEntities: React.PropTypes.array.isRequired,
   className: React.PropTypes.string,
   showRelationList: React.PropTypes.func,

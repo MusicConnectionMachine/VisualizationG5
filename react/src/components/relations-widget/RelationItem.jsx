@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Row, Col } from 'reactstrap';
+import createHighlightedText from './utils/createHighlightedText';
 
 
 export default class RelationItem extends React.Component {
@@ -8,15 +9,6 @@ export default class RelationItem extends React.Component {
     this.state = {
       mouseOver: false,
     };
-    this.createHighlightedText = this.createHighlightedText.bind(this);
-  }
-
-  createHighlightedText(query, text) {
-    if (query.length >= 2) {
-      const regex = new RegExp('(' + query + ')', 'gi');
-      return { __html: text.replace(regex, '<span class="highlight">$1</span>') };
-    }
-    return { __html: text };
   }
 
   render() {
@@ -28,18 +20,17 @@ export default class RelationItem extends React.Component {
           onMouseOver={() => this.setState({ mouseOver: true })}
           onMouseOut={() => this.setState({ mouseOver: false })}
         >
-          <Col id={'_' + relation.id} >
-            <span
-              style={{ cursor: 'pointer' }}
-              onClick={() => this.props.showRelationDetails(relation)}
-              dangerouslySetInnerHTML={this.createHighlightedText(query, relation.relation)}
-            />
-          </Col>
+          <Col
+            id={'_' + relation.id}
+            style={{ cursor: 'pointer' }}
+            onClick={() => this.props.showRelationDetails(relation)}
+            dangerouslySetInnerHTML={createHighlightedText(query, relation.relation)}
+          />
           <Col
             id={'__' + relation.id}
             style={{ cursor: 'pointer' }}
             onClick={() => this.props.showEntity2Details(relation.entity2)}
-            dangerouslySetInnerHTML={this.createHighlightedText(query, relation.entity2)}
+            dangerouslySetInnerHTML={createHighlightedText(query, relation.entity2)}
           />
           <Col style={ this.state.mouseOver ? {} : { visibility: 'hidden' } }>
             <Button
