@@ -34,6 +34,11 @@ export default class RelationItem extends React.Component {
           />
           <Col style={ this.state.mouseOver ? {} : { visibility: 'hidden' } }>
             <Button
+              onClick={() => this.props.toggleSharePopover(relation)}
+              color="link"
+              className="relation-item__button share-icon"
+            />
+            <Button
               onClick={() => this.props.toggleSourcePopover(relation)}
               color="link"
               className="relation-item__button reference-icon"
@@ -57,6 +62,7 @@ RelationItem.propTypes = {
   className: React.PropTypes.string,
   toggleFlagPopover: React.PropTypes.func,
   toggleSourcePopover: React.PropTypes.func,
+  toggleSharePopover: React.PropTypes.func,
   showRelationDetails: React.PropTypes.func,
   showEntity2Details: React.PropTypes.func,
 };

@@ -5,6 +5,7 @@ import { Pagination, PaginationItem, PaginationLink, Alert } from 'reactstrap';
 import RelationItem from './RelationItem';
 import FlagPopover from './FlagPopover';
 import SourcePopover from './SourcePopover';
+import SharePopover from './SharePopover';
 
 const LIMIT = 5;
 const MAX_PAGES = 10;
@@ -14,6 +15,7 @@ export default class RelationList extends React.Component {
     super(props);
     this.toggleSourcePopover = this.toggleSourcePopover.bind(this);
     this.toggleFlagPopover = this.toggleFlagPopover.bind(this);
+    this.toggleSharePopover = this.toggleSharePopover.bind(this);
     this.closePopover = this.closePopover.bind(this);
 
     this.state = {
@@ -23,7 +25,9 @@ export default class RelationList extends React.Component {
         },
         flagPopover: {
           isOpen: false,
-          content: '',
+        },
+        sharePopover: {
+          isOpen: false,
         },
         selectedRelation: {
           sources: [],
@@ -49,6 +53,9 @@ export default class RelationList extends React.Component {
             flagPopover: {
               isOpen: false,
             },
+            sharePopover: {
+              isOpen: false,
+            },
             selectedRelation: relation,
           },
         }
@@ -65,7 +72,9 @@ export default class RelationList extends React.Component {
         },
         flagPopover: {
           isOpen: false,
-          content: '',
+        },
+        sharePopover: {
+          isOpen: false,
         },
         selectedRelation: {
           sources: [],
@@ -82,7 +91,31 @@ export default class RelationList extends React.Component {
             flagPopover: {
               isOpen: !_.isEqual(relation, prevState.popover.selectedRelation) ||
                       !prevState.popover.flagPopover.isOpen,
-              content: relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2,
+            },
+            sourcePopover: {
+              isOpen: false,
+            },
+            sharePopover: {
+              isOpen: false,
+            },
+            selectedRelation: relation,
+          },
+        }
+      );
+    });
+  }
+
+  toggleSharePopover(relation = {}) {
+    this.setState(prevState => {
+      return _.merge({}, prevState,
+        {
+          popover: {
+            sharePopover: {
+              isOpen: !_.isEqual(relation, prevState.popover.selectedRelation) ||
+                      !prevState.popover.sharePopover.isOpen,
+            },
+            flagPopover: {
+              isOpen: false,
             },
             sourcePopover: {
               isOpen: false,
@@ -125,6 +158,7 @@ export default class RelationList extends React.Component {
             showEntity2Details={this.props.showEntity2Details}
             toggleSourcePopover={this.toggleSourcePopover}
             toggleFlagPopover={this.toggleFlagPopover}
+            toggleSharePopover={this.toggleSharePopover}
             query={this.props.query}
             key={relation.id}
             className={ index !== 0 ? 'relation-widget-list__item' : '' }
@@ -144,7 +178,7 @@ export default class RelationList extends React.Component {
         <FlagPopover
           target={'relation-popover-target'}
           isOpen={this.state.popover.flagPopover.isOpen}
-          content={this.state.popover.flagPopover.content}
+          relation={this.state.popover.selectedRelation}
           handleSubmit={this.handleReport.bind(this)}
           close={this.closePopover}
         />
@@ -152,6 +186,12 @@ export default class RelationList extends React.Component {
           target={'relation-popover-target'}
           isOpen={this.state.popover.sourcePopover.isOpen}
           sources={this.state.popover.selectedRelation.sources}
+          close={this.closePopover}
+        />
+        <SharePopover
+          target={'relation-popover-target'}
+          isOpen={this.state.popover.sharePopover.isOpen}
+          relation={this.state.popover.selectedRelation}
           close={this.closePopover}
         />
         <Alert

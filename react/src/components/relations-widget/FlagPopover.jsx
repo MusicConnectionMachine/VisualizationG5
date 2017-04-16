@@ -11,9 +11,9 @@ export default class FlagPopover extends React.Component {
     const {
       target,
       isOpen,
-      content,
       handleSubmit,
       close,
+      relation,
     } = this.props;
 
     return (
@@ -28,7 +28,7 @@ export default class FlagPopover extends React.Component {
         </PopoverTitle>
         <PopoverContent className="popover__content">
           <p>You are about to report the following relationship:</p>
-          <span> {content} </span>
+          <span> {relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2} </span>
           <Input
             style={{ fontSize: '14px', width: '300px', margin: '0 auto' }}
             placeholder="Optional comment..."
@@ -52,7 +52,7 @@ export default class FlagPopover extends React.Component {
 FlagPopover.propTypes = {
   target: React.PropTypes.string,
   isOpen: React.PropTypes.bool,
-  content: React.PropTypes.string,
   handleSubmit: React.PropTypes.func,
   close: React.PropTypes.func,
+  relation: React.PropTypes.object,
 };
