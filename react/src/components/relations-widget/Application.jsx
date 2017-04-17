@@ -100,8 +100,8 @@ class Application extends React.Component {
         relation.entity1,
         relation.relation,
         relation.entity2,
-        relation.source.text,
-        relation.source.url,
+        relation.sources[0].text,
+        relation.sources[0].url,
       ]),
     });
     Utils.download('relations.csv', csv, 'text/csv');
