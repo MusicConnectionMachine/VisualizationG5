@@ -42,6 +42,7 @@ export default class RelationsDataService {
 
 
   static _getEndpointUrl(entityId, entityType) {
-    return `/${entityType}/${entityId}/relationships`;
+    const entityUrl = `${entityType}s`;
+    return `/${entityUrl}/${entityId}/relationships`;
   }
 }
