@@ -5,10 +5,8 @@ import Utils from '../../Utils';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
 import RelationDetails from './RelationDetails';
+import RelationsDataService from './remote/RelationsDataService';
 import EntityDetails from './EntityDetails';
-import loadRelations from './remote/loadRelations';
-import loadRelationEntities from './remote/loadRelationEntities';
-import loadEntityRelations from './remote/loadEntityRelations';
 import '../../../scss/relations-widget.scss';
 
 class Application extends React.Component {
@@ -34,6 +32,7 @@ class Application extends React.Component {
       query: '',
       mainViewQuery: '',
     };
+    this.dataService = new RelationsDataService(/* TODO See RelationsDataService:6 */);
 
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onFullScreenClick = this.onFullScreenClick.bind(this);
@@ -41,8 +40,7 @@ class Application extends React.Component {
   }
 
   componentWillMount() {
-    const { entity } = this.props;
-    loadRelations(entity).then(data => {
+    this.dataService.loadRelations().then((data) => {
       this.setState({
         relations: data.relations,
         relationsFiltered: data.relations,
@@ -127,13 +125,13 @@ class Application extends React.Component {
 
   showRelationDetails(relation) {
     this.setState({ relation });
-    loadRelationEntities(relation)
+    this.dataService.loadRelations({ relation })
       .then(({ relationEntities }) => this.setState({ relationEntitiesPage: 1, relationEntities, relationEntitiesFiltered: relationEntities, query: '' }));
   }
 
   showEntity2Details(entity) {
     this.setState({ entity2: entity });
-    loadEntityRelations(entity)
+    this.dataService.loadRelations({ object: entity })
       .then(({ entity2Relations }) => this.setState({ entity2RelationsPage: 1, entity2Relations, entity2RelationsFiltered: entity2Relations, query: '' }));
   }
 
