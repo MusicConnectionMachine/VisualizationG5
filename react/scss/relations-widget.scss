@@ -1,5 +1,12 @@
 @import 'variables';
 
+.popover.bs-tether-element.show.bs-tether-element-attached-bottom.bs-tether-element-attached-center.bs-tether-target-attached-top.bs-tether-target-attached-center::before {
+  display: none;
+}
+
+.popover.bs-tether-element.show.bs-tether-element-attached-bottom.bs-tether-element-attached-center.bs-tether-target-attached-top.bs-tether-target-attached-center::after {
+  display: none;
+}
 // Override variables here
 $control-bar-height: (
   xs: 90px,
