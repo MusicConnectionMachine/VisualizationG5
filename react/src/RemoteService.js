@@ -1,5 +1,4 @@
-// const HOST_URL = 'http://mcmapi.azurewebsites.net';
-const HOST_URL = 'http://127.0.0.1:10010';
+const HOST_URL = 'http://mcmapi.azurewebsites.net';
 const API_KEY = 'not so secret';
 
 

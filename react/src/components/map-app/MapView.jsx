@@ -8,6 +8,10 @@ import iconShadow from '../../../node_modules/leaflet/dist/images/marker-shadow.
 import MarkersList from './MarkersList';
 
 
+const MAPBOX_AUTH_TOKEN = 'pk.eyJ1IjoieXNkZXZ5cyIsImEiOiJjajByMWljMncwMWp3MnFyeG5oNGdrNTltIn0.7bSRbrkT1zy3kYvXvWNgMw';
+const MAPBOX_URL = `https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=${MAPBOX_AUTH_TOKEN}`;
+
+
 const DefaultIcon = L.icon({
   iconUrl: icon,
   shadowUrl: iconShadow,
@@ -59,7 +63,7 @@ export default class MapView extends React.Component {
             maxZoom={17} minZoom={2} ref={(map) => { this.map = map; }}
           >
             <TileLayer
-              url={'https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoieXNkZXZ5cyIsImEiOiJjajByMWljMncwMWp3MnFyeG5oNGdrNTltIn0.7bSRbrkT1zy3kYvXvWNgMw'}
+              url={MAPBOX_URL}
             />
             <MarkersList markers={this.props.markers} />
           </Map>
