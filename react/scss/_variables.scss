@@ -1,0 +1,17 @@
+$used-grid-breakpoints: xs sm md;
+$control-bar-height: (
+  xs: 80px,
+  sm: 40px,
+  md: 40px
+);
+$control-bar__title-align: (
+  xs: center,
+  sm: left,
+  md: left
+);
+$control-bar__search-field-padding-right: (
+  xs: 0px,
+  sm: 60px,
+  md: 60px
+);
+$full-screen-padding: 20px;
