@@ -68,7 +68,7 @@ $control-bar__title-align: (
 
 // Popover
 .popover {
-  max-width: 460px;
+  max-width: 660px;
 }
 
 .popover__title {
@@ -83,6 +83,9 @@ $control-bar__title-align: (
   width: 400px;
   background-color: #F4F4F4;
   overflow-y: auto;
+  &--source {
+    width: 600px;
+  }
   span {
     display: block;
     font-weight: 800;
