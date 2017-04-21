@@ -128,7 +128,7 @@ export default class TimelineComponent extends React.Component {
   render() {
     return (
       <div>
-        <div className="timeline__body" ref="visTimeline" />
+        <div className="widget__body timeline__body" ref="visTimeline" />
         {this.state.timelineReady && this.props.events.map(({ id, start, description }) => (
           <ReactTooltip id={`timeline__body__tooltip__${id}`} key={id}>
             <p className="timeline__body__tooltip__date">

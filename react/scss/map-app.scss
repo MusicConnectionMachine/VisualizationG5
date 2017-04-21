@@ -1,0 +1,22 @@
+@import 'common';
+
+.leaflet-container {
+    height: 300px;
+    width: 100%;
+}
+
+.map__city-selection {
+  width: 100%;
+
+  button, div {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+.widget--full-screen {
+  .leaflet-container {
+    height: 100%;
+  }
+}
