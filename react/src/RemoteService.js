@@ -18,16 +18,15 @@ export default class RemoteService {
       url += params.join('&');
 
       const http = new window.XMLHttpRequest();
+      http.timeout = 5000;
       http.open('GET', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.setRequestHeader('API-KEY', API_KEY);
       http.onreadystatechange = function onreadystatechange() {
-        if (http.readyState === 4 && http.status === 200) {
-          if (http.status === 200) {
-            resolve(http.response);
-          } else {
-            reject(http.statusText);
-          }
+        if (http.status === 200) {
+          resolve(http.response);
+        } else {
+          reject(http.statusText);
         }
       };
       http.onerror = reject;

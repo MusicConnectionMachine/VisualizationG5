@@ -23,6 +23,7 @@ class Application extends React.Component {
       mainViewPage: 1,
       shouldShowEntityDetails: false,
       shouldShowRelationDetails: false,
+      errorMode: false,
     };
 
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -78,12 +79,15 @@ class Application extends React.Component {
   loadAllRelations() {
     const { entity } = this.props;
 
-    this.relationDataService.loadRelations({ entity }).then(data => {
-      this.setState({
-        relations: data.relations,
-        relationsFiltered: data.relations,
-      });
-    });
+    this.relationDataService.loadRelations({ entity })
+      .then(data => {
+        this.setState({
+          relations: data.relations,
+          relationsFiltered: data.relations,
+          errorMode: false,
+        });
+      })
+      .catch(() => this.setState({ errorMode: true }));
   }
 
   isDetailsView() {
@@ -106,6 +110,7 @@ class Application extends React.Component {
           query: '',
           mainViewQuery: !this.isDetailsView() ? state.query : state.mainViewQuery,
           mainViewPage: !this.isDetailsView() ? state.page : state.mainViewPage,
+          errorMode: false,
         }));
       });
   }
@@ -122,6 +127,7 @@ class Application extends React.Component {
           query: '',
           mainViewQuery: !this.isDetailsView() ? state.query : state.mainViewQuery,
           mainViewPage: !this.isDetailsView() ? state.page : state.mainViewPage,
+          errorMode: false,
         }));
       });
   }
@@ -144,47 +150,52 @@ class Application extends React.Component {
       entity,
       shouldShowEntityDetails,
       shouldShowRelationDetails,
+      errorMode,
     } = this.state;
 
     return (
-      <div className={`widget ${fullScreenMode ? 'widget--full-screen' : ''}`}>
-        <div className="widget__control-bar row">
-          <h5 className="widget__control-bar__title col-4 col-sm-3 col-md-3">
-            { entity }
-          </h5>
-          <div className="col-12 col-sm-8 col-md-6 widget__control-bar__search-field">
-            <SearchField
-              query={query}
-              className="relation-widget__search__field"
-              handleSearchChange={this.onSearchChange}
-            />
+        <div className={`widget ${fullScreenMode ? 'widget--full-screen' : ''}`}>
+          <div className="widget__control-bar row">
+            <h5 className="widget__control-bar__title col-4 col-sm-3 col-md-3">
+              { entity }
+            </h5>
+            <div className="col-12 col-sm-8 col-md-6 widget__control-bar__search-field">
+              <SearchField
+                query={query}
+                className="relation-widget__search__field"
+                handleSearchChange={this.onSearchChange}
+              />
+            </div>
+            <a href="#">
+              <div
+                className="widget__control-bar__button widget__control-bar__full-button"
+                onClick={this.onFullScreenClick}
+              />
+            </a>
+            <a href="#">
+              <div
+                className="widget__control-bar__button widget__control-bar__download-button"
+                onClick={this.onDownloadCsvClick}
+              />
+            </a>
           </div>
-          <a href="#">
-            <div
-              className="widget__control-bar__button widget__control-bar__full-button"
-              onClick={this.onFullScreenClick}
+          {errorMode && (
+            <p style={{ textAlign: 'center', marginTop: '50px' }}> We're sorry. Something went wrong on our end! </p>
+          )}
+          {(!errorMode &&
+            <RelationList
+              relations={relationsFiltered}
+              page={this.state.page}
+              query={query}
+              className="widget__body"
+              showRelationDetails={_relation => this.showRelationDetails(_relation)}
+              showEntityDetails={_entity => this.showEntityDetails(_entity)}
+              showRelationList={() => this.showRelationList()}
+              handlePageChange={(page) => this.handlePageChange(page)}
+              isRelationDetails={shouldShowRelationDetails && !shouldShowEntityDetails}
+              isEntityDetails={shouldShowEntityDetails && !shouldShowRelationDetails}
             />
-          </a>
-          <a href="#">
-            <div
-              className="widget__control-bar__button widget__control-bar__download-button"
-              onClick={this.onDownloadCsvClick}
-            />
-          </a>
-        </div>
-        <RelationList
-          relations={relationsFiltered}
-          page={this.state.page}
-          query={query}
-          className="widget__body"
-
-          showRelationDetails={_relation => this.showRelationDetails(_relation)}
-          showEntityDetails={_entity => this.showEntityDetails(_entity)}
-          showRelationList={() => this.showRelationList()}
-          handlePageChange={(page) => this.handlePageChange(page)}
-          isRelationDetails={shouldShowRelationDetails && !shouldShowEntityDetails}
-          isEntityDetails={shouldShowEntityDetails && !shouldShowRelationDetails}
-        />
+          )}
       </div>
     );
   }

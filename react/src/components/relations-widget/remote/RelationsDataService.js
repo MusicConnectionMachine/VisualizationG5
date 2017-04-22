@@ -30,7 +30,11 @@ export default class RelationsDataService {
       return loadRelations(entity);
     }
 
-    return RemoteService.get(this.endpointUrl, params).then(RelationsDataService._transform);
+    return RemoteService.get(this.endpointUrl, params)
+      .then(RelationsDataService._transform)
+      .catch(() => {
+        throw new Error('Server error');
+      });
   }
 
 
