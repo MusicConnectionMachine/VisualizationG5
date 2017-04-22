@@ -12,7 +12,40 @@ export default class RelationItem extends React.Component {
   }
 
   render() {
-    const { relation, className, query } = this.props;
+    const {
+      relation,
+      className,
+      query,
+      isRelationDetails,
+      isEntityDetails,
+      index,
+    } = this.props;
+
+    const optionsCol1 = {};
+    optionsCol1.dangerouslySetInnerHTML = createHighlightedText(query, relation.relation);
+    if (isRelationDetails) {
+      if (index === 1) {
+        optionsCol1.dangerouslySetInnerHTML = {
+          __html: '<span style="color: #0275d8">< Go Back to All Relations</span>',
+        };
+      }
+      if (index > 1) {
+        optionsCol1.dangerouslySetInnerHTML = { __html: null };
+      }
+    }
+
+    const optionsCol2 = {};
+    optionsCol2.dangerouslySetInnerHTML = createHighlightedText(query, relation.entity2);
+    if (isEntityDetails) {
+      if (index === 1) {
+        optionsCol2.dangerouslySetInnerHTML = {
+          __html: '<span style="color: #0275d8">< Go Back to All Relations</span>',
+        };
+      }
+      if (index > 1) {
+        optionsCol2.dangerouslySetInnerHTML = { __html: null };
+      }
+    }
 
     return (
       <div className={`relation-item ${className}`}>
@@ -24,14 +57,26 @@ export default class RelationItem extends React.Component {
           <Col
             id={'_' + relation.id}
             className="relation-item__relation"
-            onClick={() => this.props.showRelationDetails(relation)}
-            dangerouslySetInnerHTML={createHighlightedText(query, relation.relation)}
+            onClick={() => {
+              if (isRelationDetails && index === 1) {
+                this.props.showRelationList();
+              } else {
+                this.props.showRelationDetails(relation.relation);
+              }
+            }}
+            {...optionsCol1}
           />
           <Col
             id={'__' + relation.id}
             className="relation-item__entity"
-            onClick={() => this.props.showEntity2Details(relation.entity2)}
-            dangerouslySetInnerHTML={createHighlightedText(query, relation.entity2)}
+            onClick={() => {
+              if (isEntityDetails && index === 1) {
+                this.props.showRelationList();
+              } else {
+                this.props.showEntityDetails(relation.entity2);
+              }
+            }}
+            {...optionsCol2}
           />
           <Col style={ this.state.mouseOver ? {} : { visibility: 'hidden' } }>
             <Button
@@ -65,5 +110,10 @@ RelationItem.propTypes = {
   toggleSourcePopover: React.PropTypes.func,
   toggleSharePopover: React.PropTypes.func,
   showRelationDetails: React.PropTypes.func,
-  showEntity2Details: React.PropTypes.func,
+  showEntityDetails: React.PropTypes.func,
+  showRelationList: React.PropTypes.func,
+  isEntityDetails: React.PropTypes.bool,
+  isRelationDetails: React.PropTypes.bool,
+  index: React.PropTypes.number,
+  goToFullRelationList: React.PropTypes.func,
 };

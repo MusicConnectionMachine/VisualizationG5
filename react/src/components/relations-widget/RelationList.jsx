@@ -148,26 +148,34 @@ export default class RelationList extends React.Component {
 
   render() {
     const {
-      relations,
+      query,
       className,
+      relations,
       page,
       handlePageChange,
+      isRelationDetails,
+      isEntityDetails,
     } = this.props;
 
     const displayRelations = relations.slice((page - 1) * LIMIT, page * LIMIT);
+
     return (
       <div className={`relation-widget__body ${className}`}>
         {_.map(displayRelations, (relation, index) =>
           <RelationItem
             showRelationDetails={this.props.showRelationDetails}
-            showEntity2Details={this.props.showEntity2Details}
+            showEntityDetails={this.props.showEntityDetails}
+            showRelationList={this.props.showRelationList}
             toggleSourcePopover={this.toggleSourcePopover}
             toggleFlagPopover={this.toggleFlagPopover}
             toggleSharePopover={this.toggleSharePopover}
-            query={this.props.query}
+            query={query}
             key={relation.id}
             className={ index !== 0 ? 'relation-widget-list__item' : '' }
             relation={relation}
+            isRelationDetails={isRelationDetails}
+            isEntityDetails={isEntityDetails}
+            index={index}
           />
         )}
         <PaginationComponent
@@ -208,6 +216,10 @@ export default class RelationList extends React.Component {
   }
 }
 
+RelationList.defaultProps = {
+  isRelationDetails: false,
+  isEntityDetails: false,
+};
 
 RelationList.propTypes = {
   relations: React.PropTypes.array.isRequired,
@@ -215,6 +227,9 @@ RelationList.propTypes = {
   className: React.PropTypes.string,
   handlePageChange: React.PropTypes.func,
   showRelationDetails: React.PropTypes.func,
-  showEntity2Details: React.PropTypes.func,
+  showEntityDetails: React.PropTypes.func,
+  showRelationList: React.PropTypes.func,
   page: React.PropTypes.number,
+  isRelationDetails: React.PropTypes.bool,
+  isEntityDetails: React.PropTypes.bool,
 };

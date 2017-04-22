@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pagination, PaginationItem, PaginationLink} from 'reactstrap';
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 export default class PaginationComponent extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export default class PaginationComponent extends React.Component {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          marginTop: '20px'
+          marginTop: '20px',
         }}
       >
         {new Array(numberPages).fill(undefined).map((____, index) =>
@@ -32,7 +32,7 @@ export default class PaginationComponent extends React.Component {
               style={ index + 1 === currentPage ?
                 {
                   backgroundColor: '#DDDDDD',
-                  fontColor: '#004d90'
+                  fontColor: '#004d90',
                 } : {}}
               href="#"
               onClick={() => handlePageChange(index + 1)}
