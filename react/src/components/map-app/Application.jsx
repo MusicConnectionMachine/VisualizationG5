@@ -27,7 +27,7 @@ class Application extends React.Component {
 
 
   componentWillMount() {
-    MapDataService._getMockPlaces().then((places) => {
+    this.dataService.loadPlaces().then((places) => {
       const cityMap = new Map(places.map(place => [place.city, place]));
       const cities = Array.from(cityMap.values()).sort((c1, c2) => {
         if (c1.city < c2.city) {
