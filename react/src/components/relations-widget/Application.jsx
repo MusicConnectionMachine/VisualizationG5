@@ -147,7 +147,6 @@ class Application extends React.Component {
       relationsFiltered,
       fullScreenMode,
       query,
-      entity,
       shouldShowEntityDetails,
       shouldShowRelationDetails,
       errorMode,
@@ -157,7 +156,7 @@ class Application extends React.Component {
         <div className={`widget ${fullScreenMode ? 'widget--full-screen' : ''}`}>
           <div className="widget__control-bar row">
             <h5 className="widget__control-bar__title col-4 col-sm-3 col-md-3">
-              { entity }
+              { this.props.entity }
             </h5>
             <div className="col-12 col-sm-8 col-md-6 widget__control-bar__search-field">
               <SearchField

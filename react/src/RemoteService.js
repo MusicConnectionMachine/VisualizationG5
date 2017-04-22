@@ -21,10 +21,12 @@ export default class RemoteService {
       http.open('GET', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.onreadystatechange = function onreadystatechange() {
-        if (http.status === 200) {
-          resolve(http.response);
-        } else {
-          reject(http.statusText);
+        if (http.readyState === 4) {
+          if (http.status === 200) {
+            resolve(http.response);
+          } else {
+            reject(http.statusText);
+          }
         }
       };
       http.onerror = reject;
