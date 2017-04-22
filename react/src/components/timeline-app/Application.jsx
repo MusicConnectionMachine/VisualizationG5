@@ -89,7 +89,7 @@ class Application extends React.Component {
               />
             </a>
           </div>
-          <TimelineComponent events={ this.state.selectedEvents }/>
+          <TimelineComponent events={this.state.selectedEvents} />
         </div>
       );
     }
@@ -100,11 +100,6 @@ class Application extends React.Component {
     );
   }
 }
-
-
-Application.propTypes = {
-  host: React.PropTypes.string.isRequired,
-};
 
 
 export default Application;
