@@ -1,6 +1,7 @@
-import MockDataService from './MockDataService';
 import Papa from 'papaparse';
 import React from 'react';
+import MockDataService from './MockDataService';
+import DataService from './DataService';
 import TimelineComponent from './TimelineComponent';
 import Utils from '../../Utils';
 
@@ -13,6 +14,9 @@ class Application extends React.Component {
       selectedEvents: null,
       fullScreenMode: false,
     };
+    const CurrentDataService
+      = process.env.NODE_ENV === 'dev-mockups' ? MockDataService : DataService;
+    this.dataService = new CurrentDataService(props.entityId, props.entityType);
     this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);
     this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -20,7 +24,7 @@ class Application extends React.Component {
 
 
   componentWillMount() {
-    MockDataService.fetchData(null).then((data) => {
+    this.dataService.fetchData(null).then((data) => {
       data.events.forEach((event, i) => {
         event.id = i;
         event.start = new Date(event.start);
@@ -100,6 +104,12 @@ class Application extends React.Component {
     );
   }
 }
+
+
+Application.propTypes = {
+  entityId: React.PropTypes.string.isRequired,
+  entityType: React.PropTypes.string.isRequired,
+};
 
 
 export default Application;

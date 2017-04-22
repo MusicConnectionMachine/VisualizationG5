@@ -125,9 +125,4 @@ class Application extends React.Component {
 }
 
 
-Application.propTypes = {
-  host: React.PropTypes.string.isRequired,
-};
-
-
 export default Application;

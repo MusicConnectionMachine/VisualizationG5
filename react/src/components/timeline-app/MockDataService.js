@@ -47,12 +47,7 @@ const EVENTS = [
 
 
 export default class MockDataService {
-  /**
-   * @param {number} entityId
-   * @return {Promise}
-   */
-  /* eslint-disable no-unused-vars */
-  static fetchData(entityId) {
+  fetchData() { // eslint-disable-line
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
