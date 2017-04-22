@@ -56,7 +56,7 @@ class Application extends React.Component {
     } else {
       this.setState({
         selectedEvents: this.state.data.events.filter(event =>
-          event.title.toLowerCase().includes(value) || (event.description && event.description.toLowerCase().includes(value))),
+        event.title.toLowerCase().includes(value) || (event.description && event.description.toLowerCase().includes(value))),
       });
     }
   }

@@ -1,8 +1,14 @@
-FROM node
-COPY mock_data/ /VisualizationG5/mock_data/
-COPY express/ /VisualizationG5/express/
-WORKDIR /VisualizationG5/express/
-RUN yarn global add forever
-RUN yarn install
-EXPOSE 3000
-CMD ["npm", "run", "prod-fg"]
+FROM httpd
+ADD . /VisualizationG5/
+WORKDIR /VisualizationG5/
+RUN apt-get update
+RUN apt-get -y install wget
+RUN wget https://deb.nodesource.com/setup_7.x
+RUN bash setup_7.x
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
+RUN cd react && npm install && npm run build && cd ..
+RUN mkdir /usr/local/apache2/htdocs/widgets
+RUN mkdir /usr/local/apache2/htdocs/documentation
+RUN cp express/react/* /usr/local/apache2/htdocs/widgets
+RUN cp iFrame\ Widget/Dokumentation/* /usr/local/apache2/htdocs/documentation/

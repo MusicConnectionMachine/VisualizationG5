@@ -1,5 +1,4 @@
 const HOST_URL = 'http://mcmapi.azurewebsites.net';
-const API_KEY = 'not secure';
 
 
 export default class RemoteService {
@@ -21,7 +20,6 @@ export default class RemoteService {
       http.timeout = 5000;
       http.open('GET', url, true);
       http.setRequestHeader('Content-type', 'application/json');
-      http.setRequestHeader('API-KEY', API_KEY);
       http.onreadystatechange = function onreadystatechange() {
         if (http.status === 200) {
           resolve(http.response);

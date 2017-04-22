@@ -14,6 +14,7 @@ module.exports = {
     composersApp: './src/composers-app.js',
     relationsApp: './src/relations-app.js',
     relationsWidget: './src/relations-widget.js',
+    mapApp: './src/map-app.js',
   },
   output: {
     path: __dirname + '/../express/react',
@@ -87,6 +88,12 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['relationsWidget'],
+    }),
+      new HtmlWebpackPlugin({
+      filename: 'map-app.html',
+      template: 'index.html',
+      inject: 'body',
+      chunks: ['mapApp'],
     }),
   ],
   sassLoader: {
