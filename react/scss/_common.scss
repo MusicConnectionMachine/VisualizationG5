@@ -15,9 +15,19 @@
   position: relative;
 }
 
+.widget__control-bar.row {
+  height: 45px;
+}
+
 .widget__control-bar__search-field {
   padding: 0;
 }
+
+// Custom widget styles
+.relation-widget__search__field {
+  margin-top: 3px;
+}
+
 
 .widget__control-bar__title {
   margin: 0;
