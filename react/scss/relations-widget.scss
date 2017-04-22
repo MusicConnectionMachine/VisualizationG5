@@ -1,5 +1,12 @@
 @import 'variables';
 
+.popover.bs-tether-element.show.bs-tether-element-attached-bottom.bs-tether-element-attached-center.bs-tether-target-attached-top.bs-tether-target-attached-center::before {
+  display: none;
+}
+
+.popover.bs-tether-element.show.bs-tether-element-attached-bottom.bs-tether-element-attached-center.bs-tether-target-attached-top.bs-tether-target-attached-center::after {
+  display: none;
+}
 // Override variables here
 $control-bar-height: (
   xs: 90px,
@@ -61,7 +68,7 @@ $control-bar__title-align: (
 
 // Popover
 .popover {
-  max-width: 460px;
+  max-width: 660px;
 }
 
 .popover__title {
@@ -76,6 +83,9 @@ $control-bar__title-align: (
   width: 400px;
   background-color: #F4F4F4;
   overflow-y: auto;
+  &--source {
+    width: 600px;
+  }
   span {
     display: block;
     font-weight: 800;

@@ -30,7 +30,7 @@ export default class SourcePopover extends React.Component {
           />
           Sources
         </PopoverTitle>
-        <PopoverContent className="popover__content">
+        <PopoverContent className="popover__content popover__content--source">
           {_.map(sources, source =>
             <div className="popover__content__source-item" key={source.id}>
               <p>{source.text}</p>
