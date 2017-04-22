@@ -41,28 +41,34 @@ export default class SharePopover extends React.Component {
             className="popover__close-button close-icon"
           />
           Share
+          <Button className="popover__balance-button" />
         </PopoverTitle>
         <PopoverContent className="popover__content">
+          <div>
+            {'Just found on #MusicConnectionMachine:'}
+            <br />
+            {`${relation.entity1} ${relation.relation} ${relation.entity2}`}
+          </div>
           <FacebookShareButton
+            className="popover__content__share-button"
             url={url}
             title="MusicConnectionMachine"
             description={shareText}
-            style={{ cursor: 'pointer' }}
           >
-            <FacebookIcon size={50} />
+            <FacebookIcon size={64} />
           </FacebookShareButton>
           <TwitterShareButton
+            className="popover__content__share-button"
             url={url}
             title={shareText}
-            style={{ cursor: 'pointer' }}
           >
-            <TwitterIcon size={50} />
+            <TwitterIcon size={64} />
           </TwitterShareButton>
           <GooglePlusShareButton
+            className="popover__content__share-button"
             url={url}
-            style={{ cursor: 'pointer' }}
           >
-            <GooglePlusIcon size={50} />
+            <GooglePlusIcon size={64} />
           </GooglePlusShareButton>
         </PopoverContent>
       </Popover>

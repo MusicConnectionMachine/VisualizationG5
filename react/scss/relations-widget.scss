@@ -86,17 +86,24 @@ $control-bar__title-align: (
   &--source {
     width: 600px;
   }
-  span {
-    display: block;
-    font-weight: 800;
-    color: #4F7A90;
-    margin-bottom: 15px;
-  }
+}
+
+.popover__content__relation {
+  display: block;
+  font-weight: 800;
+  color: #4F7A90;
+  margin-bottom: 15px;
 }
 
 .popover__content__source-item {
   background-color: white;
   margin-bottom: 10px;
+}
+
+.popover__content__share-button {
+  cursor: pointer;
+  float: left;
+  margin: 30px;
 }
 
 .highlight {
@@ -116,6 +123,12 @@ $control-bar__title-align: (
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 18px 18px;
+}
+
+.popover__balance-button {
+  float: left;
+  visibility: hidden;
   background-size: 18px 18px;
 }
 

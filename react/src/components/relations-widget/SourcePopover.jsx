@@ -29,6 +29,7 @@ export default class SourcePopover extends React.Component {
             className="popover__close-button close-icon"
           />
           Sources
+          <Button className="popover__balance-button" />
         </PopoverTitle>
         <PopoverContent className="popover__content popover__content--source">
           {_.map(sources, source =>

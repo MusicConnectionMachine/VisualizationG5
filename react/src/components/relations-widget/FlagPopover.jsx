@@ -29,10 +29,11 @@ export default class FlagPopover extends React.Component {
             className="popover__close-button close-icon"
           />
           Report a problem
+          <Button className="popover__balance-button" />
         </PopoverTitle>
         <PopoverContent className="popover__content">
           <p>You are about to report the following relationship:</p>
-          <span> {relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2} </span>
+          <span className="popover__content__relation"> {relation.entity1 + ' ' + relation.relation + ' ' + relation.entity2} </span>
           <Input
             style={{ fontSize: '14px', width: '300px', margin: '0 auto' }}
             placeholder="Optional comment..."
