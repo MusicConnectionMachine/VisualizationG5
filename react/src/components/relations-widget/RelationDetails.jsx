@@ -1,7 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
-import { Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import createHighlightedText from './utils/createHighlightedText';
+import PaginationComponent from './PaginationComponent';
 
 const LIMIT = 5;
 const MAX_PAGES = 10;
@@ -41,9 +42,15 @@ export default class RelationDetails extends React.Component {
   }
 
   render() {
-    const { relationEntities, query, className, relationEntitiesPage, relation } = this.props;
+    const {
+      query,
+      className,
+      relationEntities,
+      relationEntitiesPage,
+      relation,
+      handleRelationEntitiesPage,
+    } = this.props;
 
-    const numberPages = Math.min(MAX_PAGES, Math.ceil(relationEntities.length / LIMIT));
     const displayEntities = relationEntities.slice((relationEntitiesPage - 1) * LIMIT, relationEntitiesPage * LIMIT);
 
     return (
@@ -100,15 +107,13 @@ export default class RelationDetails extends React.Component {
               </div>
               : null;
           })}
-        <Pagination style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-          {new Array(numberPages).fill(undefined).map((____, index) =>
-            <PaginationItem key={index}>
-              <PaginationLink style={ index + 1 === relationEntitiesPage ? { backgroundColor: '#DDDDDD', fontColor: '#004d90' } : {}} href="#" onClick={() => this.props.handleRelationEntitiesPage(index + 1)}>
-                {index + 1}
-              </PaginationLink>
-            </PaginationItem>
-          )}
-        </Pagination>
+        <PaginationComponent
+          currentPage={relationEntitiesPage}
+          itemCount={relationEntities.length}
+          handlePageChange={handleRelationEntitiesPage}
+          maxPages={MAX_PAGES}
+          itemsPerPage={LIMIT}
+        />
       </div>
     );
   }
