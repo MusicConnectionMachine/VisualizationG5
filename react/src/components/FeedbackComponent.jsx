@@ -21,9 +21,6 @@ export default function FeedbackComponent(props) {
           <button type="button" className="btn btn-secondary" onClick={onLiked}>
             Very interesting!
           </button>
-          <button type="button" className="btn btn-secondary" onClick={onDisliked}>
-            Less interesting!
-          </button>
           <button type="button" className="btn btn-secondary" onClick={onMarkedAsWrong}>
             Wrong information!
           </button>
@@ -36,6 +33,5 @@ export default function FeedbackComponent(props) {
 
 FeedbackComponent.propTypes = {
   onLiked: React.PropTypes.func.isRequired,
-  onDisliked: React.PropTypes.func.isRequired,
   onMarkedAsWrong: React.PropTypes.func.isRequired,
 };
