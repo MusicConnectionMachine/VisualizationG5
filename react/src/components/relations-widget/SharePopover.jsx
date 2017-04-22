@@ -1,6 +1,6 @@
 import React from 'react';
 import { Popover, PopoverTitle, PopoverContent, Button } from 'reactstrap';
-
+import { ShareButtons, generateShareIcon } from 'react-share';
 
 export default class SharePopover extends React.Component {
   constructor(props) {
@@ -14,6 +14,19 @@ export default class SharePopover extends React.Component {
       close,
       relation,
     } = this.props;
+
+    const {
+      FacebookShareButton,
+      GooglePlusShareButton,
+      TwitterShareButton,
+    } = ShareButtons;
+
+    const TwitterIcon = generateShareIcon('twitter');
+    const FacebookIcon = generateShareIcon('facebook');
+    const GooglePlusIcon = generateShareIcon('google');
+
+    const url = 'http://musicconnectionmachine.org/';
+    const shareText = `Just found on #MusicConnectionMachine: ${relation.entity1}  ${relation.relation} ${relation.entity2}`;
 
     return (
       <Popover
@@ -30,7 +43,27 @@ export default class SharePopover extends React.Component {
           Share
         </PopoverTitle>
         <PopoverContent className="popover__content">
-          <a href="https://twitter.com/share" data-text={`${relation.entity1}  ${relation.relation} ${relation.entity2}`} data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charSet="utf-8"></script>
+          <FacebookShareButton
+            url={url}
+            title="MusicConnectionMachine"
+            description={shareText}
+            style={{ cursor: 'pointer' }}
+          >
+            <FacebookIcon size={50} />
+          </FacebookShareButton>
+          <TwitterShareButton
+            url={url}
+            title={shareText}
+            style={{ cursor: 'pointer' }}
+          >
+            <TwitterIcon size={50} />
+          </TwitterShareButton>
+          <GooglePlusShareButton
+            url={url}
+            style={{ cursor: 'pointer' }}
+          >
+            <GooglePlusIcon size={50} />
+          </GooglePlusShareButton>
         </PopoverContent>
       </Popover>
     );
