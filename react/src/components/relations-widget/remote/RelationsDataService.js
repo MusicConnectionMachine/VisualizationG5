@@ -1,14 +1,14 @@
 import RemoteService from '../../../RemoteService';
+import loadRelations from '../remote/loadRelations';
 
 
 export default class RelationsDataService {
-  constructor(entityId, entityType) {
+  constructor(entityId, entityType) { // eslint-disable-line
     // TODO Need https://github.com/MusicConnectionMachine/api/issues/101 to be done.
     this.entityId = 123;
     this.entityType = 'artist';
     this.endpointUrl = RelationsDataService._getEndpointUrl(this.entityId, this.entityType);
   }
-
 
   loadRelations(opt) {
     const {
@@ -17,6 +17,7 @@ export default class RelationsDataService {
       offset,
       limit,
       query,
+      entity,
     } = opt || {};
     const params = new Map();
     if (relation) params.set('relation', relation);
@@ -24,6 +25,11 @@ export default class RelationsDataService {
     if (offset) params.set('offset', offset);
     if (limit) params.set('limit', limit);
     if (query) params.set('query', query);
+
+    if (process.env.NODE_ENV === 'dev-mockups') {
+      return loadRelations(entity);
+    }
+
     return RemoteService.get(this.endpointUrl, params).then(RelationsDataService._transform);
   }
 

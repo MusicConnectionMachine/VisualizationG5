@@ -2,9 +2,9 @@ import React from 'react';
 import Papa from 'papaparse';
 
 import Utils from '../../Utils';
+import RelationsDataService from './remote/RelationsDataService';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
-import loadRelations from './remote/loadRelations';
 import loadRelationEntities from './remote/loadRelationEntities';
 import loadEntityRelations from './remote/loadEntityRelations';
 import '../../../scss/relations-widget.scss';
@@ -28,6 +28,8 @@ class Application extends React.Component {
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onFullScreenClick = this.onFullScreenClick.bind(this);
     this.onDownloadCsvClick = this.onDownloadCsvClick.bind(this);
+
+    this.relationDataService = new RelationsDataService();
   }
 
   componentWillMount() {
@@ -75,7 +77,8 @@ class Application extends React.Component {
 
   loadAllRelations() {
     const { entity } = this.props;
-    loadRelations(entity).then(data => {
+
+    this.relationDataService.loadRelations({ entity }).then(data => {
       this.setState({
         relations: data.relations,
         relationsFiltered: data.relations,
