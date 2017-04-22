@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "export NODE_ENV=development && webpack-dev-server --inline",
     "build": "export NODE_ENV=production && webpack",
+    "dev-mockups": "export NODE_ENV=dev-mockups && webpack-dev-server --inline",
     "lint": "eslint '**/*.jsx' '**/*.js'; exit 0",
     "lint-fix": "eslint --fix '**/*.jsx' '**/*.js'; exit 0"
   },
@@ -25,6 +26,7 @@
     "react-dom": "15.4.1",
     "react-leaflet": "^1.1.6",
     "react-notification-system": "^0.2.13",
+    "react-share": "^1.13.2",
     "react-tap-event-plugin": "2.0.1",
     "react-tooltip": "^3.2.10",
     "reactstrap": "^4.3.0",
@@ -54,7 +56,7 @@
     "eslint-plugin-react": "3.16.1",
     "file-loader": "0.8.5",
     "json-loader": "0.5.4",
-    "node-sass": "3.10.0",
+    "node-sass": "^4.5.2",
     "phantomjs": "1.9.20",
     "react-addons-test-utils": "15.4.1",
     "sass-loader": "3.2.3",

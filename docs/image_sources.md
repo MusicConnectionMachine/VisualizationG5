@@ -5,3 +5,5 @@ Timeline Component
 * Full-screen icon: made by [Icomoon](http://www.flaticon.com/authors/icomoon).
 * Minimize icon: made by [Daniel Bruce](http://www.flaticon.com/authors/daniel-bruce)
 * Download icon: made by [Freepik](http://www.freepik.com)
+* Flag icon: made by [Madebyoliver](http://www.flaticon.com/authors/madebyoliver)
+* Source icon: made by [SimpleIcon](http://www.flaticon.com/authors/simpleicon)

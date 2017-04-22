@@ -17,10 +17,11 @@ export default class RemoteService {
       url += params.join('&');
 
       const http = new window.XMLHttpRequest();
+      http.timeout = 5000;
       http.open('GET', url, true);
       http.setRequestHeader('Content-type', 'application/json');
       http.onreadystatechange = function onreadystatechange() {
-        if (http.readyState === 4 && http.status === 200) {
+        if (http.readyState === 4) {
           if (http.status === 200) {
             resolve(http.response);
           } else {

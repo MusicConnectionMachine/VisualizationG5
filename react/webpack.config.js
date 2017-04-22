@@ -13,6 +13,7 @@ module.exports = {
     personGraph: './src/person-graph.js',
     composersApp: './src/composers-app.js',
     relationsApp: './src/relations-app.js',
+    relationsWidget: './src/relations-widget.js',
     mapApp: './src/map-app.js',
   },
   output: {
@@ -31,7 +32,10 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'eslint' },
       { test: /\.scss$/, include: /components/, exclude: /node_modules/, loader: 'style!css?module!autoprefixer!sass' },
-      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/'), exclude: path.normalize(__dirname + '/scss/_common.scss'), loader: 'style!css!autoprefixer!sass' },
+      { test: /\.scss$/, include: path.normalize(__dirname + '/scss/'), exclude: [
+        path.normalize(__dirname + '/scss/_common.scss'),
+        path.normalize(__dirname + '/scss/_variables.scss'),
+      ], loader: 'style!css!autoprefixer!sass' },
       { test: /\.css$/, include: /node_modules/, loader: 'style!css!autoprefixer' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.png$/, loader: 'file' },
@@ -60,7 +64,7 @@ module.exports = {
       template: 'index.html',
       inject: 'body',
       chunks: ['timelineApp'],
-      }),
+    }),
     new HtmlWebpackPlugin({
       filename: 'person-graph.html',
       template: 'index.html',
@@ -80,6 +84,12 @@ module.exports = {
       chunks: ['relationsApp'],
     }),
     new HtmlWebpackPlugin({
+      filename: 'relations-widget.html',
+      template: 'index.html',
+      inject: 'body',
+      chunks: ['relationsWidget'],
+    }),
+      new HtmlWebpackPlugin({
       filename: 'map-app.html',
       template: 'index.html',
       inject: 'body',
