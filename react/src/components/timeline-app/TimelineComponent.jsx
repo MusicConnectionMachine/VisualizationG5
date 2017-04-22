@@ -97,7 +97,6 @@ export default class TimelineComponent extends React.Component {
               { event.icon ? <div className="timeline__body__itembox__imagebox"><img src={event.icon} /></div> : '' }
               <FeedbackComponent
                 onLiked={this.handleFeedback.bind(this, event.id)}
-                onDisliked={this.handleFeedback.bind(this, event.id)}
                 onMarkedAsWrong={this.handleFeedback.bind(this, event.id)}
               />
               <div
