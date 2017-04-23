@@ -1,12 +1,11 @@
 import React from 'react';
 import Papa from 'papaparse';
+import _ from 'lodash';
 
 import Utils from '../../Utils';
 import RelationsDataService from './remote/RelationsDataService';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
-import loadRelationEntities from './remote/loadRelationEntities';
-import loadEntityRelations from './remote/loadEntityRelations';
 import '../../../scss/relations-widget.scss';
 
 class Application extends React.Component {
@@ -16,13 +15,12 @@ class Application extends React.Component {
     this.state = {
       fullScreenMode: false,
       relations: [],
-      relationsFiltered: [],
       page: 1,
       query: '',
       mainViewQuery: '',
       mainViewPage: 1,
-      shouldShowEntityDetails: false,
-      shouldShowRelationDetails: false,
+      selectedEntity: null,
+      selectedRelation: null,
       errorMode: false,
     };
 
@@ -31,6 +29,23 @@ class Application extends React.Component {
     this.onDownloadCsvClick = this.onDownloadCsvClick.bind(this);
 
     this.relationDataService = new RelationsDataService();
+    this.debouncedSearch = _.debounce((query) => {
+      const {
+        selectedEntity,
+        selectedRelation,
+      } = this.state;
+
+      this.relationDataService.loadRelations({
+        relation: selectedRelation,
+        object: selectedEntity,
+        query,
+      }).then(({ relations }) => {
+        this.setState(() => ({
+          page: 1,
+          relations,
+        }));
+      });
+    }, 500);
   }
 
   componentWillMount() {
@@ -38,28 +53,14 @@ class Application extends React.Component {
   }
 
   onSearchChange(query) {
-    if (!query) {
-      this.setState(state => ({
-        query,
-        page: 1,
-        relationsFiltered: state.relations,
-      }));
-    } else {
-      this.setState(state => ({
-        query,
-        page: 1,
-        relationsFiltered: state.relations.filter(relation =>
-          relation.relation.toLowerCase().includes(query) ||
-          relation.entity2.toLowerCase().includes(query)
-        ),
-      }));
-    }
+    this.setState({ query });
+    this.debouncedSearch(query);
   }
 
   onDownloadCsvClick() {
     const csv = Papa.unparse({
       fields: ['entity1', 'relation', 'entity2', 'sourceText', 'sourceLink'],
-      data: this.state.relationsFiltered.map(relation => [
+      data: this.state.relations.map(relation => [
         relation.entity1,
         relation.relation,
         relation.entity2,
@@ -77,13 +78,10 @@ class Application extends React.Component {
   }
 
   loadAllRelations() {
-    const { entity } = this.props;
-
-    this.relationDataService.loadRelations({ entity })
+    this.relationDataService.loadRelations()
       .then(data => {
         this.setState({
           relations: data.relations,
-          relationsFiltered: data.relations,
           errorMode: false,
         });
       })
@@ -91,7 +89,7 @@ class Application extends React.Component {
   }
 
   isDetailsView() {
-    return (this.state.shouldShowEntityDetails || this.state.shouldShowRelationDetails);
+    return (this.state.selectedEntity || this.state.selectedRelation);
   }
 
   handlePageChange(page) {
@@ -99,14 +97,13 @@ class Application extends React.Component {
   }
 
   showRelationDetails(relation) {
-    loadRelationEntities(relation)
+    this.relationDataService.loadRelations({ relation })
       .then(({ relations }) => {
         this.setState(state => ({
-          shouldShowRelationDetails: true,
-          shouldShowEntityDetails: false,
+          selectedRelation: relation,
+          selectedEntity: null,
           page: 1,
           relations,
-          relationsFiltered: relations,
           query: '',
           mainViewQuery: !this.isDetailsView() ? state.query : state.mainViewQuery,
           mainViewPage: !this.isDetailsView() ? state.page : state.mainViewPage,
@@ -116,14 +113,13 @@ class Application extends React.Component {
   }
 
   showEntityDetails(entity) {
-    loadEntityRelations(entity)
+    this.relationDataService.loadRelations({ object: entity })
       .then(({ relations }) => {
         this.setState(state => ({
-          shouldShowRelationDetails: false,
-          shouldShowEntityDetails: true,
+          selectedRelation: null,
+          selectedEntity: entity,
           page: 1,
           relations,
-          relationsFiltered: relations,
           query: '',
           mainViewQuery: !this.isDetailsView() ? state.query : state.mainViewQuery,
           mainViewPage: !this.isDetailsView() ? state.page : state.mainViewPage,
@@ -134,8 +130,8 @@ class Application extends React.Component {
 
   showRelationList() {
     this.setState(prevState => ({
-      shouldShowEntityDetails: false,
-      shouldShowRelationDetails: false,
+      selectedEntity: null,
+      selectedRelation: null,
       query: prevState.mainViewQuery,
       page: prevState.mainViewPage,
     }));
@@ -144,11 +140,11 @@ class Application extends React.Component {
 
   render() {
     const {
-      relationsFiltered,
+      relations,
       fullScreenMode,
       query,
-      shouldShowEntityDetails,
-      shouldShowRelationDetails,
+      selectedEntity,
+      selectedRelation,
       errorMode,
     } = this.state;
 
@@ -183,7 +179,7 @@ class Application extends React.Component {
           )}
           {(!errorMode &&
             <RelationList
-              relations={relationsFiltered}
+              relations={relations}
               page={this.state.page}
               query={query}
               className="widget__body"
@@ -191,8 +187,8 @@ class Application extends React.Component {
               showEntityDetails={_entity => this.showEntityDetails(_entity)}
               showRelationList={() => this.showRelationList()}
               handlePageChange={(page) => this.handlePageChange(page)}
-              isRelationDetails={shouldShowRelationDetails && !shouldShowEntityDetails}
-              isEntityDetails={shouldShowEntityDetails && !shouldShowRelationDetails}
+              isRelationDetails={selectedRelation && !selectedEntity}
+              isEntityDetails={selectedEntity && !selectedRelation}
             />
           )}
       </div>
