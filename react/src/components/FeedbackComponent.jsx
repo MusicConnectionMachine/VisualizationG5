@@ -4,7 +4,7 @@ import '../../scss/feedback-component.scss';
 
 
 export default function FeedbackComponent(props) {
-  const { onLiked, onDisliked, onMarkedAsWrong } = props;
+  const { onLiked, onMarkedAsWrong } = props;
   return (
     <div>
       <a href="#" data-event="click" data-tip>
