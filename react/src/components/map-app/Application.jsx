@@ -5,6 +5,7 @@ import IFrameService from '../../../IFrameService';
 import MapDataService from './MapDataService';
 import MapView from './MapView';
 import MockDataService from './MockDataService';
+import StartupService from '../../StartupService';
 import Utils from '../../Utils';
 
 
@@ -21,7 +22,7 @@ class Application extends React.Component {
 
     this.mapView = null;
     const CurrentDataService
-      = process.env.NODE_ENV === 'dev-mockups' ? MockDataService : MapDataService;
+      = StartupService.getEnvironment() === 'dev-mockups' ? MockDataService : MapDataService;
     this.dataService = new CurrentDataService(props.entityId, props.entityType);
 
     this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);

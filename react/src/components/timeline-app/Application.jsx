@@ -3,6 +3,7 @@ import React from 'react';
 import MockDataService from './MockDataService';
 import DataService from './DataService';
 import IFrameService from '../../../IFrameService';
+import StartupService from '../../StartupService';
 import TimelineComponent from './TimelineComponent';
 import Utils from '../../Utils';
 
@@ -16,7 +17,7 @@ class Application extends React.Component {
       fullScreenMode: false,
     };
     const CurrentDataService
-      = process.env.NODE_ENV === 'dev-mockups' ? MockDataService : DataService;
+      = StartupService.getEnvironment() === 'dev-mockups' ? MockDataService : DataService;
     this.dataService = new CurrentDataService(props.entityId, props.entityType);
     this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);
     this.handleFullScreenClick = this.handleFullScreenClick.bind(this);

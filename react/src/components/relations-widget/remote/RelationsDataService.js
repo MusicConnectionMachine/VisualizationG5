@@ -1,5 +1,6 @@
 import RemoteService from '../../../RemoteService';
 import loadRelations from '../remote/loadRelations';
+import StartupService from '../../../StartupService';
 
 
 export default class RelationsDataService {
@@ -26,7 +27,7 @@ export default class RelationsDataService {
     if (limit) params.set('limit', limit);
     if (query) params.set('query', query);
 
-    if (process.env.NODE_ENV === 'dev-mockups') {
+    if (StartupService.getEnvironment() === 'dev-mockups') {
       return loadRelations(entity);
     }
 

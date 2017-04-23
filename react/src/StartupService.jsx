@@ -2,8 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
+let environment = process.env.NODE_ENV;
+
+
 export default class StartupService {
   static start(Application, additionalProps) {
+    if (StartupService.isMockupMode()) {
+      environment = 'dev-mockups';
+    }
+
     StartupService.getEntityInformation().then(({ entityType, entityId }) => {
       const root = document.getElementById('react-app');
       ReactDOM.render(<Application entityType={entityType} entityId={entityId} {...additionalProps} />, root);
@@ -39,5 +46,18 @@ export default class StartupService {
       entityId: '550e8400-e29b-11d4-a716-446655440000',
       entityType: 'artist',
     });
+  }
+
+
+  static isMockupMode() {
+    return window.location.search.substring(1)
+      .split('&')
+      .map(s => s.split('='))
+      .some(([name]) => name === 'useMockups');
+  }
+
+
+  static getEnvironment() {
+    return environment;
   }
 }
