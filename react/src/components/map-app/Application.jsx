@@ -3,6 +3,7 @@ import React from 'react';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import MapDataService from './MapDataService';
 import MapView from './MapView';
+import MockDataService from './MockDataService';
 import Utils from '../../Utils';
 
 
@@ -18,7 +19,9 @@ class Application extends React.Component {
     };
 
     this.mapView = null;
-    this.dataService = new MapDataService();
+    const CurrentDataService
+      = process.env.NODE_ENV === 'dev-mockups' ? MockDataService : MapDataService;
+    this.dataService = new CurrentDataService(props.entityId, props.entityType);
 
     this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);
     this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
@@ -123,6 +126,12 @@ class Application extends React.Component {
     );
   }
 }
+
+
+Application.propTypes = {
+  entityId: React.PropTypes.string.isRequired,
+  entityType: React.PropTypes.string.isRequired,
+};
 
 
 export default Application;

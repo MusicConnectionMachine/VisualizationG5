@@ -4,10 +4,7 @@ import ReactDOM from 'react-dom';
 
 export default class StartupService {
   static start(Application) {
-    console.log(window.location.search);
     StartupService.getEntityInformation().then(({ entityType, entityId }) => {
-      console.log(entityType, entityId);
-
       const root = document.getElementById('react-app');
       ReactDOM.render(<Application entityType={entityType} entityId={entityId} />, root);
     });
@@ -37,6 +34,7 @@ export default class StartupService {
 
   static mapImslpLink(imslpLink) { // eslint-disable-line
     // TODO Call the API to get the real information.
+    // See: https://github.com/MusicConnectionMachine/api/issues/101
     return Promise.resolve({
       entityId: '550e8400-e29b-11d4-a716-446655440000',
       entityType: 'artist',

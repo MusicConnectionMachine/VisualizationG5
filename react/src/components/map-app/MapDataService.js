@@ -2,11 +2,8 @@ import RemoteService from '../../RemoteService';
 
 
 export default class MapDataService {
-  constructor(imslpLink) { // eslint-disable-line
-    // TODO Need https://github.com/MusicConnectionMachine/api/issues/101 to be done.
-    this.entityId = 'ef680fc7-f265-4248-9597-12435182fcd7';
-    this.entityType = 'artist';
-    this.endpointUrl = MapDataService._getEndpointUrl(this.entityId, this.entityType);
+  constructor(entityId, entityType) {
+    this.endpointUrl = MapDataService._getEndpointUrl(entityId, entityType);
   }
 
 
