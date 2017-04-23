@@ -3,6 +3,8 @@ import { Popover, PopoverTitle, PopoverContent, Button } from 'reactstrap';
 import { ShareButtons, generateShareIcon } from 'react-share';
 import ClickOutside from 'react-click-outside';
 
+import DimmedBackground from './DimmedBackground';
+
 export default class SharePopover extends React.Component {
   constructor(props) {
     super(props);
@@ -30,52 +32,56 @@ export default class SharePopover extends React.Component {
     const shareText = `Just found on #MusicConnectionMachine: ${relation.entity1}  ${relation.relation} ${relation.entity2}`;
 
     return (
-      <Popover
-        placement="bottom"
-        target={target}
-        isOpen={isOpen}
-      >
-        <ClickOutside onClickOutside={() => close()}>
-          <PopoverTitle className="popover__title">
-            <Button
-              onClick={() => close()}
-              color="link"
-              className="popover__close-button close-icon"
-            />
-            Share
-            <Button className="popover__balance-button" />
-          </PopoverTitle>
+      <div>
+        <DimmedBackground isShown={isOpen} />
+        <Popover
+          style={{ zIndex: 101 }}
+          placement="bottom"
+          target={target}
+          isOpen={isOpen}
+        >
+          <ClickOutside onClickOutside={() => close()}>
+            <PopoverTitle className="popover__title">
+              <Button
+                onClick={() => close()}
+                color="link"
+                className="popover__close-button close-icon"
+              />
+              Share
+              <Button className="popover__balance-button" />
+            </PopoverTitle>
 
-          <PopoverContent className="popover__content">
-            <div>
-              {'Just found on #MusicConnectionMachine:'}
-              <br />
-              {`${relation.entity1} ${relation.relation} ${relation.entity2}`}
-            </div>
-            <FacebookShareButton
-              className="popover__content__share-button"
-              url={url}
-              title="MusicConnectionMachine"
-              description={shareText}
-            >
-              <FacebookIcon size={64} />
-            </FacebookShareButton>
-            <TwitterShareButton
-              className="popover__content__share-button"
-              url={url}
-              title={shareText}
-            >
-              <TwitterIcon size={64} />
-            </TwitterShareButton>
-            <GooglePlusShareButton
-              className="popover__content__share-button"
-              url={url}
-            >
-              <GooglePlusIcon size={64} />
-            </GooglePlusShareButton>
-          </PopoverContent>
-        </ClickOutside>
-      </Popover>
+            <PopoverContent className="popover__content">
+              <div>
+                {'Just found on #MusicConnectionMachine:'}
+                <br />
+                {`${relation.entity1} ${relation.relation} ${relation.entity2}`}
+              </div>
+              <FacebookShareButton
+                className="popover__content__share-button"
+                url={url}
+                title="MusicConnectionMachine"
+                description={shareText}
+              >
+                <FacebookIcon size={64} />
+              </FacebookShareButton>
+              <TwitterShareButton
+                className="popover__content__share-button"
+                url={url}
+                title={shareText}
+              >
+                <TwitterIcon size={64} />
+              </TwitterShareButton>
+              <GooglePlusShareButton
+                className="popover__content__share-button"
+                url={url}
+              >
+                <GooglePlusIcon size={64} />
+              </GooglePlusShareButton>
+            </PopoverContent>
+          </ClickOutside>
+        </Popover>
+      </div>
     );
   }
 }
