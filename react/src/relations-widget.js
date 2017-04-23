@@ -7,4 +7,4 @@ injectTapEventPlugin({
   shouldRejectClick: 'ontouchstart' in window ? () => true : null,
 });
 
-StartupService.start(Application);
+StartupService.start(Application, { entity: 'Mozart' });

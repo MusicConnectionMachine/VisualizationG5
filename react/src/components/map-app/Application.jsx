@@ -1,6 +1,7 @@
 import Papa from 'papaparse';
 import React from 'react';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import IFrameService from '../../../IFrameService';
 import MapDataService from './MapDataService';
 import MapView from './MapView';
 import MockDataService from './MockDataService';
@@ -65,6 +66,12 @@ class Application extends React.Component {
 
 
   handleFullScreenClick() {
+    if (!this.state.fullScreenMode) {
+      IFrameService.activateFullScreen('map');
+    } else {
+      IFrameService.deactivateFullScreen('map');
+    }
+
     this.setState({ fullScreenMode: !this.state.fullScreenMode });
     this.mapView.redrawMap();
   }

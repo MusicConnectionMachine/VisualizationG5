@@ -8,6 +8,7 @@ import RelationList from './RelationList';
 import loadRelationEntities from './remote/loadRelationEntities';
 import loadEntityRelations from './remote/loadEntityRelations';
 import '../../../scss/relations-widget.scss';
+import IFrameService from '../../../IFrameService';
 
 class Application extends React.Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class Application extends React.Component {
         page: 1,
         relationsFiltered: state.relations.filter(relation =>
           relation.relation.toLowerCase().includes(query) ||
-          relation.entity2.toLowerCase().includes(query)
+          relation.entity2.toLowerCase().includes(query),
         ),
       }));
     }
@@ -71,6 +72,12 @@ class Application extends React.Component {
   }
 
   onFullScreenClick() {
+    if (!this.state.fullScreenMode) {
+      IFrameService.activateFullScreen('relations');
+    } else {
+      IFrameService.deactivateFullScreen('relations');
+    }
+
     this.setState(state => ({
       fullScreenMode: !state.fullScreenMode,
     }));
@@ -80,7 +87,7 @@ class Application extends React.Component {
     const { entity } = this.props;
 
     this.relationDataService.loadRelations({ entity })
-      .then(data => {
+      .then((data) => {
         this.setState({
           relations: data.relations,
           relationsFiltered: data.relations,
@@ -153,47 +160,47 @@ class Application extends React.Component {
     } = this.state;
 
     return (
-        <div className={`widget ${fullScreenMode ? 'widget--full-screen' : ''}`}>
-          <div className="widget__control-bar row">
-            <h5 className="widget__control-bar__title col-4 col-sm-3 col-md-3">
-              { this.props.entity }
-            </h5>
-            <div className="col-12 col-sm-8 col-md-6 widget__control-bar__search-field">
-              <SearchField
-                query={query}
-                className="relation-widget__search__field"
-                handleSearchChange={this.onSearchChange}
-              />
-            </div>
-            <a href="#">
-              <div
-                className="widget__control-bar__button widget__control-bar__full-button"
-                onClick={this.onFullScreenClick}
-              />
-            </a>
-            <a href="#">
-              <div
-                className="widget__control-bar__button widget__control-bar__download-button"
-                onClick={this.onDownloadCsvClick}
-              />
-            </a>
-          </div>
-          {errorMode && (
-            <p style={{ textAlign: 'center', marginTop: '50px' }}> We're sorry. Something went wrong on our end! </p>
-          )}
-          {(!errorMode &&
-            <RelationList
-              relations={relationsFiltered}
-              page={this.state.page}
+      <div className={`widget ${fullScreenMode ? 'widget--full-screen' : ''}`}>
+        <div className="widget__control-bar row">
+          <h5 className="widget__control-bar__title col-4 col-sm-3 col-md-3">
+            { this.props.entity }
+          </h5>
+          <div className="col-12 col-sm-8 col-md-6 widget__control-bar__search-field">
+            <SearchField
               query={query}
-              className="widget__body"
-              showRelationDetails={_relation => this.showRelationDetails(_relation)}
-              showEntityDetails={_entity => this.showEntityDetails(_entity)}
-              showRelationList={() => this.showRelationList()}
-              handlePageChange={(page) => this.handlePageChange(page)}
-              isRelationDetails={shouldShowRelationDetails && !shouldShowEntityDetails}
-              isEntityDetails={shouldShowEntityDetails && !shouldShowRelationDetails}
+              className="relation-widget__search__field"
+              handleSearchChange={this.onSearchChange}
             />
+          </div>
+          <a href="#">
+            <div
+              className="widget__control-bar__button widget__control-bar__full-button"
+              onClick={this.onFullScreenClick}
+            />
+          </a>
+          <a href="#">
+            <div
+              className="widget__control-bar__button widget__control-bar__download-button"
+              onClick={this.onDownloadCsvClick}
+            />
+          </a>
+        </div>
+        {errorMode && (
+        <p style={{ textAlign: 'center', marginTop: '50px' }}> We're sorry. Something went wrong on our end! </p>
+          )}
+        {(!errorMode &&
+        <RelationList
+          relations={relationsFiltered}
+          page={this.state.page}
+          query={query}
+          className="widget__body"
+          showRelationDetails={_relation => this.showRelationDetails(_relation)}
+          showEntityDetails={_entity => this.showEntityDetails(_entity)}
+          showRelationList={() => this.showRelationList()}
+          handlePageChange={page => this.handlePageChange(page)}
+          isRelationDetails={shouldShowRelationDetails && !shouldShowEntityDetails}
+          isEntityDetails={shouldShowEntityDetails && !shouldShowRelationDetails}
+        />
           )}
       </div>
     );

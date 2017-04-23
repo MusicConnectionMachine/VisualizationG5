@@ -2,6 +2,7 @@ import Papa from 'papaparse';
 import React from 'react';
 import MockDataService from './MockDataService';
 import DataService from './DataService';
+import IFrameService from '../../../IFrameService';
 import TimelineComponent from './TimelineComponent';
 import Utils from '../../Utils';
 
@@ -49,6 +50,12 @@ class Application extends React.Component {
 
 
   handleFullScreenClick() {
+    if (!this.state.fullScreenMode) {
+      IFrameService.activateFullScreen('timeline');
+    } else {
+      IFrameService.deactivateFullScreen('timeline');
+    }
+
     this.setState({ fullScreenMode: !this.state.fullScreenMode });
   }
 

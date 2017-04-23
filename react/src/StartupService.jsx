@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import IFrameService from '../IFrameService';
 
 
 export default class StartupService {
-  static start(Application) {
+  static start(Application, additionalProps) {
     StartupService.getEntityInformation().then(({ entityType, entityId }) => {
       const root = document.getElementById('react-app');
-      ReactDOM.render(<Application entityType={entityType} entityId={entityId} />, root);
+      ReactDOM.render(<Application entityType={entityType} entityId={entityId} {...additionalProps} />, root);
     });
   }
 
