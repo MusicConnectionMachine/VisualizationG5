@@ -51,7 +51,7 @@ class Application extends React.Component {
         page: 1,
         relationsFiltered: state.relations.filter(relation =>
           relation.relation.toLowerCase().includes(query) ||
-          relation.entity2.toLowerCase().includes(query),
+          relation.entity2.toLowerCase().includes(query)
         ),
       }));
     }

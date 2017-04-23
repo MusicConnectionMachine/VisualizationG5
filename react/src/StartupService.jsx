@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IFrameService from '../IFrameService';
 
 
 export default class StartupService {
