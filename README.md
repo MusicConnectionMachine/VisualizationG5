@@ -26,7 +26,7 @@ import Application from './components/timeline-app/Application';
 <Application entityType={entityType} entityId={entityId} />
 ```
 
-The documentation and a demonstration of how to include the widgets in a iframe is [here](http://mcmwidgets.azurewebsites.net/documentation/).
+The documentation and a demonstration of how to include the widgets in a iframe is [here](http://mcmwidgets.azurewebsites.net/).
 
 
 
@@ -61,6 +61,6 @@ The documentation and a demonstration of how to include the widgets in a iframe 
 
 ### Development
   - Run `npm run dev` to start webapck server in development environment
-  
-### Express Integration 
+
+### Express Integration
   - Run `npm run build` to compile the react resources and make them available for express
