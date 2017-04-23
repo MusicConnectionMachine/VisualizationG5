@@ -8,12 +8,14 @@ import SourcePopover from './SourcePopover';
 import SharePopover from './SharePopover';
 import PaginationComponent from './PaginationComponent';
 
-const LIMIT = 5;
+const LIMIT_FULLPAGE = 10;
+const LIMIT_WIDGET = 5;
 const MAX_PAGES = 10;
 
 export default class RelationList extends React.Component {
   constructor(props) {
     super(props);
+
     this.toggleSourcePopover = this.toggleSourcePopover.bind(this);
     this.toggleFlagPopover = this.toggleFlagPopover.bind(this);
     this.toggleSharePopover = this.toggleSharePopover.bind(this);
@@ -150,6 +152,7 @@ export default class RelationList extends React.Component {
     const {
       query,
       className,
+      fullScreenMode,
       relations,
       page,
       handlePageChange,
@@ -157,7 +160,12 @@ export default class RelationList extends React.Component {
       isEntityDetails,
     } = this.props;
 
-    const displayRelations = relations.slice((page - 1) * LIMIT, page * LIMIT);
+    let itemsPerPage = LIMIT_WIDGET;
+    if (fullScreenMode) {
+      itemsPerPage = LIMIT_FULLPAGE;
+    }
+
+    const displayRelations = relations.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
     return (
       <div className={`relation-widget__body ${className}`}>
@@ -183,7 +191,7 @@ export default class RelationList extends React.Component {
           itemCount={relations.length}
           handlePageChange={handlePageChange}
           maxPages={MAX_PAGES}
-          itemsPerPage={LIMIT}
+          itemsPerPage={itemsPerPage}
         />
         <FlagPopover
           target={'relation-popover-target'}
@@ -225,6 +233,7 @@ RelationList.propTypes = {
   relations: React.PropTypes.array.isRequired,
   query: React.PropTypes.string,
   className: React.PropTypes.string,
+  fullScreenMode: React.PropTypes.bool,
   handlePageChange: React.PropTypes.func,
   showRelationDetails: React.PropTypes.func,
   showEntityDetails: React.PropTypes.func,

@@ -187,6 +187,7 @@ class Application extends React.Component {
               page={this.state.page}
               query={query}
               className="widget__body"
+              fullScreenMode={fullScreenMode}
               showRelationDetails={_relation => this.showRelationDetails(_relation)}
               showEntityDetails={_entity => this.showEntityDetails(_entity)}
               showRelationList={() => this.showRelationList()}
