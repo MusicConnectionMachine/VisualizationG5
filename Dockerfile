@@ -9,6 +9,5 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y build-essential
 RUN cd react && npm install && npm run build && cd ..
 RUN mkdir /usr/local/apache2/htdocs/widgets
-RUN mkdir /usr/local/apache2/htdocs/documentation
 RUN cp express/react/* /usr/local/apache2/htdocs/widgets
-RUN cp iFrame\ Widget/Dokumentation/* /usr/local/apache2/htdocs/documentation/
+RUN cp iFrame\ Widget/Dokumentation/* /usr/local/apache2/htdocs/

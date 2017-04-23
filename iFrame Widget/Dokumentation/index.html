@@ -98,41 +98,18 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script>
-          function startUpWidget() {
-            const timelineWidget = document.getElementById("timelineWidget");
-            const relationsWidget = document.getElementById("relationsWidget");
-            const mapWidget = document.getElementById("mapWidget");
-
-            let widgets = {
-              timeline: timelineWidget,
-              relations: relationsWidget,
-              map: mapWidget,
+          function startWidget(widgetName, rootElement) {
+            const scripts = document.createElement('script');
+            scripts.src = 'http://mcmwidgets.azurewebsites.net/widgets.js';
+            scripts.type = 'text/javascript';
+            scripts.onload = function() {
+              MCMWidgets.init({ widget: widgetName, rootElement: rootElement });
             };
-            timelineWidget.src = "http://mcmwidgets.azurewebsites.net/widgets/timeline-app.html?imslp=usemockups";
-            relationsWidget.src = "http://mcmwidgets.azurewebsites.net/widgets/relations-widget.html?imslp=usemockups";
-            mapWidget.src = "http://mcmwidgets.azurewebsites.net/widgets/map-app.html?imslp=usemockups";
-
-            function onMessageFromWidget(event) {
-              const widget = widgets[event.data.widget];
-              if (event.data.text === 'full-screen activated') {
-                widget.style.height = '99vh';
-                widget.style.width = '99vw';
-                widget.style.position = 'fixed';
-                widget.style.left = '0';
-                widget.style.top = '0';
-                widget.style.zIndex = '9999999';
-              } else if (event.data.text === 'full-screen deactivated') {
-                widget.style.height = '400px';
-                widget.style.width = '100%';
-                widget.style.position = 'inherit';
-                widget.style.left = 'auto';
-                widget.style.top = 'auto';
-                widget.style.zIndex = 'auto';
-              }
-            }
-            window.addEventListener("message", onMessageFromWidget, false);
+            document.getElementsByTagName('head')[0].append(scripts);
           }
-          startUpWidget();
+          startWidget('timeline', document.getElementById('timelineWidget'));
+          startWidget('relations', document.getElementById('relationsWidget'));
+          startWidget('map', document.getElementById('mapWidget'));
         </script>
     </body>
 </html>
