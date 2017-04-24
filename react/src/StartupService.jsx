@@ -71,8 +71,8 @@ export default class StartupService {
     if (windowUrl.indexOf('Category') >= 0) {
       indexToCutOut += 9;
       windowUrl = windowUrl.slice(indexToCutOut);
-      const lastname = windowUrl.slice(0, url.indexOf(','));
-      const firstname = windowUrl.slice(url.indexOf(',') + 2);
+      const lastname = windowUrl.slice(0, windowUrl.indexOf(','));
+      const firstname = windowUrl.slice(windowUrl.indexOf(',') + 2);
       let title = `${firstname}_${lastname}`;
       title = title.replace(new RegExp('_', 'g'), ' ');
 
@@ -104,7 +104,7 @@ export default class StartupService {
 
 
   static isMockupMode(queryParams) {
-    return queryParams.some(([name]) => name === 'useMockups');
+    return queryParams.some(([name]) => name === 'useMockups') || environment === 'dev-mockups';
   }
 
 
