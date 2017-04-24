@@ -2,7 +2,7 @@ import Papa from 'papaparse';
 import React from 'react';
 import MockDataService from './MockDataService';
 import DataService from './DataService';
-import IFrameService from '../../../IFrameService';
+import IFrameService from '../../IFrameService';
 import StartupService from '../../StartupService';
 import TimelineComponent from './TimelineComponent';
 import Utils from '../../Utils';

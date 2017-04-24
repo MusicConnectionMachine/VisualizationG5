@@ -1,7 +1,7 @@
 import Papa from 'papaparse';
 import React from 'react';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import IFrameService from '../../../IFrameService';
+import IFrameService from '../../IFrameService';
 import MapDataService from './MapDataService';
 import MapView from './MapView';
 import MockDataService from './MockDataService';
