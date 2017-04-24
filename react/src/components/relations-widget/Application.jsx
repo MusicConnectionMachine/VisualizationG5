@@ -7,7 +7,7 @@ import RelationsDataService from './remote/RelationsDataService';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
 import '../../../scss/relations-widget.scss';
-import IFrameService from '../../../IFrameService';
+import IFrameService from '../../IFrameService';
 
 class Application extends React.Component {
   constructor(props) {

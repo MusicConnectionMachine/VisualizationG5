@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IFrameService from '../IFrameService';
+import IFrameService from './IFrameService';
 
 
 let environment = process.env.NODE_ENV;
