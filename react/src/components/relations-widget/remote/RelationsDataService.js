@@ -1,7 +1,7 @@
 import RemoteService from '../../../RemoteService';
 import loadRelations from '../remote/loadRelations';
-import StartupService from '../../../StartupService';
-
+import loadRelationEntities from '../remote/loadRelationEntities';
+import loadEntityRelations from '../remote/loadEntityRelations';
 
 export default class RelationsDataService {
   constructor(entityId, entityType) { // eslint-disable-line
@@ -27,7 +27,13 @@ export default class RelationsDataService {
     if (limit) params.set('limit', limit);
     if (query) params.set('query', query);
 
-    if (StartupService.getEnvironment() === 'dev-mockups') {
+    if (process.env.NODE_ENV === 'dev-mockups') {
+      if (relation) {
+        return loadRelationEntities(relation);
+      }
+      if (object) {
+        return loadEntityRelations(object);
+      }
       return loadRelations(entity);
     }
 

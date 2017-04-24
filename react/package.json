@@ -24,6 +24,7 @@
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-autocomplete": "^1.4.0",
+    "react-click-outside": "tj/react-click-outside",
     "react-dom": "15.4.1",
     "react-leaflet": "^1.1.6",
     "react-notification-system": "^0.2.13",

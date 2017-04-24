@@ -4428,6 +4428,11 @@ react-autocomplete@^1.4.0:
   dependencies:
     dom-scroll-into-view "1.0.1"
 
+react-click-outside@tj/react-click-outside, tj/react-click-outside:
+  name react-click-outside
+  version "1.1.0"
+  resolved "https://codeload.github.com/tj/react-click-outside/tar.gz/82d51114d841a151e6285ac542d6fd98690910e6"
+
 react-dom@15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.1.tgz#d54c913261aaedb17adc20410d029dcc18a1344a"
