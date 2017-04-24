@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import IFrameService from '../IFrameService';
 
 
 let environment = process.env.NODE_ENV;
@@ -7,11 +8,13 @@ let environment = process.env.NODE_ENV;
 
 export default class StartupService {
   static start(Application, additionalProps) {
-    if (StartupService.isMockupMode()) {
+    const queryParams = StartupService.getQueryParams();
+    IFrameService.setId(StartupService.getId(queryParams));
+    if (StartupService.isMockupMode(queryParams)) {
       environment = 'dev-mockups';
       StartupService.renderApplication(Application, 'artists', '-mockups-', additionalProps);
     } else {
-      StartupService.getEntityInformation().then(({ entityType, entityId }) => {
+      StartupService.getEntityInformation(queryParams).then(({ entityType, entityId }) => {
         StartupService.renderApplication(Application, entityType, entityId, additionalProps);
       });
     }
@@ -24,8 +27,23 @@ export default class StartupService {
   }
 
 
-  static getEntityInformation() {
-    const queryParams = window.location.search.substring(1).split('&').map(s => s.split('='));
+  static getQueryParams() {
+    return window.location.search.substring(1).split('&').map(s => s.split('='));
+  }
+
+
+  static getId(queryParams) {
+    for (let i = 0; i < queryParams.length; i++) {
+      const [name, value] = queryParams[i];
+      if (name === 'id') {
+        return value;
+      }
+    }
+    return undefined;
+  }
+
+
+  static getEntityInformation(queryParams) {
     let entityType;
     let entityId;
     for (let i = 0; i < queryParams.length; i++) {
@@ -85,11 +103,8 @@ export default class StartupService {
   }
 
 
-  static isMockupMode() {
-    return window.location.search.substring(1)
-      .split('&')
-      .map(s => s.split('='))
-      .some(([name]) => name === 'useMockups');
+  static isMockupMode(queryParams) {
+    return queryParams.some(([name]) => name === 'useMockups');
   }
 
 

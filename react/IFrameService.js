@@ -1,3 +1,4 @@
+let _id;
 
 
 export default class IFrameService {
@@ -5,6 +6,7 @@ export default class IFrameService {
     window.parent.postMessage({
       text: 'full-screen activated',
       widget: widgetName,
+      id: _id,
     }, '*');
   }
 
@@ -13,6 +15,12 @@ export default class IFrameService {
     window.parent.postMessage({
       text: 'full-screen deactivated',
       widget: widgetName,
+      id: _id,
     }, '*');
+  }
+
+
+  static setId(id) {
+    _id = id;
   }
 }
