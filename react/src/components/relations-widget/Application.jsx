@@ -7,6 +7,7 @@ import RelationsDataService from './remote/RelationsDataService';
 import SearchField from './SearchField';
 import RelationList from './RelationList';
 import '../../../scss/relations-widget.scss';
+import IFrameService from '../../../IFrameService';
 
 class Application extends React.Component {
   constructor(props) {
@@ -72,14 +73,22 @@ class Application extends React.Component {
   }
 
   onFullScreenClick() {
+    if (!this.state.fullScreenMode) {
+      IFrameService.activateFullScreen('relations');
+    } else {
+      IFrameService.deactivateFullScreen('relations');
+    }
+
     this.setState(state => ({
       fullScreenMode: !state.fullScreenMode,
     }));
   }
 
   loadAllRelations() {
-    this.relationDataService.loadRelations()
-      .then(data => {
+    const { entity } = this.props;
+
+    this.relationDataService.loadRelations({ entity })
+      .then((data) => {
         this.setState({
           relations: data.relations,
           errorMode: false,

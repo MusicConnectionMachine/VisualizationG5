@@ -1,6 +1,9 @@
-import MockDataService from './MockDataService';
 import Papa from 'papaparse';
 import React from 'react';
+import MockDataService from './MockDataService';
+import DataService from './DataService';
+import IFrameService from '../../../IFrameService';
+import StartupService from '../../StartupService';
 import TimelineComponent from './TimelineComponent';
 import Utils from '../../Utils';
 
@@ -13,6 +16,9 @@ class Application extends React.Component {
       selectedEvents: null,
       fullScreenMode: false,
     };
+    const CurrentDataService
+      = StartupService.getEnvironment() === 'dev-mockups' ? MockDataService : DataService;
+    this.dataService = new CurrentDataService(props.entityId, props.entityType);
     this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);
     this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
     this.handleSearchChange = this.handleSearchChange.bind(this);
@@ -20,7 +26,7 @@ class Application extends React.Component {
 
 
   componentWillMount() {
-    MockDataService.fetchData(null).then((data) => {
+    this.dataService.fetchData(null).then((data) => {
       data.events.forEach((event, i) => {
         event.id = i;
         event.start = new Date(event.start);
@@ -45,6 +51,12 @@ class Application extends React.Component {
 
 
   handleFullScreenClick() {
+    if (!this.state.fullScreenMode) {
+      IFrameService.activateFullScreen('timeline');
+    } else {
+      IFrameService.deactivateFullScreen('timeline');
+    }
+
     this.setState({ fullScreenMode: !this.state.fullScreenMode });
   }
 
@@ -89,7 +101,7 @@ class Application extends React.Component {
               />
             </a>
           </div>
-          <TimelineComponent events={ this.state.selectedEvents }/>
+          <TimelineComponent events={this.state.selectedEvents} />
         </div>
       );
     }
@@ -103,7 +115,8 @@ class Application extends React.Component {
 
 
 Application.propTypes = {
-  host: React.PropTypes.string.isRequired,
+  entityId: React.PropTypes.string.isRequired,
+  entityType: React.PropTypes.string.isRequired,
 };
 
 

@@ -89,7 +89,7 @@ module.exports = {
       inject: 'body',
       chunks: ['relationsWidget'],
     }),
-      new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       filename: 'map-app.html',
       template: 'index.html',
       inject: 'body',

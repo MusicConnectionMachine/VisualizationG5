@@ -23,7 +23,7 @@ const DimmedBackground = (props) => {
 };
 
 DimmedBackground.propTypes = {
-  isShown: React.PropTypes.string,
+  isShown: React.PropTypes.bool,
 };
 
 export default DimmedBackground;

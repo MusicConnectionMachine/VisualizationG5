@@ -5,6 +5,7 @@
     "dev": "export NODE_ENV=development && webpack-dev-server --inline",
     "build": "export NODE_ENV=production && webpack",
     "dev-mockups": "export NODE_ENV=dev-mockups && webpack-dev-server --inline",
+    "build-mockups": "export NODE_ENV=dev-mockups && webpack",
     "lint": "eslint '**/*.jsx' '**/*.js'; exit 0",
     "lint-fix": "eslint --fix '**/*.jsx' '**/*.js'; exit 0"
   },

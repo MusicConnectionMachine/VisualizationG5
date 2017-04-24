@@ -11,7 +11,7 @@ injectTapEventPlugin({
 
 function startApp() {
   const root = document.getElementById('react-app');
-  ReactDOM.render(<Application { ...(root.dataset) } />, root);
+  ReactDOM.render(<Application host="http://localhost:3000/api/v1" />, root);
 }
 
 

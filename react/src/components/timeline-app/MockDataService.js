@@ -14,54 +14,79 @@
  */
 const EVENTS = [
   {
-    start: '1770-12-17',
-    title: 'Birth in Bonn',
+    start: '1685-01-01',
+    title: 'Bach was born in Eisenach in 1685.',
   },
   {
-    start: '1827-03-26',
-    title: 'Death in Wien at the Age of 56',
-    description: `The death of Ludwig van Beethoven on 26 March 1827 at the age of 56 followed a prolonged illness. It was witnessed by his sister-in-law and by his close friend Anselm Hüttenbrenner, who provided a vivid description of the event. Beethoven's funeral was held three days later, and the procession was witnessed by a large crowd. He was buried in the cemetery at Währing, although his remains were moved in 1888 to Vienna's Zentralfriedhof.\nHüttenbrenner's account has been used to ascribe motivations of resistance and anger to Beethoven in his final moments. Beethoven's last words, and the exact cause of Beethoven's death have also been the subject of some disagreement.`,
-    icon: 'https://dummyimage.com/48x48/ccc/000',
-    link: 'https://en.wikipedia.org/wiki/Death_of_Ludwig_van_Beethoven',
-    linkType: 'external',
+    start: '1700-01-01',
+    title: 'Because of his excellent singing voice, Bach attained a position at the Michaelis monastery at L?neberg in 1700.',
   },
   {
-    start: '1790-05-02',
-    title: 'First Publication',
-    link: '/work/1',
+    start: '1703-01-01',
+    title: 'After taking a short-lived post in Weimar in 1703 as a violinist, Bach became organist at the Neue Kirche in Arnstadt (1703-1707).',
   },
   {
-    start: '1812-05-18',
-    title: 'A very important project about whatever',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    icon: 'https://dummyimage.com/48x48/ccc/000',
+    start: '1707-06.01',
+    title: 'Blasius in M?hlhausen as organist, beginning in June 1707, and married his cousin, Maria Barbara Bach, that fall.',
   },
   {
-    start: '2016-02-07',
-    title: 'Someone performed something great of L. van Beethoven',
-    icon: 'https://dummyimage.com/48x48/ccc/000',
-    link: 'http://www.spiegel.de/kultur/musik/nikolaus-harnoncourt-dirigiert-beethoven-jung-und-wiewild-wie-nie-a-1075607.html',
-    linkType: 'external',
+    start: '1708-01-010',
+    title: 'He next took a post for the Duke of Sachsen-Weimar in 1708, serving as court organist and playing in the orchestra, eventually becoming its leader in 1714.',
+  },
+  {
+    start: '1717-01-01',
+    title: 'Owing to politics between the Duke and his officials, Bach left Weimar and secured a post in December 1717 as Kapellmeister at C?then.',
+  },
+  {
+    start: '1720-01-01',
+    title: "In 1720, Bach's wife suddenly died, leaving him with four children (three others had died in infancy).",
+  },
+  {
+    start: '1721-12-01',
+    title: 'A short while later, he met his second wife, soprano Anna Magdalena Wilcke, whom he married in December 1721.',
+  },
+  {
+    start: '1723-05-01',
+    title: 'Bach became Kantor of the Thomas School in Leipzig in May 1723 and held the post until his death.',
+  },
+  {
+    start: '1729-01-01',
+    title: "Thus, he took on other projects, chief among which was the directorship of the city's Collegium Musicum, an ensemble of professional and amateur musicians who gave weekly concerts, in 1729.",
+  },
+  {
+    start: '1736-01-01',
+    title: 'He also became music director at the Dresden Court in 1736, in the service of Frederick Augustus II; though his duties were vague and apparently few, they allowed him freedom to compose what he wanted.',
+  },
+  {
+    start: '1740-01-01',
+    title: 'Bach began making trips to Berlin in the 1740s, not least because his son Carl Philipp Emanuel served as a court musician there.',
+  },
+  {
+    start: '1747-05-01',
+    title: 'In May 1747, the composer was warmly received by King Frederick II of Prussia, for whom he wrote the gloriously abstruse Musical Offering (BWV 1079).',
+  },
+  {
+    start: '1749-01-01',
+    title: "Among Bach's last works was his 1749 Mass in B minor.",
+  },
+  {
+    start: '1750-07-28',
+    title: 'Besieged by diabetes, he died on July 28, 1750.',
   },
 ];
 
 
 export default class MockDataService {
-  /**
-   * @param {number} entityId
-   * @return {Promise}
-   */
-  /* eslint-disable no-unused-vars */
-  static fetchData(entityId) {
+  fetchData() { // eslint-disable-line
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           events: EVENTS,
-          name: 'Ludwig van Beethoven',
-          brithday: '1876-10-25',
-          birthplace: 'Boechout',
-          deathdate: '1889-01-02',
-          deathplace: 'Königs Wusterhausen',
+          name: 'Johann Sebastian Bach',
+          brithday: '1685-03-21',
+          birthplace: 'Eisenach',
+          deathdate: '1750-07-28',
+          deathplace: 'Leipzig',
         });
       }, 150);
     });

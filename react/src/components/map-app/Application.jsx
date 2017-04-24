@@ -1,8 +1,11 @@
 import Papa from 'papaparse';
 import React from 'react';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import IFrameService from '../../../IFrameService';
 import MapDataService from './MapDataService';
 import MapView from './MapView';
+import MockDataService from './MockDataService';
+import StartupService from '../../StartupService';
 import Utils from '../../Utils';
 
 
@@ -18,7 +21,9 @@ class Application extends React.Component {
     };
 
     this.mapView = null;
-    this.dataService = new MapDataService();
+    const CurrentDataService
+      = StartupService.getEnvironment() === 'dev-mockups' ? MockDataService : MapDataService;
+    this.dataService = new CurrentDataService(props.entityId, props.entityType);
 
     this.handleDownloadCsvClick = this.handleDownloadCsvClick.bind(this);
     this.handleFullScreenClick = this.handleFullScreenClick.bind(this);
@@ -62,6 +67,12 @@ class Application extends React.Component {
 
 
   handleFullScreenClick() {
+    if (!this.state.fullScreenMode) {
+      IFrameService.activateFullScreen('map');
+    } else {
+      IFrameService.deactivateFullScreen('map');
+    }
+
     this.setState({ fullScreenMode: !this.state.fullScreenMode });
     this.mapView.redrawMap();
   }
@@ -126,7 +137,8 @@ class Application extends React.Component {
 
 
 Application.propTypes = {
-  host: React.PropTypes.string.isRequired,
+  entityId: React.PropTypes.string.isRequired,
+  entityType: React.PropTypes.string.isRequired,
 };
 
 
