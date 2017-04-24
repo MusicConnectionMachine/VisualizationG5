@@ -2,7 +2,7 @@ FROM httpd
 ADD . /VisualizationG5/
 WORKDIR /VisualizationG5/
 RUN apt-get update
-RUN apt-get -y install wget
+RUN apt-get -y install wget git
 RUN wget https://deb.nodesource.com/setup_7.x
 RUN bash setup_7.x
 RUN apt-get install -y nodejs
