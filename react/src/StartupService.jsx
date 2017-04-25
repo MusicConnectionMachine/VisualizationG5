@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import IFrameService from './IFrameService';
+import RemoteService from './RemoteService';
 
 
 let environment = process.env.NODE_ENV;
@@ -76,13 +77,8 @@ export default class StartupService {
       let title = `${firstname}_${lastname}`;
       title = title.replace(new RegExp('_', 'g'), ' ');
 
-      const url = `http://mcmapi.azurewebsites.net/search/entities?q=${title}&limit=1`;
-      return fetch(url, {
-        headers: {
-          'API-KEY': 123,
-        },
-      })
-        .then(res => res.json())
+      return RemoteService.get('/search/entities', new Map([['q', title], ['limit', 1]]))
+        .then(JSON.parse)
         .then(res => res[0].artists[0]);
     }
     // If Composition
@@ -92,14 +88,9 @@ export default class StartupService {
     composition = composition.replace(new RegExp('_', 'g'), ' ');
     const title = composition;
 
-    const url = `http://mcmapi.azurewebsites.net/search/entities?q=${title}&limit=1`;
-    return fetch(url, {
-      headers: {
-        'API-KEY': 123,
-      },
-    })
-        .then(res => res.json())
-        .then(res => res[0].works[0]);
+    return RemoteService.get('/search/entities', new Map([['q', title], ['limit', 1]]))
+      .then(JSON.parse)
+      .then(res => res[0].works[0]);
   }
 
 
