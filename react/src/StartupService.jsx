@@ -66,7 +66,7 @@ export default class StartupService {
 
   static mapImslpLink(imslpLink) { // eslint-disable-line
     // TODO Call the API to get the real information.
-    let windowUrl = window.location.href;
+    let windowUrl = decodeURIComponent(window.location.href);
     let indexToCutOut = windowUrl.indexOf('wiki') + 5;
     // If Composer
     if (windowUrl.indexOf('Category') >= 0) {
@@ -76,7 +76,6 @@ export default class StartupService {
       const firstname = windowUrl.slice(windowUrl.indexOf(',') + 2);
       let title = `${firstname}_${lastname}`;
       title = title.replace(new RegExp('_', 'g'), ' ');
-
       return RemoteService.get('/search/entities', new Map([['q', title], ['limit', 1]]))
         .then(JSON.parse)
         .then(res => res[0].artists[0]);
