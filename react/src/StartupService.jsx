@@ -77,20 +77,19 @@ export default class StartupService {
       let title = `${firstname}_${lastname}`;
       title = title.replace(new RegExp('_', 'g'), ' ');
 
-      return RemoteService.get('/search/entities', new Map([['q', title], ['limit', 1]]))
+      return RemoteService.get('/search/artists', new Map([['q', title], ['limit', 1]]))
         .then(JSON.parse)
-        .then(res => res[0].artists[0]);
+        .then(res => res.items[0]);
     }
     // If Composition
 
     windowUrl = windowUrl.slice(indexToCutOut);
     let composition = windowUrl.slice(0, windowUrl.indexOf('(') - 1);
     composition = composition.replace(new RegExp('_', 'g'), ' ');
-    const title = composition;
 
-    return RemoteService.get('/search/entities', new Map([['q', title], ['limit', 1]]))
+    return RemoteService.get('/search/works', new Map([['q', composition], ['limit', 1]]))
       .then(JSON.parse)
-      .then(res => res[0].works[0]);
+      .then(res => res.items[0]);
   }
 
 
