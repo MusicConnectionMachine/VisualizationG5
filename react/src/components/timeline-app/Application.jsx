@@ -13,6 +13,7 @@ class Application extends React.Component {
     super(props);
     this.state = {
       data: null,
+      error: false,
       selectedEvents: null,
       fullScreenMode: false,
     };
@@ -27,12 +28,15 @@ class Application extends React.Component {
 
   componentWillMount() {
     this.dataService.fetchData(null).then((data) => {
-      data.events.forEach((event, i) => {
-        event.id = i;
+      data.events.forEach((event) => {
         event.start = new Date(event.start);
       });
+      data.events = data.events.filter(event => !isNaN(event.start.getTime()));
+      if (data.events.length === 0) {
+        throw new Error('No events available.');
+      }
       this.setState({ data, selectedEvents: data.events });
-    });
+    }).catch(() => { this.setState({ error: true }); });
   }
 
 
@@ -75,6 +79,14 @@ class Application extends React.Component {
 
 
   render() {
+    if (this.state.error) {
+      return (
+        <div>
+          We can't find any interesting event. Maybe the <a href="https://en.wikipedia.org/wiki/Spacetime">
+          spacetime continuum</a> is collapsed?
+        </div>
+      );
+    }
     if (this.state.data) {
       return (
         <div className={`widget ${this.state.fullScreenMode ? 'widget--full-screen' : ''}`}>
