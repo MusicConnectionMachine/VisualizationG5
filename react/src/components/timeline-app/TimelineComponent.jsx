@@ -128,10 +128,12 @@ export default class TimelineComponent extends React.Component {
     return (
       <div>
         <div className="widget__body timeline__body" ref="visTimeline" />
-        {this.state.timelineReady && this.props.events.map(({ id, start, description }) => (
+        {this.state.timelineReady && this.props.events.map(({ id, start, tooltipContent, description }) => (
           <ReactTooltip id={`timeline__body__tooltip__${id}`} key={id}>
             <p className="timeline__body__tooltip__date">
-              {start.getDate()}.{start.getMonth() + 1}.{start.getFullYear()}
+              { tooltipContent || (
+                `${start.getDate()}.${start.getMonth() + 1}.${start.getFullYear()}`
+              )}
             </p>
             {description && description.split('\n').map(p => <p>{p}</p>)}
           </ReactTooltip>
