@@ -4,15 +4,16 @@ window.MCMWidgets = {};
 window.MCMWidgets.init = function (opt) {
   const widget = opt.widget;
   const rootElement = opt.rootElement;
+  const url = window.location.href;
 
   if (widget !== 'timeline' && widget !== 'relations' && widget !== 'map') {
     return;
   }
 
   const urls = {
-    timeline: 'http://mcmwidgets.azurewebsites.net/widgets/timeline-app.html?imslp=usemockups&useMockups',
-    relations: 'http://mcmwidgets.azurewebsites.net/widgets/relations-widget.html?imslp=usemockups&useMockups',
-    map: 'http://mcmwidgets.azurewebsites.net/widgets/map-app.html?imslp=usemockups&useMockups',
+    timeline: 'http://mcmwidgets.azurewebsites.net/widgets/timeline-app.html?imslp=' + url,
+    relations: 'http://mcmwidgets.azurewebsites.net/widgets/relations-widget.html?imslp=' + url,
+    map: 'http://mcmwidgets.azurewebsites.net/widgets/map-app.html?imslp=' + url,
   };
   rootElement.src = urls[widget];
 

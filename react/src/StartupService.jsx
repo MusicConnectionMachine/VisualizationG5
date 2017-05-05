@@ -66,7 +66,7 @@ export default class StartupService {
 
   static mapImslpLink(imslpLink) { // eslint-disable-line
     // TODO Call the API to get the real information.
-    let windowUrl = window.location.href;
+    let windowUrl = decodeURIComponent(window.location.href);
     let indexToCutOut = windowUrl.indexOf('wiki') + 5;
     // If Composer
     if (windowUrl.indexOf('Category') >= 0) {
