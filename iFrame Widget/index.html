@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="content" style="width: 100%; height: 300px;">
+        <h1 id="1firstHeading">Mal sehen was passiert</h1>
+        <h1 id="firstHeading" class="firstHeading pagetitle page-header" style="overflow: visible;">Abendempfindung, K.523 (<a href="/wiki/Category:Mozart,_Wolfgang_Amadeus">Mozart, Wolfgang Amadeus</a>)</h1>
+    </div>
+    <iframe src="" width="100%" height="400px" name="iFrame" title="Widget" id="widget">
+
+    </iframe>
+<script>
+    function startUpWidget() {
+        //Transform URL to Information
+
+        //var url = window.location.href;
+
+        var url = "http://imslp.org/wiki/Category:Beethoven,_Ludwig_van";
+        var url = "http://imslp.org/wiki/Studien_im_Generalbass,_Contrapunkt_und_in_der_Compositionslehre_(Beethoven,_Ludwig_van)";
+        var originUrl = "http://imslp.org/wiki/";
+        //var indexToCutOut = originUrl.length;
+        var indexToCutOut = url.indexOf("wiki") + 5;
+
+        //If Category => Composer
+        if (url.indexOf("Category") >= 0) {
+            indexToCutOut = indexToCutOut + 9;
+            url = url.slice(indexToCutOut);
+
+            var lastname = url.slice(0,url.indexOf(","));
+            var firstname = url.slice(url.indexOf(",")+2)
+            url = "Composer:" + firstname + "_" + lastname;
+        }
+        else {
+            url = url.slice(indexToCutOut);
+            var composition = url.slice(0,url.indexOf("(")-1);
+            var composerPart = url.slice(url.indexOf("(")+1);
+            var lastname = composerPart.slice(0,composerPart.indexOf(","));
+            var firstname = composerPart.slice(composerPart.indexOf(",")+2,composerPart.length-1);
+            var composer = firstname + "_" + lastname;
+            url = "Composition:" + composition + ";Composer:" + composer;
+        }
+        //CHANGE URL to domain
+        document.getElementById("widget").src = "ANY-URL?" + url;
+    }
+
+    startUpWidget();
+</script>
+</body>
+</html>
